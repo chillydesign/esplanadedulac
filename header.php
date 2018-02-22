@@ -20,11 +20,8 @@
     <body <?php body_class(); ?>>
 
 
-
-        <div class="container"  >
+        <div class="container" >
             <header id="page_header" >
-
-
                 <a href="#" id="menu_button" >Menu</a>
                 <div class=" branding"><a href="<?php echo home_url(); ?>" ><?php echo $blog_name; ?></a></div>
                 <nav class="">
@@ -33,8 +30,7 @@
                         <?php chilly_nav('header_nav'); ?>
                     </ul>
                 </nav>
-
-
+                <div id="header_bg"></div>
             </header>
         </div>
         <main id="main" >

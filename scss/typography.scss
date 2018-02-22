@@ -8,7 +8,7 @@ h1,h2,h3,h4,h5 {
 h1 {
     font-size: 4em;
     padding:0 0 50px;
-    font-weight: bold;
+    font-weight: normal;
 
 }
 h2 {
@@ -29,13 +29,21 @@ h4 {
     font-weight: bold;
 }
 
+h5 {
+    text-transform: uppercase;
+    font-size: 2em;
+    color: $brand_color;
+    padding: 0 0 10px;
+}
+
 
 
 @media (min-width: $browser_small){
-    h1 { font-size: 5em; }
+    h1 { font-size: 4em; }
     h2 { font-size: 4em; padding: 0 0 30px }
     h3 { font-size: 2.6em; }
     h4 { font-size: 1.79em; }
+    h5 { font-size: 2.2em; }
 
 }
 
@@ -65,7 +73,7 @@ section ol {
 
 a {
     text-decoration: none;
-    border-bottom:1px solid saturate(lighten($brand_color,25),10);
+    border:0;
     display: inline-block;
     @include transition(0.3s);
 
@@ -73,7 +81,7 @@ a {
         color: saturate(lighten($brand_color,15),10);
     }
     &:hover {
-    border-bottom:1px dotted saturate(lighten($brand_color,25),10);
+        color: $brand_color;
     }
 
 
@@ -85,8 +93,24 @@ a {
         text-align: center;
         color: white;
         background: $dark_grey;
+        border-radius: 3px;
         @media (min-width: $browser_small) {
             display: inline-block;
+        }
+        &:hover {
+            background-color: darken($dark_grey, 7);
+        }
+
+
+        &.button_open {
+            background: none;
+            border:2px solid $dark_grey;
+            border-color: white;
+            color: white;
+
+            &:hover {
+                background-color: transparentize(white, 0.6);
+            }
         }
 
 
