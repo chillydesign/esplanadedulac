@@ -73,7 +73,7 @@ a {
         color: saturate(lighten($brand_color,15),10);
     }
     &:hover {
-        background-color: transparentize($brand_color,0.8)
+    border-bottom:1px dotted saturate(lighten($brand_color,25),10);
     }
 
 

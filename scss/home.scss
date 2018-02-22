@@ -5,3 +5,95 @@ body.home {}
     background: $brand_color;
     min-height: 500px;
 }
+
+
+
+#all_events {
+
+    padding: 0;
+    background: $light_grey;
+
+    #all_events_title {
+        background: url('../img/blue_dots.svg') no-repeat bottom left , url('../img/yellow_lines.svg') no-repeat top right, white;
+        padding:50px 0;
+        text-align: center;
+    }
+
+
+    $single_event_gap: 15px;
+    #events_and_programme {
+        padding: 40px 0;
+        display: flex;
+        flex-wrap: nowrap;
+
+        .events_container {
+            flex: 1 auto 0;
+            width: 75%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+
+            .single_event_container {
+
+                flex: auto 1;
+                width: #{100% / 3};
+                max-width: #{100% / 3};
+                border-right: #{$single_event_gap * 2} solid $light_grey;
+                background: white;
+                margin: 0 0px #{$single_event_gap * 2};
+                padding: 20px;
+                color: $dark_grey;
+                transition: all 0.3s;
+                box-shadow: #{$single_event_gap * -1} 0px 10px #{$single_event_gap * -1}  transparentize($dark_grey, 1);
+                &:hover {
+                    box-shadow: #{$single_event_gap * -1} 20px 10px #{$single_event_gap * -1}  transparentize($dark_grey, 0.9);
+                }
+
+                .single_event_image {
+                    height: 130px;
+                    width: auto;
+                    background: red;
+                    margin: -20px -20px 20px;
+                    display: block;
+                    border: 0;
+                }
+
+                p {
+                    padding: 0;
+                    &.category {
+                        color: $brand_color;
+                    }
+                    &.date {
+                        font-size: 1.3em;
+                    }
+                }
+                h4 {
+                    padding: 0 0 10px;
+                    a {
+                        color: inherit;
+                        border: 0;
+                    }
+
+                }
+            }
+
+
+        }
+        .programme_container {
+            flex: 1 auto 0;
+            width: 25%;
+            height: auto;
+            background: white;
+            border: 2px solid $medium_grey;
+            padding: 20px;
+            margin-bottom: #{$single_event_gap * 2};
+            h4 {
+                text-transform: uppercase;
+                font-size: 3em;
+            }
+        }
+    }
+
+
+}
