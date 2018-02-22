@@ -32,7 +32,14 @@
 
                 <h5>Galerie</h5>
 
-                    <div class="gallery_container"></div>
+                    <div class="gallery_container">
+
+                        <div class="carousel">
+                            <div style="background-color:red"class="image"></div>
+                            <div style="background-color:orangered" class="image"></div>
+                            <div style="background-color:orange" class="image"></div>
+                        </div>
+                    </div>
 
 
                     <h5>Avec</h5>

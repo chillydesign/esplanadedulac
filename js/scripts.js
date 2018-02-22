@@ -29,6 +29,41 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
             }
         })
 
+
+
+        // START OF CAROUSEL
+        // var $slidesToShow = 1;
+        // if ($window.width() > 768 ) {
+        //     $slidesToShow = 3;
+        // }
+        $('.carousel').slick({
+            // options
+            infinite: true,
+            accessibility: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            prevArrow: '<div class="slick-prev">&lt;</div>',
+            nextArrow: '<div class="slick-next">&gt;</div>',
+            autoplay: true,
+            autoplaySpeed: 4000
+        });
+        // END OF CAROUSEL
+
+
+
+        // resize white header text bg on event single page
+        var $event_header_text = $('.event_header_text');
+        var $event_header_text_bg = $('.event_header_text_bg')
+        function recalculateEventHeaderHeight(text, bg) {
+            bg.css({'height' : text.outerHeight()  });
+        }
+        recalculateEventHeaderHeight($event_header_text, $event_header_text_bg);
+        $window.on('resize', function(){
+            recalculateEventHeaderHeight($event_header_text, $event_header_text_bg);
+        })
+
+
+
         //
         // //MASONRY GALLERY
         // var grid = document.querySelector('.masonry_gallery');
@@ -44,23 +79,7 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
         //
         //
         //
-        // // START OF CAROUSEL
-        // var $slidesToShow = 1;
-        // if ($window.width() > 768 ) {
-        //     $slidesToShow = 3;
-        // }
-        // $('.carousel').slick({
-        //     // options
-        //     infinite: true,
-        //     accessibility: true,
-        //     slidesToShow: $slidesToShow,
-        //     slidesToScroll: 1,
-        //     prevArrow: '<div class="slick-prev">&lt;</div>',
-        //     nextArrow: '<div class="slick-next">&gt;</div>',
-        //     autoplay: true,
-        //     autoplaySpeed: 2000
-        // });
-        // // END OF CAROUSEL
+
         //
         //
         // // MAP

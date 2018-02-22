@@ -9,17 +9,16 @@ header#page_header {
     padding: 20px 0;
     overflow: hidden;
 
-    .branding {
+    a.branding {
         display: block;
         flex:1 auto 0;
-        a {
-            background: url('../img/logo.svg') no-repeat left center;
-            background-size: contain;
-            height: 50px;
-            width: 200px;
-            text-indent: -9999px;
-            border: 0;
-        }
+        background: url('../img/logo.svg') no-repeat left bottom;
+        background-size: contain;
+        height: 75px;
+        width: 230px;
+        text-indent: -9999px;
+        border: 0;
+
     }
 
 
@@ -64,7 +63,7 @@ header#page_header {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content:flex-end;
-                margin: 0 -20px;
+                margin: 45px -20px 0;
             }
 
 
@@ -97,10 +96,7 @@ header#page_header {
                         display: inline-block;
                         color: $dark_grey;
                         padding: 10px 20px;
-                        border-top:1px solid transparent;
-
                         &:hover {
-                            border-top:1px solid $brand_color;
                             background-color: transparentize(white, 0.5);
                         }
                     }
@@ -109,6 +105,20 @@ header#page_header {
                 } // END OF A
             } // END OF LI
         } // END OF UL
+
+
+        #ticketing_link {
+            @media (min-width: $browser_small) {
+                position: absolute;
+                top:0;
+                right: 0;
+                padding: 5px 20px;
+                border: 2px solid $medium_grey;
+            }
+
+        } // end of ticketing_nav
+
+
     } // END OF NAV
 
 
@@ -121,7 +131,7 @@ header#page_header {
         background-size: 25px;
         text-indent: -9999px;
         position: absolute;
-        top:20px;
+        top:40px;
         right: 20px;
         border: 0;
         cursor: pointer;
