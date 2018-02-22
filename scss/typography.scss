@@ -13,9 +13,9 @@ h1 {
 }
 h2 {
     font-size: 2.9em;
-    padding: 0 0 20px;
-    font-weight: bold;
-    text-transform: uppercase;
+    padding: 0 0 30px;
+    font-weight: normal;
+
 }
 h3 {
     font-size: 2.21em;
@@ -30,43 +30,12 @@ h4 {
 }
 
 
-h5 {
-    font-family: $fancy_font_stack;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 3em;
-    position: relative;
-
-
-    @media (min-width: 768px) {
-        display: inline-block;
-        padding-left: 50px;
-        padding-right: 50px;
-        &:after, &:before {
-            content:'';
-            border-top:1px solid $brand_color;
-            border-bottom:1px solid $brand_color;
-            height: 7px;
-            width:30px;
-            position: absolute;
-            left: 0;
-            top:50%;
-        }
-        &:before {
-            left: auto;
-            right: 0;
-        }
-    }
-
-
-}
 
 @media (min-width: 768px){
     h1 { font-size: 5em; }
     h2 { font-size: 4.5em; padding: 0 0 60px }
     h3 { font-size: 2.6em; }
     h4 { font-size: 1.79em; }
-    h5 { font-size: 4em; }
 
 }
 
