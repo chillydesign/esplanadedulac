@@ -7,9 +7,9 @@
 @import 'footer';
 @import 'carousel';
 
-@media (min-width: 768px) { }
-@media (min-width: 992px) { }
-@media (min-width: 1200px) { }
+@media (min-width: $browser_small) { }
+@media (min-width: browser_medium) { }
+@media (min-width: $browser_large) { }
 
 body {
     background: $background_color;
@@ -24,3 +24,14 @@ body {
 @import 'sections';
 @import 'home';
 @import 'gallery';
+
+
+
+p.category {
+    color: $brand_color;
+}
+
+p.date {
+    font-size: 1.3em;
+    text-transform: uppercase;
+}

@@ -42,7 +42,7 @@ header#page_header {
 
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: $browser_small) {
             flex: 1 auto 0;
             display: block;
             position: relative;
@@ -60,7 +60,7 @@ header#page_header {
             padding: 0;
 
 
-            @media (min-width: 768px) {
+            @media (min-width: $browser_small) {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content:flex-end;
@@ -77,7 +77,7 @@ header#page_header {
 
 
 
-                @media (min-width: 768px) {
+                @media (min-width: $browser_small) {
                     display: inline-block;
                     flex: 1 auto 0;
 
@@ -89,7 +89,7 @@ header#page_header {
                     padding: 20px 20px;
                     border: 0;
 
-                    @media (min-width: 768px) {
+                    @media (min-width: $browser_small) {
                         display: inline-block;
                         color: $dark_grey;
                         padding: 10px 20px;
@@ -124,7 +124,7 @@ header#page_header {
         cursor: pointer;
         z-index: 60;
 
-        @media (min-width: 768px) {
+        @media (min-width: $browser_small) {
             display: none;
         }
     }

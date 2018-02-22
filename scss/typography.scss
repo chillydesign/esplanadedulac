@@ -31,9 +31,9 @@ h4 {
 
 
 
-@media (min-width: 768px){
+@media (min-width: $browser_small){
     h1 { font-size: 5em; }
-    h2 { font-size: 4.5em; padding: 0 0 60px }
+    h2 { font-size: 4em; padding: 0 0 30px }
     h3 { font-size: 2.6em; }
     h4 { font-size: 1.79em; }
 
@@ -42,8 +42,8 @@ h4 {
 
 
 
-p { font-size: 1.6em;padding:0 0 30px;line-height: 160%;font-weight:200;  }
-li { font-size: 1.6em;padding:0 0 5px;line-height: 160%; font-weight:200; }
+p { font-size: 1.6em;padding:0 0 20px;line-height: 160%;font-weight: normal  }
+li { font-size: 1.6em;padding:0 0 5px;line-height: 160%; font-weight: normal }
 
 
 
@@ -79,21 +79,16 @@ a {
 
     &.button {
         display: block;
-        border: 3px solid $brand_color;
+        border: 0;
         padding: 10px 40px;
         margin:10px 0;
         text-align: center;
-        color: $brand_color;
-        @media (min-width: 768px) {
+        color: white;
+        background: $dark_grey;
+        @media (min-width: $browser_small) {
             display: inline-block;
         }
-        &.button_white {
-            border-color: white;
-            color: white;
-            &:hover {
-                background-color: transparentize(white,0.8)
-            }
-        }
+
 
 
     }

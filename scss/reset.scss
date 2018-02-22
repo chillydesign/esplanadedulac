@@ -14,9 +14,9 @@ table {	border-collapse: collapse;	border-spacing: 0}
   box-sizing: border-box;}
 
 
-  @media (min-width: 768px) { }
-  @media (min-width: 992px) { }
-  @media (min-width: 1200px) { }
+  @media (min-width: $browser_small) { }
+  @media (min-width: browser_medium) { }
+  @media (min-width: $browser_large) { }
 
 
   /*BOOTSTRAP STUFF*/
@@ -31,18 +31,18 @@ table {	border-collapse: collapse;	border-spacing: 0}
     margin-left: auto;
   }
 
-  @media (min-width:   768px) {
+  @media (min-width:   $browser_small) {
     .container {
       width: 750px;
     }
 
   }
-  @media (min-width: 992px) {
+  @media (min-width: browser_medium) {
     .container {
       width: 970px;
     }
   }
-  @media (min-width: 1200px) {
+  @media (min-width: $browser_large) {
     .container {
       width: 1170px;
     }

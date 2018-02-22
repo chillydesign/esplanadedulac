@@ -14,40 +14,63 @@ body.home {}
     background: $light_grey;
 
     #all_events_title {
+        background: white;
         background: url('../img/blue_dots.svg') no-repeat bottom left , url('../img/yellow_lines.svg') no-repeat top right, white;
         padding:50px 0;
         text-align: center;
     }
 
 
-    $single_event_gap: 15px;
+
     #events_and_programme {
         padding: 40px 0;
-        display: flex;
-        flex-wrap: nowrap;
+
+
+        @media (min-width: $browser_small) {
+            display: flex;
+            flex-wrap: nowrap;
+        }
 
         .events_container {
             flex: 1 auto 0;
-            width: 75%;
+
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
+
+            @media (min-width: $browser_small) {
+                width: 75%;
+            }
 
 
             .single_event_container {
 
                 flex: auto 1;
-                width: #{100% / 3};
-                max-width: #{100% / 3};
-                border-right: #{$single_event_gap * 2} solid $light_grey;
+                width: #{100% / 1};
+                max-width: #{100% / 1};
+
                 background: white;
-                margin: 0 0px #{$single_event_gap * 2};
+                margin: 0 0px #{$column_gap };
                 padding: 20px;
                 color: $dark_grey;
                 transition: all 0.3s;
-                box-shadow: #{$single_event_gap * -1} 0px 10px #{$single_event_gap * -1}  transparentize($dark_grey, 1);
+                box-shadow: #{$column_gap * -0.5} 0px 10px #{$column_gap * -0.5}  transparentize($dark_grey, 1);
+
+
+                @media (min-width: $browser_verysmall) {
+                    width: #{100% / 2};
+                    max-width: #{100% / 2};
+                    border-right: #{$column_gap } solid $light_grey;
+                }
+                @media (min-width: $browser_small) {
+                    width: #{100% / 3};
+                    max-width: #{100% / 3};
+                }
+
+
+
                 &:hover {
-                    box-shadow: #{$single_event_gap * -1} 20px 10px #{$single_event_gap * -1}  transparentize($dark_grey, 0.9);
+                    box-shadow: #{$column_gap * -0.5} 20px 10px #{$column_gap * -0.5}  transparentize($dark_grey, 0.9);
                 }
 
                 .single_event_image {
@@ -61,12 +84,7 @@ body.home {}
 
                 p {
                     padding: 0;
-                    &.category {
-                        color: $brand_color;
-                    }
-                    &.date {
-                        font-size: 1.3em;
-                    }
+
                 }
                 h4 {
                     padding: 0 0 10px;
@@ -82,17 +100,88 @@ body.home {}
         }
         .programme_container {
             flex: 1 auto 0;
-            width: 25%;
+
             height: auto;
             background: white;
             border: 2px solid $medium_grey;
             padding: 20px;
-            margin-bottom: #{$single_event_gap * 2};
+            margin-bottom: $column_gap;
+
+            @media (min-width: $browser_small) {
+                width: 25%;
+            }
+
             h4 {
                 text-transform: uppercase;
                 font-size: 3em;
             }
         }
+    }
+
+
+}
+
+
+
+
+
+#news_slider {
+    padding: 50px 0;
+    background: white;
+    background: url('../img/blue_dots.svg') no-repeat bottom left , url('../img/yellow_lines.svg') no-repeat top right, white;
+
+
+    .single_news_container {
+
+
+        @media (min-width: $browser_verysmall) {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+
+        .news_image {
+            flex: 1 auto 0;
+            background: red;
+            width: 100%;
+            min-height: 300px;
+            margin: 0 0 20px;
+
+
+            @media (min-width: $browser_verysmall) {
+                width: 50%;
+                border-right: $column_gap solid white;
+            }
+            @media (min-width: $browser_medium) {
+                width: 25%;
+            }
+
+        }
+        .news_text {
+
+            flex: 1 auto 0;
+            @media (min-width: $browser_verysmall) {
+                width: 50%;
+            }
+            @media (min-width: $browser_medium) {
+                width: 75%;
+            }
+
+            h2 {
+                padding: 0 0 5px;
+            }
+            p {
+
+                &.category {
+                    padding: 0 0 5px;
+                }
+                &.date {
+                    padding: 0 0 5px;
+                }
+            }
+
+        }
+
     }
 
 

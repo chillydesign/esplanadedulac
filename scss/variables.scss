@@ -16,7 +16,19 @@ $font_stack: 'Dosis',   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, H
 $transition_time: 0.3s;
 
 
+$column_gap: 30px;
+
+
 $max_width_paragraph: 530px;
+
+
+//browser sizes
+$browser_verysmall: 520px;
+$browser_small: 768px;
+$browser_medium: 992px;
+$browser_large: 1200px;
+
+
 
 @keyframes pulse {
     from { transform: scale(1) }

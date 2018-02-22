@@ -15,14 +15,14 @@ section {
         flex:wrap;
         flex-direction: column;
 
-        @media (min-width: 768px) {
+        @media (min-width: $browser_small) {
             flex-direction: row;
         }
 
         .section_col {
             flex:1 auto 0;
             width: 100%;
-            @media (min-width: 768px) {
+            @media (min-width: $browser_small) {
                 padding: 0 0 0 30px;
                 flex-direction: row;
                 &:first-child {
