@@ -1,0 +1,38 @@
+{
+  "name": "esplanadetheme",
+  "version": "0.0.1",
+  "description": "This is the Esplanade du lac wordpress theme made by webfactor.ch.",
+  "main": "index.php",
+  "scripts": {
+    "test": "say test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chillydesign/chaletagate.git"
+  },
+  "keywords": [
+    "wordpress",
+    "webfactor",
+    "blank",
+    "theme"
+  ],
+  "author": "Charles Harvey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chillydesign/chaletagate/issues"
+  },
+  "homepage": "https://github.com/chillydesign/chaletagate#readme",
+  "dependencies": {
+    "featherlight": "^1.7.12",
+    "jquery": "^3.3.1",
+    "masonry-layout": "^4.2.1",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-minify": "^1.0.0",
+    "gulp-sass": "^3.1.0",
+    "webpack": "^3.11.0"
+  }
+}

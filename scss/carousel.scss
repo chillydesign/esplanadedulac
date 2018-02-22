@@ -1,0 +1,140 @@
+/* Slider */
+
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+    margin: 20px 0 50px;
+}
+.slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+}
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    transform: scale(0.7);
+    transition: all 0.3s ease-in-out;
+
+    [dir="rtl"] & {
+        float: right;
+    }
+    img {
+        display: block;
+        width: 90%;
+        margin: 0 5% 10px;
+
+        height: auto;
+        box-shadow: 0 5px 9px transparentize($dark_grey, 0.8);
+    }
+    &.slick-loading img {
+        display: none;
+    }
+
+    display: none;
+
+    &.dragging img {
+        pointer-events: none;
+    }
+
+    .slick-initialized & {
+        display: block;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+
+    .slick-vertical & {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+
+.slick-prev, .slick-next {
+    content: '<';
+    left: 0px;
+    font-family:verdana, sans-serif;
+    &.slick-next {
+        content: '>';
+        right: 0px;
+        left: auto;
+    }
+}
+
+
+
+
+.slick-arrow {
+    position: absolute;
+    top: calc(50% - 20px);
+    font-size: 2.5em;
+    transform: scaleY(2.2);
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+
+.slick-current+.slick-active {
+
+    transform: scale(1);
+}

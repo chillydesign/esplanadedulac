@@ -1,0 +1,126 @@
+body.home {
+    section {
+        @media (min-width: 768px) {
+            text-align: center;
+
+            p {
+                max-width: $max_width_paragraph;
+                margin: auto;
+            }
+
+        }
+
+
+    }
+}
+
+#appartment_section { }
+
+
+
+#programme_section { }
+$shadow_distance: 15px;
+$parralel_amount: 20%;
+
+.programme_row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 30px;
+
+    &.programme_row_flip {
+        flex-direction: row-reverse;
+
+    }
+
+
+
+    .programme_col {
+        flex: 1 auto 0;
+        padding: 0 0;
+        width: 100%;
+        min-width: 100%;
+        margin: 0 0 30px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .image_image {
+            background: no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            width: #{100% / 2};
+            min-width: #{100% / 2};
+            padding: 0 15px;
+
+
+            .image_parallelogram {
+                position: relative;
+
+                .image_image, .shadow_1, .shadow_2 {
+                    clip-path: polygon(0 $parralel_amount, 100% 0, 100% 100%, 0 #{100% - $parralel_amount}  );
+                    position: relative;
+                    z-index: 2;
+                }
+                .shadow_1, .shadow_2 {
+                    position: absolute;
+                    top: #{$shadow_distance * -1};
+                    left: $shadow_distance;
+                    width: 100%;
+                    height: 100%;
+                    background: $brand_color;
+                    opacity: 0.1;
+                    z-index: 1;
+                    &.shadow_2 {
+                        top: #{$shadow_distance * -2};
+                        left: #{$shadow_distance * 2};
+                    }
+                }
+            }
+
+
+        }
+
+    }
+
+    @media (min-width: 768px) {
+        text-align: right;
+        &.programme_row_flip {
+            text-align: left;
+
+            .programme_col {
+                .image_image, .shadow_1, .shadow_2 {
+                    clip-path: polygon(0 0, 100% $parralel_amount, 100% #{100% - $parralel_amount} , 0 100%);
+                }
+                .shadow_1, .shadow_2 {
+                    top: #{$shadow_distance * -1};
+                    left: #{$shadow_distance * -1};
+
+                    &.shadow_2 {
+                        top: #{$shadow_distance * -2};
+                        left: #{$shadow_distance * -2};
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+
+
+
+#location_section {
+
+    #map_container {
+        background: $light_grey;
+        height: 400px;
+        width: 100%;
+    }
+ }
