@@ -1,8 +1,9 @@
 footer {
-    background: $brand_color;
+    background: $dark_grey;
     padding:0;
     margin:40px 0 0;
-    color: lighten( $brand_color, 75);
+    color: $light_grey;
+
 
     h4 {
         text-transform: uppercase;
@@ -31,15 +32,49 @@ footer {
 
     }
 
-    #copyright {
-        border-top:1px solid white;
-        padding: 20px 0;
+    nav {
         text-align: center;
-         p {
-             padding: 0;
-             margin: 0;
-         }
+        background: darken($dark_grey,20);
+        padding: 20px 0;
+        ul {
+            margin: 0;
+            li {
+                display: inline-block;
+                a {
+                    display: inline-block;
+                    padding: 5px 15px;
+                    position: relative;
+                    border: 0;
+
+                    &:after {
+                        content: '|';
+                        position: relative;
+                        left: 15px;
+
+                    }
+                }
+                &:last-child {
+                    a:after {
+                        content: '';
+                    }
+                }
+            }
+        }
     }
 
+}
 
+$social_icon_size: 35px;
+.social_icon {
+    padding:10px 10px 10px #{$social_icon_size * 1.2};
+    background: no-repeat center left;
+    background-size: $social_icon_size;
+    border: 0;
+
+    &.social_icon_facebook {
+        background-image: url('../img/facebook.svg')
+    }
+    &.social_icon_instagram {
+        background-image: url('../img/instagram.svg')
+    }
 }

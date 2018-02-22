@@ -125,6 +125,7 @@ function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
         'header_nav' => __('Header Menu', 'webfactor'), // Main Navigation
+        'footer_nav' => __('Footer Menu', 'webfactor'), // Footer Navigation
     ));
 }
 

@@ -26,7 +26,7 @@
 
 
                 <a href="#" id="menu_button" >Menu</a>
-                <div class=" branding"><a href="#" ><?php echo $blog_name; ?></a></div>
+                <div class=" branding"><a href="<?php echo home_url(); ?>" ><?php echo $blog_name; ?></a></div>
                 <nav class="">
 
                     <ul>

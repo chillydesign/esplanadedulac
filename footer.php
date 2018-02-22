@@ -2,12 +2,40 @@
 <?php $tdu = get_template_directory_uri(); ?>
 
 <footer>
+    <div class="container">
 
-    <div id="copyright">
-        <div class="container"><p>&copy; <?php echo date('Y'); ?> Esplanade du lac.  Website by <a href="https://webfactor.ch">Webfactor</a>. </p></div>
-    </div>
+        <div class="footer_columns">
+            <div class="footer_column">
+                <h3>L’Esplanade du Lac</h3>
+                <p>181, avenue de la Plage <br>
+                    01220 Divonne les Bains - France <br>
+                    Téléphone : 33.(0)4.50.99.17.70 </p>
+                </div>
+                <div class="footer_column">
+                    <h3>Suivez-nous</h3>
+                    <p> <a  class="social_icon social_icon_facebook" href="#">Suivez-nous sur Facebook</a>  <br>
+                     <a  class="social_icon social_icon_instagram" href="#">Suivez-nous sur Instagram</a> </p>
 
-</footer>
+                </div>
+                <div class="footer_column">
+                    <h3>Newsletter</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+            <div class="container">
+                <ul>
+                    <?php chilly_nav('footer_nav'); ?>
+                    <li><a href="https://webfactor.ch">Website by Webfactor</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </footer>
 
 
 </main>
