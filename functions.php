@@ -410,8 +410,34 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 \*------------------------------------*/
 
 add_action('init', 'create_post_type_event'); // Add our HTML5 Blank Custom Post Type
-function create_post_type_event()
-{
+function create_post_type_event() {
+
+    $labels_event_cat = array(
+        'name'                       => 'Catégories',
+        'singular_name'              => 'Catégorie',
+        'menu_name'                  => 'Catégorie',
+        'all_items'                  => 'Toutes les Catégories',
+        'parent_item'                => 'Catégorie parente',
+        'parent_item_colon'          => 'Catégorie parente:',
+        'new_item_name'              => 'Nom de la nouvelle categorie',
+        'add_new_item'               => 'Ajouter une categorie',
+        'edit_item'                  => 'Modifier categorie',
+        'update_item'                => 'Mettre à jur la categorie',
+        'separate_items_with_commas' => 'Separer les categories avec des virgules',
+        'search_items'               => 'Chercher dans les categories',
+        'add_or_remove_items'        => 'Ajouter ou supprimer des categories',
+        'choose_from_most_used'      => 'Choisir parmi les categories les plus utilisées',
+    );
+    $args_event_cat = array(
+        'labels'                     => $labels_event_cat,
+        'hierarchical'               => true,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => false,
+    );
+    register_taxonomy( 'event_cat', array( 'event' ), $args_event_cat );
 
     register_post_type('event', // Register Custom Post Type
         array(

@@ -6,6 +6,11 @@
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
     <?php $event_id = get_the_id(); ?>
     <?php $image = thumbnail_of_post_url( $event_id,  'large');  ?>
+    <?php $date = get_field('date'); ?>
+    <?php $nice_date =  date('jS M', strtotime($date)); ?>
+    <?php $time = get_field('time'); ?>
+    <?php $gallery = get_field('gallery'); ?>
+    <?php $tarifs = get_field('tarifs'); ?>
 
     <header class="event_header" style="background-image:url(<?php echo $image; ?>);">
         <div class="container">
@@ -20,29 +25,25 @@
     </header>
 
 
-    <div class="container" >
+    <article class="container" >
         <div id="event_details">
 
             <section>
-                <p><strong>Cirque, danse, théâtre, humour, cinéma muet... ce spectacle mené tambour battant par quatre artistes talentueux vous embarque dans une ambiance années 30 entre exploits et excentricité !</strong></p>
+                <?php the_content(); ?>
 
-                <p>Dans un boudoir cosy où le champagne coule à  ots, trois hommes plutôt dandys et une mariée hystérique entretiennent des relations mystérieuses, font irruption et tentent de protéger un coupable secret : « The Elephant in the room ». Expression utilisée lorsqu’un problème est évident pour tout le monde mais que personne n’ose l’aborder.</p>
-                <p>Leurs confrontations se muent alors en un tour d’acrobaties de haut vol où ces personnages, en tenue chic et glamour, volent, virevoltent et se projettent avec une énergie débordante et une folie contagieuse !</p>
-
-
-                <h5>Galerie</h5>
-
+                <?php if ($gallery) : ?>
+                    <h5>Galerie</h5>
                     <div class="gallery_container">
-
                         <div class="carousel">
-                            <div style="background-color:red"class="image"></div>
-                            <div style="background-color:orangered" class="image"></div>
-                            <div style="background-color:orange" class="image"></div>
+                            <?php foreach( $gallery as $image ): ?>
+                                <div style="background-image:url(<?php echo $image['sizes']['medium']; ?>);" class="image"></div>
+                         <?php endforeach; ?>
                         </div>
                     </div>
+                <?php endif; ?>
 
 
-                    <h5>Avec</h5>
+                <h5>Avec</h5>
                 <p>Lolita Costet, Grégory Arsenal, Philip Rosenberg, Yannick Thomas - Mise en scène Charlotte Saliou - Concept Cirque Le Roux - Intervenant / Œil extérieur Raymond Raymondson - Chorégraphie Brad Musgrove - Musique originale Alexandra Stréliski - Création costumes Philip Rosenberg, Grégory Arsenal - Costumes Emily Ockenfeels</p>
 
 
@@ -51,9 +52,9 @@
             <aside>
 
 
-                <h5>CIRQUE  <br>
-                    VE 1ER DÉC <br>
-                    20H30</h5>
+                <?php if ($date): ?>
+                <h5>CIRQUE  <br> VE <?php echo $nice_date; ?> <br> <?php echo $time; ?></h5>
+                <?php endif; ?>
 
                 <p>Spectacle à voir chez nos voisins
                       au Théâtre du Bordeau à Saint-Genis-Pouilly</p>
@@ -63,23 +64,26 @@
                 À partir de 10 ans<br>
                 Durée 1h20</p>
 
+
+
+                <?php if ($tarifs): ?>
                 <h5>TARIFS</h5>
-                <p>Plein 25 €<br>
-                Réduit 22 € Abonné 20 € Abonné Jeune 15 € Enfant 12 €</p>
+                <p><?php echo $tarifs; ?></p>
+                <?php endif; ?>
 
                 <p>Navette gratuite au départ de
                 L’Esplanade du lac à 19h30 en direction de Saint-Genis-Pouilly.
                 Retour à la fin du spectacle.</p>
 
 
-                <p><a href="<?php echo $permalink; ?>" class="button  ">Réserver en ligne</a></p>
+                <p><a href="<?php echo $permalink; ?>" class="button">Réserver en ligne</a></p>
 
 
             </aside>
 
         </div>
 
-    </div>
+    </article>
 
 
     <?php endwhile; ?>

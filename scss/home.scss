@@ -41,7 +41,7 @@ body.home {}
             p {
 
                 &.date {
-
+                font-size: 1.7em;
                 }
             }
             a.button {
@@ -127,7 +127,8 @@ body.home {}
                 .single_event_image {
                     height: 130px;
                     width: auto;
-                    background: $brand_color;
+                    background: no-repeat center center ;
+                    background-size: cover;
                     margin: -20px -20px 20px;
                     display: block;
                     border: 0;
@@ -197,7 +198,8 @@ body.home {}
 
         .news_image {
             flex: 1 auto 0;
-            background: $brand_color;
+            background:  no-repeat center center $light_grey;
+            background-size: cover;
             width: 100%;
             min-height: 300px;
             margin: 0 0 20px;

@@ -11,6 +11,9 @@
 				<p>
 					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'webfactor' ); ?></a>
 				</p>
+                <br>
+                <br>
+                <br>
 
 			</article>
 			<!-- /article -->

@@ -1,65 +1,53 @@
 <?php get_header(); ?>
 
 
-	<!-- section -->
-	<section class="container">
 
-	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-		<!-- article -->
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-			<!-- post thumbnail -->
-			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
-				</a>
-			<?php endif; ?>
-			<!-- /post thumbnail -->
+    <?php $post_id = get_the_id(); ?>
+    <?php $image = thumbnail_of_post_url( $post_id,  'large');  ?>
+    <header class="event_header small_event_header" style="background-image:url(<?php echo $image; ?>);">
+        <div class="container">
 
-			<!-- post title -->
-			<h1>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-			</h1>
-			<!-- /post title -->
+            <div class="event_header_text">
+                <h1><?php the_title(); ?></h1>
+            </div>
+            <div class="event_header_text_bg"></div>
+        </div>
 
-			<!-- post details -->
-			<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-			<span class="author"><?php _e( 'Published by', 'webfactor' ); ?> <?php the_author_posts_link(); ?></span>
-			<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'webfactor' ), __( '1 Comment', 'webfactor' ), __( '% Comments', 'webfactor' )); ?></span>
-			<!-- /post details -->
+    </header>
 
-			<?php the_content(); // Dynamic Content ?>
+    <!-- article -->
+    <article  class="container" >
+        <div id="event_details">
+            <section>
+                <p><span class="author"><?php _e( 'Published by', 'webfactor' ); ?> <?php the_author_posts_link(); ?></span> on <span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span></p>
 
-			<?php the_tags( __( 'Tags: ', 'webfactor' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+                <?php the_content(); // Dynamic Content ?>
 
-			<p><?php _e( 'Categorised in: ', 'webfactor' ); the_category(', '); // Separated by commas ?></p>
+                <p><?php edit_post_link(); // Always handy to have Edit Post Links available ?></p>
 
-			<p><?php _e( 'This post was written by ', 'webfactor' ); the_author(); ?></p>
+                <?php // comments_template(); ?>
+            </section>
+        </div>
+    </article>
+    <!-- /article -->
 
-			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+<?php endwhile; ?>
 
-			<?php // comments_template(); ?>
+<?php else: ?>
 
-		</article>
-		<!-- /article -->
+    <!-- article -->
+    <article>
 
-	<?php endwhile; ?>
+        <h1><?php _e( 'Sorry, nothing to display.', 'webfactor' ); ?></h1>
 
-	<?php else: ?>
+    </article>
+    <!-- /article -->
 
-		<!-- article -->
-		<article>
+<?php endif; ?>
 
-			<h1><?php _e( 'Sorry, nothing to display.', 'webfactor' ); ?></h1>
-
-		</article>
-		<!-- /article -->
-
-	<?php endif; ?>
-
-	</section>
-	<!-- /section -->
 
 
 <?php get_footer(); ?>

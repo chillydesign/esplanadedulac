@@ -13,7 +13,7 @@
     -ms-touch-action: pan-y;
     touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
-    margin: 20px 0 50px;
+    margin: 00px 0 50px;
 }
 .slick-list {
     position: relative;
@@ -106,7 +106,7 @@
     left: 0px;
     position: relative;
     z-index: 50;
-    font-family:verdana, sans-serif;
+
     &.slick-next {
         content: '>';
         right: 0px;
@@ -120,10 +120,11 @@
 .slick-arrow {
     position: absolute;
     top: calc(50% - 20px);
-    font-size: 2.5em;
+    font-size: 4em;
     transform: scaleY(2.2);
     cursor: pointer;
-    padding: 5px;
+    padding: 5px 10px;
+    opacity: 0.5;
 }
 
 
