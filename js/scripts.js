@@ -36,7 +36,7 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
         // if ($window.width() > 768 ) {
         //     $slidesToShow = 3;
         // }
-        $('.carousel').slick({
+         $('.carousel').slick({
             // options
             infinite: true,
             accessibility: true,
@@ -45,6 +45,7 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
             prevArrow: '<div class="slick-prev">&lt;</div>',
             nextArrow: '<div class="slick-next">&gt;</div>',
             autoplay: true,
+            pauseOnHover: true,
             autoplaySpeed: 4000
         });
         // END OF CAROUSEL
@@ -62,6 +63,54 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
             recalculateEventHeaderHeight($event_header_text, $event_header_text_bg);
         })
 
+
+        // SHOW YOUTUBE VIDEOS IN SLIDER
+        if (typeof $video_urls !== 'undefined' ) {
+            setTimeout(  function() {
+                for (var vi = 0; vi < $video_urls.length; vi++) {
+                    var $video = $video_urls[vi];
+                    var $youtube_id = youtubeIDFromUrl( $video.video );
+                    if ($youtube_id) {
+                        var $html_id = 'video_' + vi.toString();
+                        new YT.Player( $html_id, {
+                            height: '390',
+                            width: '640',
+                            videoId: $youtube_id,
+                             events: {
+                               'onStateChange': onPlayerStateChange
+                             }
+                        });
+                    }
+                }
+
+            }, 1000);
+
+        }
+
+
+        function onPlayerStateChange(event) {
+             if (event.data == YT.PlayerState.PLAYING ) {
+                 // stop slick form autoplaying if user decides to play video
+                var $c =  $('.carousel');
+                if ($c.length) {
+                    $c.slick('slickSetOption', 'autoplay', false, true);
+                }
+            }
+
+        }
+
+        function youtubeIDFromUrl($url) {
+            var $id = false;
+            var $v = $url.split('v=');
+            if ($v.length > 1) {
+                var $g = $v[1];
+                var $h = $g.split('&');
+                if ($h.length > 0) {
+                    $id = $h[0];
+                }
+            }
+            return $id;
+        }
 
 
         //

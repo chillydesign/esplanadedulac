@@ -10,6 +10,7 @@
     <?php $nice_date =  date('jS M', strtotime($date)); ?>
     <?php $time = get_field('time'); ?>
     <?php $gallery = get_field('gallery'); ?>
+    <?php $videos = get_field('videos'); ?>
     <?php $tarifs = get_field('tarifs'); ?>
 
     <header class="event_header" style="background-image:url(<?php echo $image; ?>);">
@@ -31,16 +32,27 @@
             <section>
                 <?php the_content(); ?>
 
-                <?php if ($gallery) : ?>
+                <?php if ($gallery || $videos) : ?>
                     <h5>Galerie</h5>
                     <div class="gallery_container">
                         <div class="carousel">
+
+                            <?php $vv = 0; foreach( $videos as $video ):   ?>
+                                <div id="video_<?php echo $vv; ?>"></div>
+                            <?php $vv++; endforeach; ?>
                             <?php foreach( $gallery as $image ): ?>
                                 <div style="background-image:url(<?php echo $image['sizes']['medium']; ?>);" class="image"></div>
-                         <?php endforeach; ?>
+                            <?php endforeach; ?>
                         </div>
                     </div>
+
+                    <?php if ($videos) : ?>
+                        <script>
+                            var $video_urls = <?php echo json_encode( $videos); ?>;
+                        </script>
+                    <?php endif; ?>
                 <?php endif; ?>
+
 
 
                 <h5>Avec</h5>
@@ -53,53 +65,53 @@
 
 
                 <?php if ($date): ?>
-                <h5>CIRQUE  <br> VE <?php echo $nice_date; ?> <br> <?php echo $time; ?></h5>
+                    <h5>CIRQUE  <br> VE <?php echo $nice_date; ?> <br> <?php echo $time; ?></h5>
                 <?php endif; ?>
 
                 <p>Spectacle à voir chez nos voisins
-                      au Théâtre du Bordeau à Saint-Genis-Pouilly</p>
+                    au Théâtre du Bordeau à Saint-Genis-Pouilly</p>
 
-                <h5>INFOS</h5>
-                <p>À voir en famille  <br>
-                À partir de 10 ans<br>
-                Durée 1h20</p>
-
-
-
-                <?php if ($tarifs): ?>
-                <h5>TARIFS</h5>
-                <p><?php echo $tarifs; ?></p>
-                <?php endif; ?>
-
-                <p>Navette gratuite au départ de
-                L’Esplanade du lac à 19h30 en direction de Saint-Genis-Pouilly.
-                Retour à la fin du spectacle.</p>
-
-
-                <p><a href="<?php echo $permalink; ?>" class="button">Réserver en ligne</a></p>
-
-
-            </aside>
-
-        </div>
-
-    </article>
-
-
-    <?php endwhile; ?>
-
-<?php else: ?>
-
-    <!-- article -->
-    <article>
-
-        <h1><?php _e( 'Sorry, nothing to display.', 'webfactor' ); ?></h1>
-
-    </article>
-    <!-- /article -->
-
-<?php endif; ?>
+                    <h5>INFOS</h5>
+                    <p>À voir en famille  <br>
+                        À partir de 10 ans<br>
+                        Durée 1h20</p>
 
 
 
-<?php get_footer(); ?>
+                        <?php if ($tarifs): ?>
+                            <h5>TARIFS</h5>
+                            <p><?php echo $tarifs; ?></p>
+                        <?php endif; ?>
+
+                        <p>Navette gratuite au départ de
+                            L’Esplanade du lac à 19h30 en direction de Saint-Genis-Pouilly.
+                            Retour à la fin du spectacle.</p>
+
+
+                            <p><a href="<?php echo $permalink; ?>" class="button">Réserver en ligne</a></p>
+
+
+                        </aside>
+
+                    </div>
+
+                </article>
+
+
+            <?php endwhile; ?>
+
+        <?php else: ?>
+
+            <!-- article -->
+            <article>
+
+                <h1><?php _e( 'Sorry, nothing to display.', 'webfactor' ); ?></h1>
+
+            </article>
+            <!-- /article -->
+
+        <?php endif; ?>
+
+
+
+        <?php get_footer(); ?>
