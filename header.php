@@ -23,7 +23,7 @@
         <div class="container" >
             <header id="page_header" >
                 <a href="#" id="menu_button" >Menu</a>
-                <a  class=" branding" href="<?php echo home_url(); ?>" ><?php echo $blog_name; ?></a>
+                <a  accesskey="1" class=" branding" href="<?php echo home_url(); ?>" ><?php echo $blog_name; ?></a>
                 <nav>
                     <ul>
                         <?php chilly_nav('header_nav'); ?>

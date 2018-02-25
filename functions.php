@@ -512,7 +512,7 @@ function chilly_nav($menu){
         'link_after'      => '',
         'items_wrap'      => '%3$s',
         'depth'           => 0,
-        'walker'          => ''
+        'walker'          =>  new Chilly_Walker()
         )
     );
 
@@ -614,6 +614,8 @@ function thumbnail_of_post_url( $post_id,  $size='large'  ) {
 //
 //
 
+
+include('functions_accesskey.php');
 
 
 
