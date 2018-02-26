@@ -34,7 +34,7 @@ $all_events_args = array(
                     <?php $permalink = get_the_permalink(); ?>
                     <?php $category =   get_the_terms( $event_id, 'event_cat' ); ?>
                     <?php $date = get_field('date');  ?>
-                    <?php $nice_date =  date('D j M',strtotime($date)); ?>
+                    <?php $nice_date =  strftime("%d %B %Y", strtotime( $date )); ?>
                     <?php $time = get_field('time'); ?>
 
                     <div class="single_event_container">

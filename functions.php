@@ -15,6 +15,9 @@
 	Theme Support
 \*------------------------------------*/
 
+
+setlocale(LC_TIME, "fr_FR");
+
 if (!isset($content_width))
 {
     $content_width = 900;
