@@ -9,7 +9,7 @@
     <!-- article -->
     <article id="post-<?php the_ID(); ?>" class="container">
 
-
+            <h1><?php the_title(); ?></h1>
         <?php include('section-loop.php'); ?>
 
 
