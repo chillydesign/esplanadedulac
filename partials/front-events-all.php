@@ -1,4 +1,5 @@
 <?php
+$tdu = get_template_directory_uri();
 $today = date( 'Y-m-d' );
 $all_events_args = array(
     'post_type' => 'event',
@@ -49,7 +50,15 @@ $all_events_args = array(
 
             </div>
             <div class="programme_container">
-                <h4>L’AGENDA</h4>
+                <div class="programme_inner">
+                        <h4>L’AGENDA</h4>
+                        <a href="#">
+                            <img src="<?php echo $tdu;?>/img/esplanade.jpg"  alt="programme image" />
+                        </a>
+                        <p><a href="#" class="button">Télécharger le programme</a></p>
+
+                </div>
+
             </div>
         </div>
     </div>

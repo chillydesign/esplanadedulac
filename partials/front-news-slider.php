@@ -11,7 +11,7 @@
             <div class="single_news_container_inner">
                 <div class="news_image" style="background-image:url(<?php echo $image; ?>);"></div>
                 <div class="news_text">
-                    <p class="category">ACTUALITéS L’Esplanade DU LAC</p>
+                    <p class="category">Actualités L’Esplanade du Lac</p>
                     <h3><a href="<?php echo $permalink; ?>"><?php the_title(); ?></a></h3>
                     <p class="date"><?php the_time('F j, Y'); ?></p>
                     <p><?php the_excerpt(); ?></p>
