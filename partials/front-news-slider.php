@@ -9,7 +9,11 @@
             <?php $image = thumbnail_of_post_url( $post_id,  'large');  ?>
             <div class="single_news_container">
             <div class="single_news_container_inner">
+              <?php if(get_field('video')) : ?>
+                <div class="news_image"><?php the_field('video'); ?></div>
+              <?php else: ?>
                 <div class="news_image" style="background-image:url(<?php echo $image; ?>);"></div>
+              <?php endif; ?>
                 <div class="news_text">
                     <p class="category">Actualités L’Esplanade du Lac</p>
                     <h3><a href="<?php echo $permalink; ?>"><?php the_title(); ?></a></h3>

@@ -36,18 +36,18 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
         // if ($window.width() > 768 ) {
         //     $slidesToShow = 3;
         // }
-         $('.carousel').slick({
-            // options
-            infinite: true,
-            accessibility: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            prevArrow: '<div class="slick-prev">&lt;</div>',
-            nextArrow: '<div class="slick-next">&gt;</div>',
-            autoplay: true,
-            pauseOnHover: true,
-            autoplaySpeed: 4000
-        });
+        $('.carousel').slick({
+           // options
+           infinite: true,
+           accessibility: true,
+           slidesToShow: 1,
+           slidesToScroll: 1,
+           prevArrow: '<div class="slick-prev">&lt;</div>',
+           nextArrow: '<div class="slick-next">&gt;</div>',
+           autoplay: true,
+           pauseOnHover: true,
+           autoplaySpeed: 4000
+       });
         // END OF CAROUSEL
 
 

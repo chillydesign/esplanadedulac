@@ -16,7 +16,7 @@ header.event_header {
 
     .event_header_text_bg {
         background: white;
-        background: url('../img/blue_dots.svg') no-repeat top left, white;
+        background: url('../img/yellow_lines.png') no-repeat top left, white;
         position: absolute;
         bottom: 0;
         height: 124px;
@@ -28,11 +28,12 @@ header.event_header {
 
     .event_header_text {
 
-        position: relative;
+        position: absolute;
+        bottom: -20px;
         z-index: 2;
-        margin: 400px 0 0;
+        margin: 0 0 0;
         padding:20px 0 20px;
-        width: $event_text_width;
+        width: 50%;
         display: inline-block;
         color: $brand_color;
         text-transform: uppercase;
@@ -64,13 +65,7 @@ header.event_header {
             .slick-prev, .slick-next {
                 color: white
             }
-            .carousel {
-                .image {
-                    background: no-repeat center center $light_grey;
-                    background-size: cover;
-                    height: 350px;
-                }
-            }
+
 
         }
 
@@ -79,5 +74,22 @@ header.event_header {
         flex: 1 auto 0;
         width: #{100% - $event_text_width};
         border-left: $column_gap solid white;
+    }
+}
+.carousel {
+    .image {
+        background: no-repeat center center $light_grey;
+        background-size: cover;
+        height: 350px;
+        position: relative;
+        .caption {
+            font-size: 1.6em;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 149, 194, 0.7);
+            color: white;
+            padding: 3px 10px;
+        }
     }
 }

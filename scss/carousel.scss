@@ -1,5 +1,4 @@
 /* Slider */
-
 .slick-slider {
     position: relative;
     display: block;
@@ -13,7 +12,7 @@
     -ms-touch-action: pan-y;
     touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
-    margin: 00px 0 50px;
+    margin: 0!important;
 }
 .slick-list {
     position: relative;

@@ -7,13 +7,30 @@
     <?php $event_id = get_the_id(); ?>
     <?php $image = thumbnail_of_post_url( $event_id,  'large');  ?>
     <?php $date = get_field('date'); ?>
-    <?php $nice_date =  utf8_encode(strftime("%d %b", strtotime( $date ))); ?>
+    <?php $nice_date =  strftime("%a %d %b", strtotime( $date )); ?>
     <?php $time = get_field('time'); ?>
+    <?php $top_slider = get_field('top_slider'); ?>
     <?php $gallery = get_field('gallery'); ?>
     <?php $videos = get_field('videos'); ?>
     <?php $tarifs = get_field('tarifs'); ?>
 
-    <header class="event_header" style="background-image:url(<?php echo $image; ?>);">
+
+    </div>
+
+    <!-- <header class="event_header" style="background-image:url(<?php echo $image; ?>);"> -->
+    <header class="event_header">
+
+          <div class="carousel">
+            <?php if($top_slider): ?>
+            <?php foreach( $top_slider as $image ): ?>
+                <div style="background-image:url(<?php echo $image['sizes']['medium']; ?>); background-size:cover; background-repeat:no-repeat; height:500px; width:100%;" class="image"></div>
+            <?php endforeach; ?>
+          <?php else: ?>
+              <div style="background-image:url(<?php echo $image; ?>); background-size:cover; background-repeat:no-repeat; height:500px; width:100%;" class="image"></div>
+            <?php endif; ?>
+              </div>
+
+
         <div class="container">
 
             <div class="event_header_text">
@@ -37,9 +54,11 @@
                     <div class="gallery_container">
                         <div class="carousel">
 
-                            <?php $vv = 0; foreach( $videos as $video ):   ?>
+                            <?php if ($videos): ?>
+                              <?php $vv = 0; foreach( $videos as $video ):   ?>
                                 <div id="video_<?php echo $vv; ?>"></div>
                             <?php $vv++; endforeach; ?>
+                          <?php endif; ?>
                             <?php foreach( $gallery as $image ): ?>
                                 <div style="background-image:url(<?php echo $image['sizes']['medium']; ?>);" class="image"></div>
                             <?php endforeach; ?>
@@ -55,8 +74,25 @@
 
 
 
-                <h5>Avec</h5>
-                <p>Lolita Costet, Grégory Arsenal, Philip Rosenberg, Yannick Thomas - Mise en scène Charlotte Saliou - Concept Cirque Le Roux - Intervenant / Œil extérieur Raymond Raymondson - Chorégraphie Brad Musgrove - Musique originale Alexandra Stréliski - Création costumes Philip Rosenberg, Grégory Arsenal - Costumes Emily Ockenfeels</p>
+                <?php if(get_field('avec')): ?>
+                  <h5>Avec</h5>
+                  <?php echo get_field('avec'); ?>
+                <?php endif; ?>
+
+                <?php if(get_field('retour')): ?>
+                  <h5>Retour en images</h5>
+                  <?php $retour = get_field('retour'); ?>
+                  <div class="gallery_container">
+                    <div class="carousel">
+                      <?php if( have_rows('retour') ): while ( have_rows('retour') ) : the_row(); ?>
+                        <div style="background-image:url(<?php echo get_sub_field('image')['sizes']['medium']; ?>);" class="image">
+                          <div class="caption"><?php the_sub_field('text'); ?></div>
+                          </div>
+
+                        <?php endwhile; endif; ?>
+                      </div>
+                    </div>
+                  <?php endif; ?>
 
 
             </section>
@@ -65,7 +101,7 @@
 
 
                 <?php if ($date): ?>
-                    <h5>CIRQUE  <br> VE <?php echo $nice_date; ?> <br> <?php echo $time; ?></h5>
+                    <h5>CIRQUE  <br> <?php echo $nice_date; ?> <br> <?php echo $time; ?></h5>
                 <?php endif; ?>
 
                 <p>Spectacle à voir chez nos voisins

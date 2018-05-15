@@ -20,7 +20,7 @@ $all_events_args = array(
 
 
 <section id="all_events">
-    <h2 id="all_events_title">Saison 2017 - 2018</h2>
+    <!-- <h2 id="all_events_title">Saison 2017 - 2018</h2> -->
 
     <div class="container">
         <div id="events_and_programme">
@@ -34,14 +34,19 @@ $all_events_args = array(
                     <?php $permalink = get_the_permalink(); ?>
                     <?php $category =   get_the_terms( $event_id, 'event_cat' ); ?>
                     <?php $date = get_field('date');  ?>
-                    <?php $nice_date =  utf8_encode(strftime("%d %B %Y", strtotime( $date ))); ?>
+                    <?php $nice_date =  strftime("%d %B %Y", strtotime( $date )); ?>
                     <?php $time = get_field('time'); ?>
+                    <?php $familyclass = (get_field('family')) ? 'family ' : '' ; ?>
 
                     <div class="single_event_container">
-                        <a  href="<?php echo $permalink; ?>" class="single_event_image" style="background-image:url(<?php echo $image; ?>);"></a>
-                        <?php if (sizeof($category) > 0) :?><p class="category"><?php echo $category[0]->name; ?></p><?php endif; ?>
+                      <div class="<?php echo $familyclass;?>single_event_inner">
+                        <div class="single_event_image_container">
+                          <a  href="<?php echo $permalink; ?>" class="single_event_image" style="background-image:url(<?php echo $image; ?>);"></a>
+                        </div>
+                        <?php if ($category AND sizeof($category) > 0) :?><p class="category"><?php echo $category[0]->name; ?></p><?php endif; ?>
                         <h4><a href="<?php echo $permalink; ?>"><?php the_title(); ?></a></h4>
                         <?php if ($date): ?><p class="date"> <?php echo $nice_date; ?>  - <?php echo $time; ?></p><?php endif; ?>
+                      </div>
                     </div>
 
                 <?php endwhile;endif;  ?>
@@ -49,17 +54,17 @@ $all_events_args = array(
 
 
             </div>
-            <div class="programme_container">
-                <div class="programme_inner">
-                        <h4>L’AGENDA</h4>
-                        <a href="#">
-                            <img src="<?php echo $tdu;?>/img/esplanade.jpg"  alt="programme image" />
-                        </a>
-                        <p><a href="#" class="button">Télécharger le programme</a></p>
+              <!-- <div class="programme_container">
+                  <div class="programme_inner">
+                          <h4>L’AGENDA</h4>
+                          <a href="#">
+                              <img src="<?php echo $tdu;?>/img/esplanade.jpg"  alt="programme image" />
+                          </a>
+                          <p><a href="#" class="button">Télécharger le programme</a></p>
 
-                </div>
+                  </div>
 
-            </div>
+              </div> -->
         </div>
     </div>
 

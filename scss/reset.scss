@@ -37,7 +37,7 @@ table {	border-collapse: collapse;	border-spacing: 0}
     }
 
   }
-  @media (min-width: browser_medium) {
+  @media (min-width: $browser_medium) {
     .container {
       width: 970px;
     }
