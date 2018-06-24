@@ -76,21 +76,33 @@ header.event_header {
     }
 }
 .carousel {
+
+    .image_container {
+        position: relative;
+        img {
+
+        }
+
+    }
+
+    .caption {
+        font-size: 1.6em;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 149, 194, 0.7);
+        color: white;
+        padding: 3px 10px 7px;
+        z-index: 4;
+    }
+    
     .image {
         background: no-repeat center center $light_grey;
         background-size: cover;
         height: 350px;
         position: relative;
-        .caption {
-            font-size: 1.6em;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            background: rgba(0, 149, 194, 0.7);
-            color: white;
-            padding: 3px 10px 7px;
-        }
     }
+
 }
 h2.first_part {
   color: $brand_color;

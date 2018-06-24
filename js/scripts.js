@@ -46,7 +46,8 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
            nextArrow: '<div class="slick-next">&gt;</div>',
            autoplay: true,
            pauseOnHover: true,
-           autoplaySpeed: 4000
+           autoplaySpeed: 4000,
+           adaptiveHeight: true
        });
         // END OF CAROUSEL
 

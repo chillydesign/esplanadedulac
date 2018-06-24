@@ -98,7 +98,7 @@
                               <?php $vv++; endforeach; ?>
                             <?php endif; ?>
                               <?php foreach( get_field('gallery_first_part') as $image ): ?>
-                                  <div style="background-image:url(<?php echo $image['sizes']['medium']; ?>);" class="image"></div>
+                                  <img src="<?php echo $image['sizes']['medium']; ?>" alt="" />
                               <?php endforeach; ?>
                           </div>
                       </div>
@@ -127,8 +127,12 @@
                   <div class="gallery_container">
                     <div class="carousel">
                       <?php if( have_rows('retour') ): while ( have_rows('retour') ) : the_row(); ?>
-                        <div style="background-image:url(<?php echo get_sub_field('image')['sizes']['medium']; ?>);" class="image">
-                          <div class="caption"><?php the_sub_field('text'); ?></div>
+
+                          <div class="image_container">
+                              <img src="<?php echo get_sub_field('image')['sizes']['medium']; ?>" alt="" />
+                              <div class="caption">
+                                  <?php the_sub_field('text'); ?>
+                              </div>
                           </div>
 
                         <?php endwhile; endif; ?>
