@@ -6,7 +6,7 @@ header#page_header {
     position: relative;
     display: flex;
     flex-wrap: nowrap;
-    padding: 20px 0 20px;
+    padding: 20px 0 0px;
 
     a.branding {
         display: block;
@@ -100,9 +100,10 @@ header#page_header {
                         display: inline-block;
                         color: $dark_grey;
                         padding: 10px 20px;
+                        border-bottom: 5px solid rgba(0,0,0,0);
                         &:hover {
                             background-color: transparentize(white, 0.5);
-                            border-bottom: 1px solid $brand_color;
+                            border-bottom: 5px solid $brand_color;
                         }
                     }
 
@@ -119,6 +120,12 @@ header#page_header {
                 right: 0;
                 padding: 5px 20px;
                 border: 2px solid $medium_grey;
+                transition: all 0.3s;
+
+                &:hover {
+                  background: $medium_grey;
+                  color: white;
+                }
             }
 
         } // end of ticketing_nav
@@ -146,17 +153,7 @@ header#page_header {
         }
     }
 
-    #header_bg {
-        background: white;
-        background: url('../img/header-test.png') no-repeat top right, white;
-        transform: rotate(-10deg);
-        position: absolute;
-        top:100px;
-        right: 0px;
-        width: 100%;
-        height: 100px;
-        z-index: -1;
-    }
+
 
 
 

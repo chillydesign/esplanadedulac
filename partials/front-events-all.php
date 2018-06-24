@@ -6,7 +6,7 @@ $all_events_args = array(
     'posts_per_page' =>  -1,
     'meta_key' => 'date',
     'orderby' => 'meta_value',
-    'order' => 'ASC',
+    'order' => 'DESC',
     // 'meta_query' => array(  //    ONLY SHOW EVENTS THAT HAVENT FINISHED YET
     //     array(
     //         'key' => 'date',
@@ -34,7 +34,7 @@ $all_events_args = array(
                     <?php $permalink = get_the_permalink(); ?>
                     <?php $category =   get_the_terms( $event_id, 'event_cat' ); ?>
                     <?php $date = get_field('date');  ?>
-                    <?php $nice_date =  strftime("%d %B %Y", strtotime( $date )); ?>
+                    <?php $nice_date =  utf8_encode(strftime("%d %B %Y", strtotime( $date ))); ?>
                     <?php $time = get_field('time'); ?>
                     <?php $familyclass = (get_field('family')) ? 'family ' : '' ; ?>
 

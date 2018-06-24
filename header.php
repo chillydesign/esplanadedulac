@@ -32,7 +32,6 @@
                     </ul>
                 </nav>
 
-                <div id="header_bg"></div>
             </header>
         </div>
         <main id="main" >

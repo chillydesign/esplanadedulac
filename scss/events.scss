@@ -16,7 +16,6 @@ header.event_header {
 
     .event_header_text_bg {
         background: white;
-        background: url('../img/yellow_lines.png') no-repeat top left, white;
         position: absolute;
         bottom: 0;
         height: 124px;
@@ -89,7 +88,23 @@ header.event_header {
             right: 0;
             background: rgba(0, 149, 194, 0.7);
             color: white;
-            padding: 3px 10px;
+            padding: 3px 10px 7px;
         }
     }
 }
+h2.first_part {
+  color: $brand_color;
+  padding: 80px 0 5px;
+  text-transform: uppercase;
+}
+
+.mentions {
+  font-size: 0.8em;
+  margin-top: 60px;
+
+    h5 {
+      padding-bottom: 0px;
+    }
+}
+
+.masterclass {margin-top: 30px;}

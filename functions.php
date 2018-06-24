@@ -471,6 +471,7 @@ function create_post_type_event() {
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
         'taxonomies' => array(
+          'event_cat'
         //    'post_tag',
         //    'category'
         ) // Add Category and Post Tags support
@@ -620,6 +621,15 @@ function thumbnail_of_post_url( $post_id,  $size='large'  ) {
 
 include('functions_accesskey.php');
 
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page(array(
+		'page_title' 	=> 'Paramètres Webfactor',
+		'menu_title'	=> 'Paramètres Webfactor',
+		'menu_slug' 	=> 'wf-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+}
 
 
 

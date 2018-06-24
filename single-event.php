@@ -13,6 +13,7 @@
     <?php $gallery = get_field('gallery'); ?>
     <?php $videos = get_field('videos'); ?>
     <?php $tarifs = get_field('tarifs'); ?>
+    <?php $masterclass = get_field('masterclass'); ?>
 
 
     </div>
@@ -35,7 +36,7 @@
 
             <div class="event_header_text">
                 <h1><?php the_title(); ?></h1>
-                <h5>Cirque Le Roux</h5>
+                <h5><?php echo get_field('subtitle'); ?></h5>
             </div>
             <div class="event_header_text_bg"></div>
         </div>
@@ -47,7 +48,7 @@
         <div id="event_details">
 
             <section>
-                <?php the_content(); ?>
+                <?php the_field('main'); ?>
 
                 <?php if ($gallery || $videos) : ?>
                     <h5>Galerie</h5>
@@ -79,8 +80,49 @@
                   <?php echo get_field('avec'); ?>
                 <?php endif; ?>
 
+                <?php if(get_field('first_part_title')): ?>
+                  <h2 class="first_part"><?php echo get_field('first_part_title'); ?></h2>
+                  <h5>Première partie</h5>
+
+                  <?php if(get_field('first_part_text')): ?>
+                    <?php echo get_field('first_part_text'); ?>
+                  <?php endif; ?>
+
+                  <?php if (get_field('gallery_first_part') || get_field('videos_first_part')) : ?>
+                      <div class="gallery_container">
+                          <div class="carousel">
+
+                              <?php if (get_field('videos_first_part')): ?>
+                                <?php $vv = 0; foreach( get_field('videos_first_part') as $video ):   ?>
+                                  <div id="video_<?php echo $vv; ?>"></div>
+                              <?php $vv++; endforeach; ?>
+                            <?php endif; ?>
+                              <?php foreach( get_field('gallery_first_part') as $image ): ?>
+                                  <div style="background-image:url(<?php echo $image['sizes']['medium']; ?>);" class="image"></div>
+                              <?php endforeach; ?>
+                          </div>
+                      </div>
+
+                      <?php if (get_field('videos_first_part')) : ?>
+                          <script>
+                              var $video_urls = <?php echo json_encode( get_field('videos_first_part')); ?>;
+                          </script>
+                      <?php endif; ?>
+                  <?php endif; ?>
+                  <?php if(get_field('first_part_avec')): ?>
+                    <h5>Avec</h5>
+                    <?php echo get_field('first_part_avec'); ?>
+                  <?php endif; ?>
+
+
+
+
+
+                <?php endif; ?>
+
+
                 <?php if(get_field('retour')): ?>
-                  <h5>Retour en images</h5>
+                  <h2 class="first_part">RETOUR EN IMAGES</h2>
                   <?php $retour = get_field('retour'); ?>
                   <div class="gallery_container">
                     <div class="carousel">
@@ -94,37 +136,45 @@
                     </div>
                   <?php endif; ?>
 
+                  <?php if(get_field('mentions')): ?>
+                    <div class="mentions">
+                      <h5>Mentions obligatoires*</h5>
+                      <?php echo get_field('mentions'); ?>
+                    </div>
+                  <?php endif; ?>
+
 
             </section>
 
             <aside>
 
 
-                <?php if ($date): ?>
-                    <h5>CIRQUE  <br> <?php echo $nice_date; ?> <br> <?php echo $time; ?></h5>
+                <?php if ($date AND false): ?>
+                    <h5>
+                      <?php
+$terms_count =1; $terms = get_the_terms( $post->id, 'event_cat' );; $count = count($terms); if ( $count > 0 ){ foreach ( $terms as $term ) { if($terms_count<2) {echo $term->name; $terms_count++;} } } ?>
+
+                     <br> <?php echo $nice_date; ?> <br> <?php echo $time; ?></h5>
                 <?php endif; ?>
 
-                <p>Spectacle à voir chez nos voisins
-                    au Théâtre du Bordeau à Saint-Genis-Pouilly</p>
-
-                    <h5>INFOS</h5>
-                    <p>À voir en famille  <br>
-                        À partir de 10 ans<br>
-                        Durée 1h20</p>
 
 
+                <?php if ($tarifs): ?>
+                    <div><?php echo $tarifs; ?></div>
+                <?php endif; ?>
 
-                        <?php if ($tarifs): ?>
-                            <h5>TARIFS</h5>
-                            <p><?php echo $tarifs; ?></p>
-                        <?php endif; ?>
+                <?php if ($masterclass): ?>
+                    <h5 class="masterclass">MASTERCLASS</h5>
+                    <div><?php echo $masterclass; ?></div>
+                    <p>
+                      <?php $email = get_field('masterclass_email','option'); ?>
+                      <?php $name = get_the_title(); ?>
+                      <?php $subject = rawurlencode('Inscription à la Masterclass ' . $name  ); ?>
+                      <?php  $mailto = "mailto:" . $email . "?subject=". $subject . "&body=Bonjour%2C%20%0A%0AJe%20souhaite%20m'inscrire%20%C3%A0%20la%20Masterclass%20" .  $name . ".%0A%0A%0ABien%20cordialement%2C"; ?>
+                    </p>
+                    <h6><a target="_blank" href="<?php echo $mailto; ?>" style="margin-top:-30px;">S'inscrire</a></h6>
+                <?php endif; ?>
 
-                        <p>Navette gratuite au départ de
-                            L’Esplanade du lac à 19h30 en direction de Saint-Genis-Pouilly.
-                            Retour à la fin du spectacle.</p>
-
-
-                            <p><a href="<?php echo $permalink; ?>" class="button">Réserver en ligne</a></p>
 
 
                         </aside>

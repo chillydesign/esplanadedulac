@@ -20,7 +20,7 @@ $latest_events_args = array(
             <?php $image = thumbnail_of_post_url( $event_id,  'large');  ?>
             <?php $permalink = get_the_permalink(); ?>
             <?php $date = get_field('date');  ?>
-            <?php $nice_date =  utf8_encode(strftime("%A %d %B, %Y", strtotime( $date ))); ?>
+            <?php $nice_date =  strftime("%A %d %B, %Y", strtotime( $date )); ?>
 
             <?php $time = get_field('time'); ?>
             <div class="single_event_slide">
