@@ -145,3 +145,11 @@ $social_icon_size: 35px;
         background-image: url('../img/instagram.svg')
     }
 }
+
+a.poster_link {
+    display: inline-block;
+    img {
+        width: 100px;
+        height: auto;
+    }
+}
