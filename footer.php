@@ -31,7 +31,7 @@
 
 
             </div>
-            <div class="footer_column">
+            <div class="footer_column footer_column_right">
 
                 <?php $footer_poster = get_field('footer_poster', 'option'); ?>
                 <?php $footer_poster_link = get_field('footer_poster_link', 'option'); ?>

@@ -18,6 +18,7 @@ footer {
     .footer_columns {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
 
 
         .footer_column {
@@ -26,6 +27,8 @@ footer {
             min-width: 100%;
             margin: 30px 0 0;
 
+
+
             @media (min-width: $browser_small) {
                 width: #{100% / 3};
                 min-width: #{100% / 3};
@@ -33,6 +36,10 @@ footer {
                 &.footer_column_wide {
                     width: #{100% / 3};
                     min-width: #{100% / 3};
+                }
+
+                &.footer_column_right {
+                    text-align: right;
                 }
             }
 
@@ -149,7 +156,9 @@ $social_icon_size: 35px;
 a.poster_link {
     display: inline-block;
     img {
-        width: 100px;
+        width: 150px;
+        max-width: 100%;
         height: auto;
+        border: 2px solid $medium_grey;
     }
 }
