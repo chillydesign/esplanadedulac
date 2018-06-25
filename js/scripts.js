@@ -31,6 +31,17 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
 
 
 
+        // accordions
+        var $single_accordions = $('.single_accordion');
+        $single_accordions.on('click', function(e){
+            var $this = $(this);
+            $single_accordions.removeClass('active_accordion');
+            $this.addClass('active_accordion');
+        });
+        $single_accordions.first().addClass('active_accordion');
+
+
+
         // START OF CAROUSEL
         // var $slidesToShow = 1;
         // if ($window.width() > 768 ) {
