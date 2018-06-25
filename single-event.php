@@ -36,6 +36,9 @@
             <div class="event_header_text">
                 <h1><?php the_title(); ?></h1>
                 <h5><?php echo get_field('subtitle'); ?></h5>
+                <h6 style="color: #373737; margin: 5px 0 0;">
+                  <?php $terms_count =1; $terms = get_the_terms( $post->id, 'event_cat' ); $count = count($terms); if ( $count > 0 ){ foreach ( $terms as $term ) { if($terms_count<2) {echo $term->name; $terms_count++;} } } ?>
+                </h6>
             </div>
         </div>
         <div class="event_header_text_bg"></div>
