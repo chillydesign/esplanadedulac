@@ -22,9 +22,9 @@ $latest_events_args = array(
             <?php $nice_date =  strftime("%A %d %B, %Y", strtotime( $date )); ?>
             <?php $time = get_field('time'); ?>
 
-            <?php
+            <?php 
             $top_slider = get_field('top_slider');
-            if (sizeof($top_slider) > 0) {
+            if ($top_slider) {
                 $image = $top_slider[0]['sizes']['large'];
             } else {
                 $image = thumbnail_of_post_url( $event_id,  'large');
