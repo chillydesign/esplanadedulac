@@ -306,7 +306,8 @@ body.home {}
       // }
 
       h3 {
-        padding: 0 0 5px;
+        padding: 0 0 15px;
+        text-transform: uppercase;
         a {
           color: inherit;
         }
@@ -314,7 +315,10 @@ body.home {}
       p {
 
         &.category {
-          padding: 0 0 5px;
+          padding: 0px;
+          // color: $dark_grey;
+          text-transform: uppercase;
+          font-size: 1.8em;
         }
         &.date {
           padding: 0 0 5px;

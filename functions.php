@@ -269,7 +269,7 @@ function html5wp_excerpt($length_callback = '', $more_callback = '')
 function html5_blank_view_article($more)
 {
     global $post;
-    return '... <br/><a class="button" href="' . get_permalink($post->ID) . '">' . __('Lire plus', 'webfactor') . '</a>';
+    return '... <br/><h6><a href="' . get_permalink($post->ID) . '">' . __('Lire plus', 'webfactor') . '</a></h6>';
 }
 
 // Remove Admin bar

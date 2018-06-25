@@ -14,6 +14,7 @@
     <?php $videos = get_field('videos'); ?>
     <?php $tarifs = get_field('tarifs'); ?>
     <?php $masterclass = get_field('masterclass'); ?>
+    <?php $booking_link = get_field('booking_link'); ?>
 
 
 
@@ -37,7 +38,10 @@
                 <h1><?php the_title(); ?></h1>
                 <h5><?php echo get_field('subtitle'); ?></h5>
                 <h6 style="color: #373737; margin: 5px 0 0;">
-                  <?php $terms_count =1; $terms = get_the_terms( $post->id, 'event_cat' ); $count = count($terms); if ( $count > 0 ){ foreach ( $terms as $term ) { if($terms_count<2) {echo $term->name; $terms_count++;} } } ?>
+                  <?php $terms_count =1; $terms = get_the_terms( $post->id, 'event_cat' ); $count = count($terms); if ( $count > 0 ){ foreach ( $terms as $term ) { if($terms_count<2) {echo $term->name . ' - '; $terms_count++;} } } ?>
+                  <?php $date = get_field('date');  ?>
+                  <?php echo $nice_date =  utf8_encode(strftime("%d %B %Y", strtotime( $date ))); ?> -
+                  <?php echo get_field('time'); ?>
                 </h6>
             </div>
         </div>
@@ -51,6 +55,9 @@
 
                 <section class="event_details_section">
                 <?php the_field('main'); ?>
+                <?php if ($booking_link) { ?>
+                  <h6 class="showonlyonsmall"><a href="<?php echo $booking_link;?>" class="book_button">Réserver</a></h6>
+                <?php } ?>
 
                 <?php if ($gallery || $videos) : ?>
                     <h5>Galerie</h5>
@@ -142,6 +149,10 @@
                     </div>
                   <?php endif; ?>
 
+                  <?php if ($booking_link) { ?>
+                    <h6 class="showonlyonbig"><a href="<?php echo $booking_link;?>" class="book_button">Réserver</a></h6>
+                  <?php } ?>
+
                   <?php if(get_field('mentions')): ?>
                     <div class="mentions">
                       <h5>Mentions obligatoires*</h5>
@@ -164,6 +175,9 @@ $terms_count =1; $terms = get_the_terms( $post->id, 'event_cat' );; $count = cou
                 <?php endif; ?>
 
 
+                <?php if ($booking_link) { ?>
+                  <h6><a href="<?php echo $booking_link;?>" class="book_button">Réserver</a></h6>
+                <?php } ?>
 
                 <?php if ($tarifs): ?>
                     <div><?php echo $tarifs; ?></div>
