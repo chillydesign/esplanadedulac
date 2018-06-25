@@ -61,7 +61,7 @@
                             <?php $vv++; endforeach; ?>
                           <?php endif; ?>
                             <?php foreach( $gallery as $image ): ?>
-                                <div style="background-image:url(<?php echo $image['sizes']['medium']; ?>);" class="image"></div>
+                                  <img src="<?php echo $image['sizes']['medium']; ?>" alt="" />
                             <?php endforeach; ?>
                         </div>
                     </div>
