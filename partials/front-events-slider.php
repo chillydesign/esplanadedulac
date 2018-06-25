@@ -19,10 +19,10 @@ $latest_events_args = array(
             <?php $event_id = get_the_id(); ?>
             <?php $permalink = get_the_permalink(); ?>
             <?php $date = get_field('date');  ?>
-            <?php $nice_date =  strftime("%A %d %B, %Y", strtotime( $date )); ?>
+            <?php $nice_date =  strftime("%a %d %B", strtotime( $date )); ?>
             <?php $time = get_field('time'); ?>
 
-            <?php 
+            <?php
             $top_slider = get_field('top_slider');
             if ($top_slider) {
                 $image = $top_slider[0]['sizes']['large'];

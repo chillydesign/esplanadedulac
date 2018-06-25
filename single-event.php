@@ -7,7 +7,7 @@
     <?php $event_id = get_the_id(); ?>
     <?php $image = thumbnail_of_post_url( $event_id,  'large');  ?>
     <?php $date = get_field('date'); ?>
-    <?php $nice_date =  strftime("%a %d %b", strtotime( $date )); ?>
+    <?php $nice_date =  strftime("%a %d %B", strtotime( $date )); ?>
     <?php $time = get_field('time'); ?>
     <?php $top_slider = get_field('top_slider'); ?>
     <?php $gallery = get_field('gallery'); ?>

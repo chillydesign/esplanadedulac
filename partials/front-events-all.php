@@ -34,7 +34,7 @@ $all_events_args = array(
                     <?php $permalink = get_the_permalink(); ?>
                     <?php $category =   get_the_terms( $event_id, 'event_cat' ); ?>
                     <?php $date = get_field('date');  ?>
-                    <?php $nice_date =  utf8_encode(strftime("%d %B %Y", strtotime( $date ))); ?>
+                    <?php $nice_date =  utf8_encode(strftime("%a %d %B", strtotime( $date ))); ?>
                     <?php $time = get_field('time'); ?>
                     <?php $familyclass = (get_field('family')) ? 'family ' : '' ; ?>
 
@@ -45,7 +45,7 @@ $all_events_args = array(
                         </div>
                         <?php if ($category AND sizeof($category) > 0) :?><p class="category"><?php echo $category[0]->name; ?></p><?php endif; ?>
                         <h4><a href="<?php echo $permalink; ?>"><?php the_title(); ?></a></h4>
-                        <?php if ($date): ?><p class="date"> <?php echo $nice_date; ?>  - <?php echo $time; ?></p><?php endif; ?>
+                        <?php if ($date): ?><p class="date"> <?php echo $nice_date; ?>  <br> <?php echo $time; ?></p><?php endif; ?>
                       </div>
                     </div>
 
