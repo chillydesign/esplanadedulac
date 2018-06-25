@@ -6,7 +6,7 @@ $all_events_args = array(
     'posts_per_page' =>  -1,
     'meta_key' => 'date',
     'orderby' => 'meta_value',
-    'order' => 'DESC',
+    'order' => 'ASC',
     // 'meta_query' => array(  //    ONLY SHOW EVENTS THAT HAVENT FINISHED YET
     //     array(
     //         'key' => 'date',
