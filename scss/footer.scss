@@ -94,9 +94,20 @@ footer {
 
     }
     button {
-        background: darken($dark_grey,20);
-        border: 0;
-        color: white;
+        background: transparent;
+        border: 2px solid $brand_color;
+        color: $brand_color;
+        margin-top:10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+            background: $brand_color;
+            color: white;
+        }
+        &:active {
+            position: relative;
+            top:1px;
+        }
     }
 
     nav {
@@ -156,9 +167,10 @@ $social_icon_size: 35px;
 a.poster_link {
     display: inline-block;
     img {
-        width: 150px;
+        width: auto;
+        height: 100px;
         max-width: 100%;
-        height: auto;
+        margin: 0 0 20px;
         border: 2px solid $medium_grey;
     }
 }

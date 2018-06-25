@@ -41,6 +41,19 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
         $single_accordions.first().addClass('active_accordion');
 
 
+        // match height footer columns
+        var $footer_columns = $('.footer_column');
+        var $max_footer_column_height = 0;
+        $footer_columns.each( function() {
+            var $this = $(this);
+            var $height = $this.innerHeight()
+            if ( $height > $max_footer_column_height ) {
+                $max_footer_column_height = $height;
+            }
+        });
+        $('img', $footer_columns).css({'height' : $max_footer_column_height});
+
+
 
         // START OF CAROUSEL
         // var $slidesToShow = 1;

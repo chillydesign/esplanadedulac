@@ -167,10 +167,11 @@ blockquote {
 }
 blockquote p:last-child {padding-bottom: 0}
 
-
+input, textarea, button {
+    font-family: $font_stack;
+}
 input, textarea {
     padding: 10px;
-    font-family: $font_stack;
     width: 100%;
     font-size: 1.5em;
     appearance:none;
