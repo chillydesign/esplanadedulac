@@ -95,7 +95,7 @@ header.event_header {
         padding: 3px 10px 7px;
         z-index: 4;
     }
-    
+
     .image {
         background: no-repeat center center $light_grey;
         background-size: cover;
@@ -107,7 +107,7 @@ header.event_header {
 h2.first_part {
   color: $brand_color;
   padding: 80px 0 5px;
-  text-transform: uppercase;
+  text-transform: uppercase; 
 }
 
 .mentions {
