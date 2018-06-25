@@ -14,14 +14,14 @@
           </div>
 
 
-    <div class="container">
+          <div class="container">
+              <div class="event_header_text">
+                  <h1><?php the_title(); ?></h1>
+                  <h5><?php echo get_field('subtitle'); ?></h5>
+              </div>
+          </div>
+          <div class="event_header_text_bg"></div>
 
-        <div class="event_header_text">
-            <h1><?php the_title(); ?></h1>
-            <h5><?php echo get_field('subtitle'); ?></h5>
-        </div>
-        <div class="event_header_text_bg"></div>
-    </div>
 
 </header>
 
@@ -32,13 +32,20 @@
     <!-- article -->
     <article id="post-<?php the_ID(); ?>" class="container">
 
-        <?php include('section-loop.php'); ?>
+
+        <div id="event_details">
+
+            <section class="event_details_section">
+                <?php include('section-loop.php'); ?>
 
 
-        <div class="container">
-            <?php the_content(); ?>
+                <div class="container">
+                    <?php the_content(); ?>
+                </div>
+            </section>
+
+
         </div>
-
 
 
     </article>

@@ -33,12 +33,10 @@
 
 
         <div class="container">
-
             <div class="event_header_text">
                 <h1><?php the_title(); ?></h1>
                 <h5><?php echo get_field('subtitle'); ?></h5>
             </div>
-
         </div>
         <div class="event_header_text_bg"></div>
 
@@ -48,7 +46,7 @@
     <article class="container" >
         <div id="event_details">
 
-            <section>
+                <section class="event_details_section">
                 <?php the_field('main'); ?>
 
                 <?php if ($gallery || $videos) : ?>
