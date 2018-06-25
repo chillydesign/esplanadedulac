@@ -16,7 +16,7 @@
     <?php $masterclass = get_field('masterclass'); ?>
 
 
-    </div>
+
 
     <!-- <header class="event_header" style="background-image:url(<?php echo $image; ?>);"> -->
     <header class="event_header">

@@ -10,14 +10,12 @@
                 <p>181, avenue de la Plage <br>
                     01220 Divonne les Bains - France <br>
                     Téléphone : 33.(0)4.50.99.17.70 </p>
-                </div>
-                <div class="footer_column">
                     <h3>Suivez-nous</h3>
                     <p> <a  class="social_icon social_icon_facebook" href="#">Suivez-nous sur Facebook</a>  <br>
                         <a  class="social_icon social_icon_instagram" href="#">Suivez-nous sur Instagram</a> </p>
+                </div>
 
-                    </div>
-                    <div class="footer_column footer_column_wide">
+                    <div class="footer_column ">
                         <h3>Newsletter</h3>
 
                         <form action="" >
@@ -29,6 +27,10 @@
 
 
                     </div>
+                    <div class="footer_column">
+
+
+                        </div>
 
                 </div>
 

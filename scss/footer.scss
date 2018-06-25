@@ -1,8 +1,9 @@
 footer {
-    background: $dark_grey;
+    background: lighten($brand_color, 55);
+    border-top: 6px double $brand_color;
     padding:0;
     margin:0;
-    color: $light_grey;
+    color: darken($brand_color, 10);
 
 
     h4 {
@@ -10,7 +11,7 @@ footer {
     }
 
     a, a:hover, a:visited, a:link {
-        color: white;
+        color: inherit;
     }
 
 
@@ -54,32 +55,32 @@ footer {
 
 
     form {
-        display: flex;
-        flex-wrap: wrap;
+    //    display: flex;
+    //    flex-wrap: wrap;
         margin: 0 0 20px;
     }
     input, button {
-        flex: 1 auto 0;
+    //    flex: 1 auto 0;
         border: 0;
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid  darken($brand_color, 20);;
         outline:0;
         background: transparent;
-        color: white;
+        color:  darken($brand_color, 10);
         display: inline-block;
         padding: 10px;
         width: 100%;
         min-width: 100%;
         margin: 0 0 10px;
+        font-size: 1.7em;
         &::placeholder {
-          color: #eee;
+          color:  darken($brand_color, 20);
         }
 
 
         @media (min-width: $browser_verysmall) {
-            width: 45%;
-            min-width: 45%;
-            margin-right: 5%;
-
+            // width: 45%;
+            // min-width: 45%;
+            // margin-right: 5%;
         }
 
 
@@ -92,18 +93,25 @@ footer {
     }
 
     nav {
+        border-top: 3px solid $brand_color;
         text-align: center;
-        background: darken($dark_grey,20);
+        background: white;
+        color: $medium_grey;
         padding: 20px 0;
+        text-transform: uppercase;
         ul {
             margin: 0;
             li {
                 display: inline-block;
+
                 a {
                     display: inline-block;
                     padding: 5px 15px;
                     position: relative;
 
+                    &, &:hover, &:visited, &:link {
+                        color: $medium_grey;
+                    }
 
                     &:after {
                         content: '|';
