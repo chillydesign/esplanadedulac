@@ -66,10 +66,10 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
 
         // resize white header text bg on event single page
         var $event_header_text = $('.event_header_text');
-        var $event_header_text_bg = $('.event_header_text_bg')
+        var $event_header_text_bg = $('.event_header_text_bg');
         function recalculateEventHeaderHeight(text, bg) {
-            // + 20 to stop the blue dots overlapping the title text
-            bg.css({'height' : text.outerHeight() + 20  });
+            // - 20 to counteract padding
+            bg.css({'height' : text.outerHeight() - 20  });
         }
         recalculateEventHeaderHeight($event_header_text, $event_header_text_bg);
         $window.on('resize', function(){

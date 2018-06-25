@@ -38,8 +38,9 @@
                 <h1><?php the_title(); ?></h1>
                 <h5><?php echo get_field('subtitle'); ?></h5>
             </div>
-            <div class="event_header_text_bg"></div>
+
         </div>
+        <div class="event_header_text_bg"></div>
 
     </header>
 
