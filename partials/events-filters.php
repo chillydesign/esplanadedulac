@@ -23,12 +23,23 @@
             </select>
         </div>
         <div>
+            <label for="for_families">Only For families</label>
+            <select name="for_families" id="for_families">
+                <?php $selected = ( $_GET['for_families']  == '1' ) ? 'selected' : ''; ?>
+                <option value="">All events</option>
+                <option <?php echo $selected; ?> value="1">Families events</option>
+            </select>
+        </div>
+        <!--
+        <div>
             <label for="for_families" >
-                <?php $checked = ( $_GET['for_families'] == '1' ) ? 'checked' : ''; ?>
+                <?php $checked =  'checked'; //( $_GET['for_families'] == '1' ) ? 'checked' : ''; ?>
                 Only For families  <br>
                 <input  <?php echo $checked; ?> type="checkbox" id="for_families" name="for_families" value="1"  />
+                <span class="checkmark"></span>
             </label>
-        </div>
+
+        </div> -->
         <div>
             <label for="">&nbsp;</label>
             <button  type="submit" >Filter</button>

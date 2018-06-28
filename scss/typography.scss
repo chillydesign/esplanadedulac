@@ -168,6 +168,11 @@ blockquote {
 }
 blockquote p:last-child {padding-bottom: 0}
 
+label {
+    display: block;
+    text-transform: uppercase;
+    padding: 0 0 5px 1px;
+}
 
 input, textarea {
     padding: 10px;
@@ -175,6 +180,24 @@ input, textarea {
     width: 100%;
     font-size: 1.5em;
     appearance:none;
+    border: 1px solid $medium_grey;
+    box-shadow: 0 1px 1px $light_grey, 0 5px 9px $light_grey;
 }
-input {}
+input {
+    &[type="checkbox"] {
+        appearance: checkbox !important;
+    }
+    &[type="radio"] {
+        appearance: radio !important;
+    }
+    &[type="submit"] {
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+            background-color: $brand_color;
+            color: white;
+
+        }
+    }
+}
 button {text-transform: uppercase;}

@@ -21,6 +21,7 @@ footer {
 
     a, a:hover, a:visited, a:link {
         color: inherit;
+        border-bottom: 0;
     }
 
 
@@ -89,6 +90,7 @@ footer {
         min-width: 100%;
         margin: 0 0 18px;
         font-size: 1.7em;
+        box-shadow: 0 0 0;
         &::placeholder {
           color:  white;
         }

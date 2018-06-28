@@ -8,9 +8,8 @@
 
 $search = (isset($_GET['search'])) ? $_GET['search'] : false;
 $category = (isset($_GET['categorie'])) ? $_GET['categorie'] : false;
-$for_families = (isset($_GET['for_families'])) ? true : false;
+$for_families = (isset($_GET['for_families'])) ? $_GET['for_families'] : false;
 
-var_dump($for_families);
 
 $events_args = array(  // used for partials/front events all
     'post_type' => 'event',
@@ -43,7 +42,7 @@ if ($category && $category != '') {
 	);
 }
 
-if ($for_families) {
+if ($for_families && $for_families != '') {
      array_push(
          $events_args['meta_query'],
         array(

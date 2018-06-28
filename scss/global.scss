@@ -49,3 +49,30 @@ img {width: 100%; height: auto; margin-bottom: 20px;}
 img.small_img {max-width: 180px;}
 
 iframe {width: 100%;}
+
+
+
+// contactform7
+// contactform7
+.wpcf7-submit {
+    margin-top: 20px;
+}
+.wpcf7-radio {
+    margin: 15px -15px 0px;
+    display: block;
+    input[type="checkbox"], input[type="radio"] {
+        width: auto;
+    }
+}
+div.wpcf7-response-output {
+    padding: 15px;
+    font-size: 1.6em;
+    margin: 0 0 15px;
+}
+
+div.wpcf7-validation-errors, div.wpcf7-acceptance-missing {
+    background: #fffcd1;
+    color: #7a7200;
+}
+// contactform7
+// contactform7
