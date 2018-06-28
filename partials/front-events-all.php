@@ -7,21 +7,22 @@ $all_events_args = array(
     'meta_key' => 'date',
     'orderby' => 'meta_value',
     'order' => 'ASC',
-    'meta_query' => array(  //    ONLY SHOW EVENTS THAT ARENT RESIDENCE
-        array(
+    'meta_query' => array(
+        'relation' => 'AND',
+        array( //    ONLY SHOW EVENTS THAT ARENT RESIDENCE
             'key' => 'residence',
-            'value' => '0',
-            'compare' => '='
+            'value' => 0,
+            'compare' => '=',
+            'type' => 'numeric'
+        ),
+        array(  //    ONLY SHOW EVENTS THAT HAVENT FINISHED YET
+            'key' => 'date',
+            'value' => $today,
+            'compare' => '>=',
+            'type' => 'DATE'
         )
     )
-    // 'meta_query' => array(  //    ONLY SHOW EVENTS THAT HAVENT FINISHED YET
-    //     array(
-    //         'key' => 'date',
-    //         'value' => $today,
-    //         'compare' => '>=',
-    //         'type' => 'DATE'
-    //     )
-    // )
+
 );
 ?>
 

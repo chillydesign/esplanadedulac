@@ -6,10 +6,18 @@ $latest_events_args = array(
     'orderby' => 'meta_value',
     'order' => 'ASC',
     'meta_query' => array(  //    ONLY SHOW EVENTS THAT ARENT RESIDENCE
-        array(
+        'relation' => 'AND',
+        array( //    ONLY SHOW EVENTS THAT ARENT RESIDENCE
             'key' => 'residence',
-            'value' => '0',
-            'compare' => '='
+            'value' => 0,
+            'compare' => '=',
+            'type' => 'numeric'
+        ),
+        array(  //    ONLY SHOW EVENTS THAT HAVENT FINISHED YET
+            'key' => 'date',
+            'value' => $today,
+            'compare' => '>=',
+            'type' => 'DATE'
         )
     )
 );
