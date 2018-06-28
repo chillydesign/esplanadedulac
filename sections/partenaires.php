@@ -13,23 +13,5 @@
             <img src="<?php echo $partenaire['logo']['url']; ?>" alt ="<?php echo $partenaire['nom']; ?>">
          </a>
 	</li>
-    <li  class="gallery_partenaires">
-
-		 <a class=""  target ="_blank" href="<?php echo  esc_url($partenaire['url']); ?>">
-            <img src="<?php echo $partenaire['logo']['url']; ?>" alt ="<?php echo $partenaire['nom']; ?>">
-         </a>
-	</li>
-    <li  class="gallery_partenaires">
-
-		 <a class=""  target ="_blank" href="<?php echo  esc_url($partenaire['url']); ?>">
-            <img src="<?php echo $partenaire['logo']['url']; ?>" alt ="<?php echo $partenaire['nom']; ?>">
-         </a>
-	</li>
-    <li  class="gallery_partenaires">
-
-		 <a class=""  target ="_blank" href="<?php echo  esc_url($partenaire['url']); ?>">
-            <img src="<?php echo $partenaire['logo']['url']; ?>" alt ="<?php echo $partenaire['nom']; ?>">
-         </a>
-	</li>
 	<?php endforeach; ?>
 </ul>

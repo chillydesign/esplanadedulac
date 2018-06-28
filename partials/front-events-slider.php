@@ -4,7 +4,14 @@ $latest_events_args = array(
     'posts_per_page' =>  3,
     'meta_key' => 'date',
     'orderby' => 'meta_value',
-    'order' => 'ASC'
+    'order' => 'ASC',
+    'meta_query' => array(  //    ONLY SHOW EVENTS THAT ARENT RESIDENCE
+        array(
+            'key' => 'residence',
+            'value' => '0',
+            'compare' => '='
+        )
+    )
 );
 
 
