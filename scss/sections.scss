@@ -65,6 +65,7 @@ section {
                 padding: 0 0 0  $accord_padding_left;
                 display: none;
 
+
             }
 
 
@@ -88,9 +89,10 @@ section {
                 // transition: all 0.3s;
                 content: '';
                 position: absolute;
+                z-index: -1;
                 top:0;
                 left: 0;
-                width: 100%;
+                right: 10px;
                 height: 100%;
                 border: 2px solid transparent;
             }

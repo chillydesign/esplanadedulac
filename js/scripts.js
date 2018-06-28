@@ -33,12 +33,18 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
 
         // accordions
         var $single_accordions = $('.single_accordion');
-        $single_accordions.on('click', function(e){
+        $('.accordion_title', $single_accordions).on('click', function(e){
             var $this = $(this);
+            var $parent = $this.parent();
+            var $is_open = $parent.hasClass('active_accordion');
             $single_accordions.removeClass('active_accordion');
-            $this.addClass('active_accordion');
+            if ($is_open == false) {
+                $parent.addClass('active_accordion');
+            }
+
+
         });
-        $single_accordions.first().addClass('active_accordion');
+        // $single_accordions.first().addClass('active_accordion');
 
 
         // match height footer columns
