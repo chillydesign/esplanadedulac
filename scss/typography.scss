@@ -65,7 +65,7 @@ ul ul , ul ol, ol ol {font-size: inherit}
 
 
 section ul {
-    list-style: disc;
+    list-style: circle;
     margin:0 0 20px 30px;
 }
 section ol {
@@ -83,7 +83,8 @@ a {
     @include transition(0.3s);
 
     &:link, &:visited, &:active {
-        color: saturate(lighten($brand_color,15),10);
+        color: saturate(lighten($dark_grey,15),10);
+        border-bottom: dotted 1px;
     }
     &:hover {
         color: $brand_color;
