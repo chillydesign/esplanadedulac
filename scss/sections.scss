@@ -141,3 +141,45 @@ ul.partenaires {
     }
 
 }
+
+
+#event_filters {
+    margin: 0;
+    background: darken($light_grey, 5);
+    padding: 16px 0 7px;
+
+    form {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: left;
+
+        div {
+            flex: 1 auto 0;
+            margin: 0 30px 10px 0;
+
+
+            label {
+                display: block;
+                font-size: 1.6em;
+                text-transform: uppercase;
+                padding: 0 0 5px 1px;
+            }
+            select, input, button  {
+                font-size: 2em;
+                appearance: none;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid $medium_grey;
+            }
+            input {
+                width: auto;
+                &[type="checkbox"] {
+                    appearance: checkbox;
+                }
+            }
+
+        }
+    }
+
+
+}

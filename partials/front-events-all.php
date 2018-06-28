@@ -1,29 +1,6 @@
 <?php
-$tdu = get_template_directory_uri();
-$today = date( 'Y-m-d' );
-$all_events_args = array(
-    'post_type' => 'event',
-    'posts_per_page' =>  -1,
-    'meta_key' => 'date',
-    'orderby' => 'meta_value',
-    'order' => 'ASC',
-    'meta_query' => array(
-        'relation' => 'AND',
-        array( //    ONLY SHOW EVENTS THAT ARENT RESIDENCE
-            'key' => 'residence',
-            'value' => 0,
-            'compare' => '=',
-            'type' => 'numeric'
-        ),
-        array(  //    ONLY SHOW EVENTS THAT HAVENT FINISHED YET
-            'key' => 'date',
-            'value' => $today,
-            'compare' => '>=',
-            'type' => 'DATE'
-        )
-    )
-
-);
+// $tdu = get_template_directory_uri();
+global $events_args;
 ?>
 
 
@@ -35,7 +12,7 @@ $all_events_args = array(
 
             <div class="events_container">
 
-                <?php $all_events = new WP_Query( $all_events_args );  ?>
+                <?php $all_events = new WP_Query( $events_args );  ?>
                 <?php if ($all_events->have_posts() ) :  while($all_events->have_posts()) : $all_events->the_post();  ?>
                     <?php $event_id = get_the_id(); ?>
                     <?php $image = thumbnail_of_post_url( $event_id,  'large');  ?>

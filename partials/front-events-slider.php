@@ -1,4 +1,5 @@
 <?php
+
 $latest_events_args = array(
     'post_type' => 'event',
     'posts_per_page' =>  3,
@@ -15,7 +16,7 @@ $latest_events_args = array(
         ),
         array(  //    ONLY SHOW EVENTS THAT HAVENT FINISHED YET
             'key' => 'date',
-            'value' => $today,
+            'value' => date( 'Y-m-d' ),  // today
             'compare' => '>=',
             'type' => 'DATE'
         )
