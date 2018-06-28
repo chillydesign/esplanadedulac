@@ -98,3 +98,44 @@ section {
     }
 
 }
+
+
+h2.partenaires_h2 { }
+ul.partenaires {
+    margin: -20px -10px 50px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .gallery_partenaires {
+        flex: 1 auto 0;
+        background: white;
+        width: calc(50% - 10px);
+        padding: 10px;
+        display: inline-block;
+        margin: 0 0 20px 0;
+        border: solid 0px #ddd;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        transition: all ease-in-out 0.2s;
+
+        @media (min-width: $browser_small) {
+            width: calc(33% - 10px);
+        }
+
+
+        a {
+            border-bottom: 0;
+            img {
+                width: 100%;
+                height: auto;
+                margin: 0;
+            }
+
+        }
+        &:hover {
+          transform: scale(1.1);
+        }
+    }
+
+}
