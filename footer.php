@@ -2,7 +2,9 @@
 <?php $tdu = get_template_directory_uri(); ?>
 
 <footer>
+
     <div class="container">
+        <form action="" >
 
         <div class="footer_columns">
             <div class="footer_column">
@@ -10,33 +12,32 @@
                 <p>
                     181, avenue de la Plage <br>
                     01220 Divonne les Bains - France <br>
-                    Téléphone : 33.(0)4.50.99.17.70
-                </p>
-                <h3>Suivez-nous</h3>
-                <p>
-                    <a class="social_icon social_icon_facebook" href="#">Suivez-nous sur Facebook</a>  <br>
-                    <a class="social_icon social_icon_instagram" href="#">Suivez-nous sur Instagram</a>
+                    Téléphone : 33.(0)4.50.99.17.70<br>
+                    <a class="social_icon social_icon_instagram" href="#"></a>
+                    <a class="social_icon social_icon_facebook" href="#"></a>
                 </p>
             </div>
 
             <div class="footer_column ">
                 <h3>Newsletter</h3>
 
-                <form action="" >
+
                     <input type="text" autocomplete="given-name"  id="first_name" name="first_name" placeholder="Prénom" />
                     <input type="text" autocomplete="family-name" id="last_name" name="last_name" placeholder="Nom" />
-                    <input type="text"   autocomplete="email" id="email" name="email" placeholder="Adresse email" />
-                    <button type="submit" id="submit_newsletter">S'inscrire</button>
-                </form>
+
 
 
             </div>
             <div class="footer_column footer_column_right">
+              <div class="showonlyonbig" style="height:36px;"></div>
+              <input type="text"   autocomplete="email" id="email" name="email" placeholder="Adresse email" />
+              <button type="submit" id="submit_newsletter">S'inscrire</button>
+
 
                 <?php $footer_poster = get_field('footer_poster', 'option'); ?>
                 <?php $footer_poster_link = get_field('footer_poster_link', 'option'); ?>
 
-                <?php if ($footer_poster && $footer_poster_link) : ?>
+                <?php if ($footer_poster && $footer_poster_link && false) : ?>
                     <a class="poster_link" target="_blank" href="<?php echo $footer_poster_link['url']; ?>">
                         <img src="<?php echo $footer_poster['url']; ?>" alt="<?php echo $footer_poster['caption']; ?>" />
                     </a>
@@ -45,7 +46,7 @@
             </div>
 
         </div>
-
+</form>
     </div>
 
 
@@ -57,7 +58,6 @@
             </ul>
         </div>
     </nav>
-
 </footer>
 
 

@@ -20,15 +20,16 @@
     </head>
     <body <?php body_class(); ?>>
 
+      <?php $logo = get_field('logo', 'option'); ?>
 
         <div class="container" >
             <header id="page_header" >
                 <a href="#" id="menu_button" >Menu</a>
-                <a  accesskey="1" class=" branding" href="<?php echo home_url(); ?>" ><?php echo $blog_name; ?></a>
+                <a  accesskey="1" class=" branding" href="<?php echo home_url(); ?>" style="background-image:url('<?php echo $logo; ?>')" ><?php echo $blog_name; ?></a>
                 <nav>
                     <ul>
                         <?php chilly_nav('header_nav'); ?>
-                        <li><a id="ticketing_link" href="#">Billetterie En Ligne</a></li>
+                        <li style="position:initial"><a id="ticketing_link" href="http://forumsirius.fr/orion/divonne.phtml?kld=1" target="_blank">Billetterie En Ligne</a></li>
                     </ul>
                 </nav>
 

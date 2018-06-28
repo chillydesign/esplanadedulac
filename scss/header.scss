@@ -2,159 +2,201 @@
 $mob_nav_width: 300px;
 
 header#page_header {
-    color: white;
-    position: relative;
-    display: flex;
-    flex-wrap: nowrap;
-    padding: 20px 0 0px;
+  color: white;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 20px 0 20px;
 
+  a.branding {
+    display: block;
+    flex:1 auto 0;
+    // background: url('../img/logo.svg') no-repeat left bottom;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: contain;
+    height: 75px;
+    width: 319px;
+    text-indent: -9999px;
+    border: 0;
+
+  }
+  @media(max-width: $browser_verysmall){
     a.branding {
-        display: block;
-        flex:1 auto 0;
-        background: url('../img/logo.svg') no-repeat left bottom;
-        background-size: contain;
-        height: 75px;
-        width: 319px;
-        text-indent: -9999px;
-        border: 0;
+      height: 50px;
+    }
+  }
+
+  nav {
+
+    position: fixed;
+    top:0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    width:$mob_nav_width;
+    background: transparentize($brand_color,0.04);
+    transform: translateX(-1 * $mob_nav_width);
+    transition: all 0.3s;
+    z-index: 50;
+
+    &.visible {
+      display: block;
+      transform: translateX(0);
 
     }
-    @media(max-width: $browser_verysmall){
-      a.branding {
-        height: 50px;
+
+    @media (min-width: $browser_small) {
+      flex: 1 auto 0;
+      display: block;
+      position: relative;
+      height: auto;
+      transform: none;
+      background: none;
+      text-align: right;
+      width: 100%;
+
+
+    }
+
+    ul {
+      margin: 30px 0 0;
+      padding: 0;
+
+
+      @media (min-width: $browser_small) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:flex-end;
+        margin: 45px -20px 0;
+      }
+
+
+      li {
+        display: block;
+        padding: 0;
+        margin: 0;
+        text-transform: uppercase;
+        text-align: left;
+        position: relative;
+
+
+
+        @media (min-width: $browser_small) {
+          display: inline-block;
+          flex: 1 auto 0;
+
+          &.menu-item-has-children a:hover{border-bottom: solid 5px white!important;}
+
+        }
+
+        a {
+          display: block;
+          color: white;
+          padding: 20px 20px;
+          border: 0;
+          border-bottom: 1px solid transparent;
+
+          &:hover {
+            background-color: transparentize(white, 0.8);
+          }
+
+          @media (min-width: $browser_small) {
+            display: inline-block;
+            color: $dark_grey;
+            padding: 10px 20px;
+            border-bottom: 5px solid rgba(0,0,0,0);
+            &:hover {
+              background-color: transparentize(white, 0.5);
+              border-bottom: 5px solid $brand_color;
+            }
+          }
+
+
+        } // END OF A
+      } // END OF LI
+    } // END OF UL
+
+
+    #ticketing_link {
+      @media (min-width: $browser_small) {
+        position: absolute;
+        top:0;
+        right: 0;
+        padding: 5px 20px;
+        border: 2px solid $medium_grey;
+        transition: all 0.3s;
+
+        &:hover {
+          background: $medium_grey;
+          color: white;
+        }
+      }
+
+    } // end of ticketing_nav
+
+
+  } // END OF NAV
+
+
+
+  #menu_button {
+    display: inline-block;
+    background: url('../img/menu.svg') no-repeat center center;
+    width: 30px;
+    height: 30px;
+    background-size: 25px;
+    text-indent: -9999px;
+    position: absolute;
+    top:23px;
+    right: 20px;
+    border: 0;
+    cursor: pointer;
+    z-index: 60;
+    @media (min-width: $browser_small) {
+      display: none;
+    }
+  }
+
+
+
+
+  nav ul li.menu-item-has-children {
+    ul.sub-menu {
+      display: none;
+      position: absolute;
+      top: 0px;
+      background: white;
+      left: 0;
+      border-top: 5px solid $brand_color;
+
+
+      li {
+        text-align: center;
+        display: block;
+        padding: 0!important;
+        border-top: solid 1px transparentize($brand_color, 0.3);
+
+        a{
+          display: block;
+          border-bottom: 0!important;
+          &:hover {
+            background: transparentize($brand_color, 0.7);
+          }
+        }
       }
     }
 
-    nav {
-
-        position: fixed;
-        top:0;
-        bottom: 0;
-        height: 100%;
-        left: 0;
-        width:$mob_nav_width;
-        background: transparentize($brand_color,0.04);
-        transform: translateX(-1 * $mob_nav_width);
-        transition: all 0.3s;
-        z-index: 50;
-
-        &.visible {
-            display: block;
-            transform: translateX(0);
-
-        }
-
-        @media (min-width: $browser_small) {
-            flex: 1 auto 0;
-            display: block;
-            position: relative;
-            height: auto;
-            transform: none;
-            background: none;
-            text-align: right;
-            width: 100%;
-
-
-        }
-
-        ul {
-            margin: 30px 0 0;
-            padding: 0;
-
-
-            @media (min-width: $browser_small) {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content:flex-end;
-                margin: 45px -20px 0;
-            }
-
-
-            li {
-                display: block;
-                padding: 0;
-                margin: 0;
-                text-transform: uppercase;
-                text-align: left;
-
-
-
-                @media (min-width: $browser_small) {
-                    display: inline-block;
-                    flex: 1 auto 0;
-
-                }
-
-                a {
-                    display: block;
-                    color: white;
-                    padding: 20px 20px;
-                    border: 0;
-                        border-bottom: 1px solid transparent;
-
-                    &:hover {
-                        background-color: transparentize(white, 0.8);
-                    }
-
-                    @media (min-width: $browser_small) {
-                        display: inline-block;
-                        color: $dark_grey;
-                        padding: 10px 20px;
-                        border-bottom: 5px solid rgba(0,0,0,0);
-                        &:hover {
-                            background-color: transparentize(white, 0.5);
-                            border-bottom: 5px solid $brand_color;
-                        }
-                    }
-
-
-                } // END OF A
-            } // END OF LI
-        } // END OF UL
-
-
-        #ticketing_link {
-            @media (min-width: $browser_small) {
-                position: absolute;
-                top:0;
-                right: 0;
-                padding: 5px 20px;
-                border: 2px solid $medium_grey;
-                transition: all 0.3s;
-
-                &:hover {
-                  background: $medium_grey;
-                  color: white;
-                }
-            }
-
-        } // end of ticketing_nav
-
-
-    } // END OF NAV
-
-
-
-    #menu_button {
+    &:hover{
+      ul.sub-menu{
         display: inline-block;
-        background: url('../img/menu.svg') no-repeat center center;
-        width: 30px;
-        height: 30px;
-        background-size: 25px;
-        text-indent: -9999px;
-        position: absolute;
-        top:23px;
-        right: 20px;
-        border: 0;
-        cursor: pointer;
-        z-index: 60;
-        @media (min-width: $browser_small) {
-            display: none;
-        }
+      }
     }
-
-
-
+  }
 
 
 } // END OF header#page_header
+
+@media(min-width: $browser_small){
+  header#page_header{padding-bottom: 0;}
+}

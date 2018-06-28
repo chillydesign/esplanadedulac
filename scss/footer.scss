@@ -1,10 +1,19 @@
 footer {
-    background: lighten($brand_color, 55);
-    border-top: 6px double $brand_color;
-    padding:0;
-    margin:0;
-    color: darken($brand_color, 10);
+  // background: lighten($brand_color, 55);
+  // border-top: 6px double $brand_color;
+  // padding:0;
+  // margin:0;
+  // color: darken($brand_color, 10);
 
+  background: $dark_grey;
+  padding:0;
+  margin:0;
+  color: white;
+  h3 {
+    color: white!important;
+    font-weight: normal;
+    font-size: 2em;
+  }
 
     h4 {
         text-transform: uppercase;
@@ -69,18 +78,19 @@ footer {
     input, button {
     //    flex: 1 auto 0;
         border: 0;
-        border-bottom: 1px solid  darken($brand_color, 20);;
+        border-bottom: 1px solid  white;
         outline:0;
         background: transparent;
-        color:  darken($brand_color, 10);
+        // color:  darken($brand_color, 10);
+        color:  white;
         display: inline-block;
         padding: 10px;
         width: 100%;
         min-width: 100%;
-        margin: 0 0 10px;
+        margin: 0 0 18px;
         font-size: 1.7em;
         &::placeholder {
-          color:  darken($brand_color, 20);
+          color:  white;
         }
 
 
@@ -95,14 +105,14 @@ footer {
     }
     button {
         background: transparent;
-        border: 2px solid $brand_color;
-        color: $brand_color;
-        margin-top:10px;
+        border: 2px solid white;
+        color: white;
+        margin-top:1px;
         cursor: pointer;
         transition: all 0.3s;
         &:hover {
-            background: $brand_color;
-            color: white;
+            background: white;
+            color: $dark_grey;
         }
         &:active {
             position: relative;
@@ -111,10 +121,9 @@ footer {
     }
 
     nav {
-        border-top: 3px solid $brand_color;
+        border-top: 1px solid white;
         text-align: center;
-        background: white;
-        color: $medium_grey;
+        color: white;
         padding: 20px 0;
         text-transform: uppercase;
         ul {
@@ -128,7 +137,7 @@ footer {
                     position: relative;
 
                     &, &:hover, &:visited, &:link {
-                        color: $medium_grey;
+                        color: white;
                     }
 
                     &:after {
@@ -154,6 +163,7 @@ $social_icon_size: 35px;
     padding:10px 10px 10px #{$social_icon_size * 1.2};
     background: no-repeat center left;
     background-size: $social_icon_size;
+    margin: 10px -10px 0 -8px;
 
 
     &.social_icon_facebook {

@@ -7,7 +7,7 @@
     <?php $event_id = get_the_id(); ?>
     <?php $image = thumbnail_of_post_url( $event_id,  'large');  ?>
     <?php $date = get_field('date'); ?>
-    <?php $nice_date =  strftime("%a %d %B", strtotime( $date )); ?>
+    <?php $nice_date =  utf8_encode(strftime("%a %d %B", strtotime( $date ))); ?>
     <?php $time = get_field('time'); ?>
     <?php $top_slider = get_field('top_slider'); ?>
     <?php $gallery = get_field('gallery'); ?>
@@ -34,13 +34,13 @@
 
 
         <div class="container">
-            <div class="event_header_text">
+            <div class="event_header_text<?php if(get_field('family')) {echo ' voir_en_famille';} ?>">
                 <h1><?php the_title(); ?></h1>
                 <h5><?php echo get_field('subtitle'); ?></h5>
                 <h6 style="color: #373737; margin: 5px 0 0;">
                   <?php $terms_count =1; $terms = get_the_terms( $post->id, 'event_cat' ); $count = count($terms); if ( $count > 0 ){ foreach ( $terms as $term ) { if($terms_count<2) {echo $term->name . ' - '; $terms_count++;} } } ?>
                   <?php $date = get_field('date');  ?>
-                  <?php echo $nice_date =  utf8_encode(strftime("%d %B %Y", strtotime( $date ))); ?> -
+                  <?php echo $nice_date; ?> -
                   <?php echo get_field('time'); ?>
                 </h6>
             </div>
@@ -56,7 +56,7 @@
                 <section class="event_details_section">
                 <?php the_field('main'); ?>
                 <?php if ($booking_link) { ?>
-                  <h6 class="showonlyonsmall"><a href="<?php echo $booking_link;?>" class="book_button">Réserver</a></h6>
+                  <h6 class="showonlyonsmall"><a href="<?php echo $booking_link;?>" target="_blank" class="book_button">Réserver</a></h6>
                 <?php } ?>
 
                 <?php if ($gallery || $videos) : ?>
@@ -150,7 +150,7 @@
                   <?php endif; ?>
 
                   <?php if ($booking_link) { ?>
-                    <h6 class="showonlyonbig"><a href="<?php echo $booking_link;?>" class="book_button">Réserver</a></h6>
+                    <h6 class="showonlyonbig"><a href="<?php echo $booking_link;?>" target="_blank" class="book_button">Réserver</a></h6>
                   <?php } ?>
 
                   <?php if(get_field('mentions')): ?>
@@ -165,18 +165,8 @@
 
             <aside>
 
-
-                <?php if ($date AND false): ?>
-                    <h5>
-                      <?php
-$terms_count =1; $terms = get_the_terms( $post->id, 'event_cat' );; $count = count($terms); if ( $count > 0 ){ foreach ( $terms as $term ) { if($terms_count<2) {echo $term->name; $terms_count++;} } } ?>
-
-                     <br> <?php echo $nice_date; ?> <br> <?php echo $time; ?></h5>
-                <?php endif; ?>
-
-
                 <?php if ($booking_link) { ?>
-                  <h6><a href="<?php echo $booking_link;?>" class="book_button">Réserver</a></h6>
+                  <h6><a href="<?php echo $booking_link;?>" target="_blank" class="book_button">Réserver</a></h6>
                 <?php } ?>
 
                 <?php if ($tarifs): ?>
@@ -184,7 +174,7 @@ $terms_count =1; $terms = get_the_terms( $post->id, 'event_cat' );; $count = cou
                 <?php endif; ?>
 
                 <?php if ($masterclass): ?>
-                    <h5 class="masterclass">MASTERCLASS</h5>
+                    <h5 class="masterclass"><span class="plus">+</span> MASTERCLASS</h5>
                     <div><?php echo $masterclass; ?></div>
                     <p>
                       <?php $email = get_field('masterclass_email','option'); ?>

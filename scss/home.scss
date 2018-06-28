@@ -28,13 +28,13 @@ body.home {}
       color: white;
       margin: auto;
       padding: 0 20px;
+      a {
+        color: white!important;
+        &:focus, &:active {border:0; outline: 0; background:rgba(255,255,255,0.3);}
+      }
       h2 {
         padding: 0;
         text-transform: uppercase;
-
-        a {
-          color: inherit;
-        }
       }
       h5 {
         color: white;
@@ -229,14 +229,14 @@ body.home {}
   .family.single_event_inner:after {
     display: block;
     content: '';
-    width: 60px;
+    width: 70px;
     height: 60px;
-    background-image: url('../img/pastille.png');
+    background-image: url('../img/voir_en_famille.png');
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    bottom: -30px;
-    right: -20px;
+    bottom: -20px;
+    right: -33px;
   }
 
   .family .single_event_image_container:before{

@@ -29,7 +29,7 @@ h4 {
     font-weight: bold;
 }
 
-h5 {
+h5, .page h3 {
     text-transform: uppercase;
     font-size: 2em;
     color: $brand_color;
@@ -48,7 +48,7 @@ h6 {
     h2 { font-size: 4em; padding: 0 0 30px }
     h3 { font-size: 2.6em; }
     h4 { font-size: 1.79em; }
-    h5 { font-size: 2.2em; }
+    h5, .page h3 { font-size: 2.2em; }
 
 }
 

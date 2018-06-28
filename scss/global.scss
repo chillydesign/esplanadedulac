@@ -25,7 +25,16 @@ body {
 @import 'home';
 @import 'events';
 
+aside {
+    flex: 1 auto 0;
+    width: 100%;
 
+    @media (min-width: $browser_small) {
+        width: #{100% - $page_text_width};
+        border-left: $column_gap solid white;
+    }
+
+}
 
 p.category {
     color: $brand_color;
@@ -35,5 +44,8 @@ p.date {
     font-size: 1.3em;
     text-transform: uppercase;
 }
+
+img {width: 100%; height: auto; margin-bottom: 20px;}
+img.small_img {max-width: 180px;}
 
 iframe {width: 100%;}

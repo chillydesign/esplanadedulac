@@ -32,20 +32,21 @@
     <!-- article -->
     <article id="post-<?php the_ID(); ?>" class="container">
 
-
         <div id="event_details">
 
             <section class="event_details_section">
+              <?php the_content(); ?>
                 <?php include('section-loop.php'); ?>
 
 
-                <div class="container">
-                    <?php the_content(); ?>
-                </div>
-            </section>
 
+            </section>
+            <aside>
+              <?php echo get_field('sidebar'); ?>
+            </aside>
 
         </div>
+
 
 
     </article>

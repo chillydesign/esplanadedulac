@@ -34,10 +34,12 @@ $latest_events_args = array(
             <div class="single_event_slide">
                 <div class="single_event_slide_inner" style="background-image:url(<?php echo $image; ?>);">
                     <div class="event_slide_text">
-                        <h2><a href="<?php echo $permalink; ?>"><?php the_title(); ?></a></h2>
-                        <h5>Cirque Le Roux</h5>
+                      <a style="color:white" href="<?php echo $permalink; ?>">
+                          <h2><?php the_title(); ?></h2>
+                        <h5><?php echo get_field('subtitle'); ?></h5>
                         <?php if ($date): ?><p class="date"><?php echo $nice_date; ?> à <?php echo $time; ?> </p><?php endif; ?>
-                        <p><a href="<?php echo $permalink; ?>" class="button button_open ">Billetterie</a></p>
+                        </a>
+                        <p><a href="<?php echo get_field('booking_link'); ?>" class="button button_open " target="_blank">Billetterie</a></p>
                     </div>
                 </div>
 
