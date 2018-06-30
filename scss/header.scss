@@ -60,7 +60,7 @@ header#page_header {
     }
 
     ul {
-      margin: 30px 0 0;
+      margin: 40px 0 0;
       padding: 0;
 
 
@@ -86,14 +86,18 @@ header#page_header {
           display: inline-block;
           flex: 1 auto 0;
 
-          &.menu-item-has-children a:hover{border-bottom: solid 5px white!important;}
+          &.menu-item-has-children {
+              a:hover {
+                  border-bottom: solid 5px white!important;
+              }
+          }
 
         }
 
         a {
           display: block;
           color: white;
-          padding: 20px 20px;
+          padding: 10px 20px;
           border: 0;
           border-bottom: 1px solid transparent;
 
@@ -104,7 +108,7 @@ header#page_header {
           @media (min-width: $browser_small) {
             display: inline-block;
             color: $dark_grey;
-            padding: 10px 20px;
+
             border-bottom: 5px solid rgba(0,0,0,0);
             &:hover {
               background-color: transparentize(white, 0.5);
@@ -162,39 +166,62 @@ header#page_header {
 
 
   nav ul li.menu-item-has-children {
+
+
+
     ul.sub-menu {
-      display: none;
-      position: absolute;
-      top: 0px;
-      background: white;
-      left: calc(50% - 104px);
-      width: 250px;
-      border-top: 5px solid $brand_color;
-
-
-      li {
-        text-align: center;
         display: block;
-        padding: 0!important;
-        border-top: solid 1px transparentize($brand_color, 0.3);
+        margin: 0;
 
-        a{
-          display: block;
-          border-bottom: 0!important;
-          &:hover {
-            background: transparentize($brand_color, 0.7);
-          }
+        li {
+            display: block;
+            font-size: 85%;
+
+            a {
+                display: block;
+                padding: 10px 20px 10px 30px;
+            }
         }
+
+
+
+      @media (min-width: $browser_small) {
+          display: none;
+          position: absolute;
+          background: white;
+          left: calc(50% - 104px);
+          width: 250px;
+          border-top: 5px solid $brand_color;
+          top: 44px;
+          li {
+            text-align: center;
+            display: block;
+            padding: 0!important;
+            border-top: solid 1px transparentize($brand_color, 0.3);
+
+            a{
+              display: block;
+              border-bottom: 0!important;
+              &:hover {
+                background: transparentize($brand_color, 0.7);
+              }
+            }
+          }
       }
+
+
     }
 
-    &:hover{
-      ul.sub-menu{
-        display: inline-block;
-        z-index: 9;
-        box-shadow: 0 0 20px rgba(0,0,0,0.3);
-      }
+    @media (min-width: $browser_small) {
+        &:hover {
+            ul.sub-menu{
+                display: inline-block;
+                z-index: 9;
+                box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            }
+        }
     }
+
   }
 
 
