@@ -1,15 +1,24 @@
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-	<!-- article -->
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php $event_id = get_the_id(); ?>
+	<?php $image = thumbnail_of_post_url( $event_id,  'large');  ?>
+	<?php $permalink = get_the_permalink(); ?>
+	<?php $category =   get_the_terms( $event_id, 'event_cat' ); ?>
+	<?php $date = get_field('date');  ?>
+	<?php $nice_date =  utf8_encode(strftime("%a %d %B", strtotime( $date ))); ?>
+	<?php $time = get_field('time'); ?>
+	<?php $familyclass = (get_field('family')) ? 'family ' : '' ; ?>
 
-
-
-		<!-- post title -->
-		<h2>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-		</h2>
-		<!-- /post title -->
+	<div class="single_event_container">
+		<div class="<?php echo $familyclass;?>single_event_inner">
+			<div class="single_event_image_container">
+				<a  href="<?php echo $permalink; ?>" class="single_event_image" style="background-image:url(<?php echo $image; ?>);"></a>
+			</div>
+			<?php if ($category AND sizeof($category) > 0) :?><p class="category"><?php echo $category[0]->name; ?></p><?php endif; ?>
+			<h4><a href="<?php echo $permalink; ?>"><?php the_title(); ?></a></h4>
+			<?php if ($date): ?><p class="date"> <?php echo $nice_date; ?>  <br> <?php echo $time; ?></p><?php endif; ?>
+		</div>
+	</div>
 
 
 		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>

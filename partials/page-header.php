@@ -4,7 +4,7 @@
         <?php $top_slider = get_field('top_slider'); ?>
         <?php if($top_slider): ?>
             <?php foreach( $top_slider as $image ): ?>
-                <div style="background-image:url(<?php echo $image['sizes']['medium']; ?>); background-size:cover; background-repeat:no-repeat; height:500px; width:100%;" class="image"></div>
+                <div style="background-image:url(<?php echo $image['sizes']['large']; ?>); background-size:cover; background-repeat:no-repeat; height:500px; width:100%;" class="image"></div>
             <?php endforeach; ?>
         <?php else: ?>
             <div style="background-image:url(<?php echo $image; ?>); background-size:cover; background-repeat:no-repeat; height:500px; width:100%;" class="image"></div>

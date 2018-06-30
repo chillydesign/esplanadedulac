@@ -1,0 +1,4 @@
+@media print {
+ /* All your print styles go here */
+ nav, footer, #latest_events_slider, #news_slider, header.event_header .carousel{ display: none !important; } 
+}

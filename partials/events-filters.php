@@ -9,13 +9,13 @@
 
     <form  method="get">
         <div>
-            <label for="search" >Search</label>
-            <input placeholder="search" type="text" id="search" name="search" value="<?php echo $_GET['search']; ?>"  />
+            <label for="search" >Rechercher</label>
+            <input placeholder="rechercher" type="text" id="search" name="search" value="<?php echo $_GET['search']; ?>"  />
         </div>
         <div>
-            <label for="categorie">Categorie</label>
+            <label for="categorie">Catégorie</label>
             <select name="categorie" id="categorie">
-                <option value="">All categories</option>
+                <option value="">Toutes les catégories</option>
                 <?php foreach ($categories as $categorie) : ?>
                     <?php $selected = ($categorie->slug == $_GET['categorie'] ) ? 'selected' : ''; ?>
                     <option <?php echo $selected; ?> value="<?php echo $categorie->slug ;?>"><?php echo $categorie->name; ?></option>
@@ -23,11 +23,11 @@
             </select>
         </div>
         <div>
-            <label for="for_families">Only For families</label>
+            <label for="for_families">En famille</label>
             <select name="for_families" id="for_families">
                 <?php $selected = ( $_GET['for_families']  == '1' ) ? 'selected' : ''; ?>
-                <option value="">All events</option>
-                <option <?php echo $selected; ?> value="1">Families events</option>
+                <option value="">Tous les évènements</option>
+                <option <?php echo $selected; ?> value="1">À voir en famille</option>
             </select>
         </div>
         <!--
@@ -42,7 +42,7 @@
         </div> -->
         <div>
             <label for="">&nbsp;</label>
-            <button  type="submit" >Filter</button>
+            <button  type="submit" >Chercher</button>
         </div>
 
     </form>

@@ -56,8 +56,35 @@ if ($for_families && $for_families != '') {
 
  ?>
 
-<?php get_template_part('partials/page', 'header'); ?>
-<?php get_template_part('partials/events', 'filters'); ?>
+<?php //get_template_part('partials/page', 'header'); ?>
+<header class="event_header">
+
+    <div class="carousel">
+        <?php $top_slider = get_field('top_slider'); ?>
+        <?php if($top_slider): ?>
+            <?php foreach( $top_slider as $image ): ?>
+                <div style="background-image:url(<?php echo $image['sizes']['large']; ?>); background-size:cover; background-repeat:no-repeat; height:500px; width:100%;" class="image"></div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <div style="background-image:url(<?php echo $image; ?>); background-size:cover; background-repeat:no-repeat; height:500px; width:100%;" class="image"></div>
+        <?php endif; ?>
+    </div>
+    <div class="container">
+        <div class="event_header_text">
+            <h1>
+              <?php if($_GET['for_families']==1){echo 'À voir en famille';}else{ the_title(); }?>
+              <?php //the_title(); ?>
+            </h1>
+            <h5><?php echo get_field('subtitle'); ?></h5>
+        </div>
+    </div>
+    <div class="event_header_text_bg"></div>
+
+
+</header>
+
+
+<?php //get_template_part('partials/events', 'filters'); ?>
 <?php get_template_part('partials/front', 'events-all'); ?>
 
 

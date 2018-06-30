@@ -23,7 +23,7 @@
       <?php $logo = get_field('logo', 'option'); ?>
 
         <div class="container" >
-            <header id="page_header" >
+            <header id="page_header"  accesskey="n">
                 <a href="#" id="menu_button" >Menu</a>
                 <a  accesskey="1" class=" branding" href="<?php echo home_url(); ?>" style="background-image:url('<?php echo $logo; ?>')" ><?php echo $blog_name; ?></a>
                 <nav>

@@ -105,7 +105,7 @@ footer {
 
 
     }
-    button {
+    button, input[type="submit"] {
         background: transparent;
         border: 2px solid white;
         color: white;
@@ -185,4 +185,21 @@ a.poster_link {
         margin: 0 0 20px;
         border: 2px solid $medium_grey;
     }
+}
+
+
+div.response {
+    position: fixed;
+    top: 30vh;
+    left: 10%;
+    width: 80%;
+    max-width: 90%;
+    background: white;
+    z-index: 999999;
+    border: solid 2px #0095c0;
+    color: #0095c0!important;
+    box-shadow: 0 0 50px rgba(0,0,0,0.2);
+    padding: 50px;
+    text-align: center;
+    font-size: 2em;
 }

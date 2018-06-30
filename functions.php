@@ -91,7 +91,7 @@ function webfactor_nav()
 }
 
 function wf_version(){
-  return '0.0.2';
+  return '0.0.3';
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -522,17 +522,22 @@ function chilly_nav($menu){
 
 }
 
+
 function chilly_map( $atts, $content = null ) {
 
     $attributes = shortcode_atts( array(
-        'title' => "Rue du Midi 15 Case postale 411 1020 Renens"
+        'title' => "Somewhere",
+        'lat' => 0,
+        'lng' => 0,
     ), $atts );
 
 
 
     $title = $attributes['title'];
-    $chilly_map = '<div id="map_container_1"></div>';
-    $chilly_map .= "<script> var latt = 46.5380683; var lonn=6.5812023; var map_title = '" . $title . "'  </script>";
+    $lat = $attributes['lat'];
+    $lng = $attributes['lng'];
+    $chilly_map = '<div id="map_container"></div>';
+    $chilly_map .= "<script> var   map_location = {lat: ". $lat . ", lng:  ". $lng . ", title:  '" . $title . "'  }; </script>";
     return $chilly_map;
 
 }
