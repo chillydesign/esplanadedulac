@@ -26,10 +26,11 @@ body.home {}
       flex:1 auto 0;
       max-width: 700px;
       color: white;
-      margin: auto;
+      margin: 0;
       padding: 0 20px;
       a {
         color: white!important;
+        border: 0;
         &:focus, &:active {border:0; outline: 0; background:rgba(255,255,255,0.3);}
       }
       h2 {
@@ -48,6 +49,7 @@ body.home {}
       }
       a.button, a h6, h6 a {
         text-transform: uppercase;
+        border:solid 1px white;
       }
     }
 
@@ -249,7 +251,7 @@ body.home {}
     left: 0;
     top: 5px;
     content: '';
-    background-image: url(../img/famille.png);
+    background-image: url('../img/famille-dark.png');
     background-repeat: no-repeat;
     background-position: top;
     background-size: 100% auto;

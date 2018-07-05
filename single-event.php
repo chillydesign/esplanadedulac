@@ -63,8 +63,8 @@
                 <?php } ?>
 
                 <?php if ($gallery || $videos) : ?>
-                    <h5>Galerie</h5>
-                    <div class="gallery_container">
+                    <h5 class="gallery_title">Galerie</h5>
+                    <div class="gallery_container ">
                         <div class="carousel">
 
                             <?php if ($videos): ?>
@@ -134,7 +134,7 @@
 
 
                 <?php if(get_field('retour')): ?>
-                  <h2 class="first_part">RETOUR EN IMAGES</h2>
+                  <h2 class="first_part gallery_title">RETOUR EN IMAGES</h2>
                   <?php $retour = get_field('retour'); ?>
                   <div class="gallery_container">
                     <div class="carousel">

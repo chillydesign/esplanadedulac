@@ -71,8 +71,15 @@ if ($for_families && $for_families != '') {
     </div>
     <div class="container">
         <div class="event_header_text">
-            <h1>
-              <?php if($_GET['for_families']==1){echo 'À voir en famille';}else{ the_title(); }?>
+            <h1> 
+              <?php if(isset($_GET['for_families']) AND $_GET['for_families']==1){echo 'À voir en famille';}
+              elseif($_GET['categorie']=='theatre'){echo 'Théâtre'; }
+              elseif($_GET['categorie']=='danse'){echo 'Danse'; }
+              elseif($_GET['categorie']=='musique'){echo 'Musique'; }
+              elseif($_GET['categorie']=='cirque'){echo 'Cirque'; }
+              elseif($_GET['categorie']=='magie'){echo 'Magie'; }
+              elseif($_GET['categorie']=='jeune-public'){echo 'Jeune Public'; }
+              else{ the_title(); }?>
               <?php //the_title(); ?>
             </h1>
             <h5><?php echo get_field('subtitle'); ?></h5>

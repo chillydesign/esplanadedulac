@@ -50,7 +50,7 @@ $latest_events_args = array(
             <div class="single_event_slide">
                 <div class="single_event_slide_inner" style="background-image:url(<?php echo $image; ?>);">
                     <div class="event_slide_text">
-                      <a style="color:white" href="<?php echo $permalink; ?>">
+                      <a style="color:white;" href="<?php echo $permalink; ?>">
                           <h2><?php the_title(); ?></h2>
                         <h5><?php echo get_field('subtitle'); ?></h5>
                         <?php if ($date): ?><p class="date"><?php echo $nice_date; ?> à <?php echo $time; ?> </p><?php endif; ?>

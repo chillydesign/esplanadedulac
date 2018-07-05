@@ -43,6 +43,7 @@ header#page_header {
     &.visible {
       display: block;
       transform: translateX(0);
+      overflow-y: scroll;
 
     }
 
@@ -130,6 +131,7 @@ header#page_header {
         padding: 5px 20px;
         border: 2px solid $medium_grey;
         transition: all 0.3s;
+        min-width: 180px;
 
         &:hover {
           background: $medium_grey;
@@ -138,6 +140,7 @@ header#page_header {
       }
 
     } // end of ticketing_nav
+
 
 
   } // END OF NAV
@@ -189,7 +192,7 @@ header#page_header {
           display: none;
           position: absolute;
           background: white;
-          left: calc(50% - 104px);
+          left: calc(50% - 124px);
           width: 250px;
           border-top: 5px solid $brand_color;
           top: 44px;
@@ -230,3 +233,4 @@ header#page_header {
 @media(min-width: $browser_small){
   header#page_header{padding-bottom: 0;}
 }
+.ie #ticketing_link{top:-40px!important; display: none!important;}

@@ -14,6 +14,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="<?php bloginfo('description'); ?>">
         <link href="https://fonts.googleapis.com/css?family=Dosis:300,700" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/img/favicon/apple-touch-icon.png?v=ngkn6OpdjR">
+        <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/img/favicon/favicon-32x32.png?v=ngkn6OpdjR">
+        <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/img/favicon/favicon-16x16.png?v=ngkn6OpdjR">
+        <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/img/favicon/site.webmanifest?v=ngkn6OpdjR">
+        <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon/safari-pinned-tab.svg?v=ngkn6OpdjR" color="#5bbad5">
+        <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon/favicon.ico?v=ngkn6OpdjR">
+        <meta name="msapplication-TileColor" content="#2b5797">
+        <meta name="theme-color" content="#ffffff">
+
+
         <?php wp_head(); ?>
 
 
@@ -29,7 +39,7 @@
                 <nav>
                     <ul>
                         <?php chilly_nav('header_nav'); ?>
-                        <li style="position:initial"><a id="ticketing_link" href="http://forumsirius.fr/orion/divonne.phtml?kld=1" target="_blank">Billetterie En Ligne</a></li>
+                        <li style="position:initial"><a id="ticketing_link" href="http://www.forumsirius.fr/orion/divonne.phtml?kld=1" target="_blank">Billetterie En Ligne</a></li>
                     </ul>
                 </nav>
 

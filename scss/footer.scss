@@ -116,6 +116,10 @@ footer {
             background: white;
             color: $dark_grey;
         }
+        &:focus {
+            background: white;
+            color: $dark_grey;
+        }
         &:active {
             position: relative;
             top:1px;

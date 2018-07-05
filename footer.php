@@ -14,8 +14,8 @@
               181, avenue de la Plage <br>
               01220 Divonne les Bains - France <br>
               Téléphone : 33.(0)4.50.99.17.70<br>
-              <a class="social_icon social_icon_instagram" href="#"></a>
-              <a class="social_icon social_icon_facebook" href="#"></a>
+              <a target="_blank" class="social_icon social_icon_instagram" href="https://www.instagram.com/esplanadedulac/"></a>
+              <a target="_blank" class="social_icon social_icon_facebook" href="https://www.facebook.com/lesplanadedulac/"></a>
             </p>
           </div>
 
@@ -62,7 +62,7 @@
         <div class="container">
           <ul>
             <?php chilly_nav('footer_nav'); ?>
-            <li><a href="https://webfactor.ch">Website by Webfactor</a></li>
+            <li><a target="_blank" href="https://webfactor.ch">Website by Webfactor</a></li>
           </ul>
         </div>
       </nav>
