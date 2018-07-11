@@ -176,6 +176,21 @@
                     <div><?php echo $tarifs; ?></div>
                 <?php endif; ?>
 
+                <?php if(get_field('voltaire') OR get_field('passedanse')): ?>
+                  <h5>Partenariat</h5>
+                  <br><br>
+                <?php endif; ?>
+                <?php if(get_field('voltaire')): ?>
+                  <div class="event_partner">
+                    <a href="https://www.ferney-voltaire.fr/agendas/presentation-saison-voltaire" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/voltaire.jpg"><span>Saison Voltaire</span></a>
+                  </div>
+                  <?php endif; ?>
+                <?php if(get_field('passedanse')): ?>
+                  <div class="event_partner">
+                    <a href="http://www.passedanse.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/passedanse.jpg"><span>Passe Danse</span></a>
+                  </div>
+                <?php endif; ?>
+
                 <?php if ($masterclass): ?>
                     <h5 class="masterclass"><span class="plus">+</span> MASTERCLASS</h5>
                     <div><?php echo $masterclass; ?></div>

@@ -186,3 +186,20 @@ span.plus {
     display: inline-block;
     padding-right: 5px;
 }
+
+
+
+.event_partner {
+    font-size: 2em;
+    margin: 10px 0;
+    a {
+        text-decoration: none!important;
+        border-bottom: 0;
+        img {
+            display: inline-block;
+            width: 70px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    }
+}
