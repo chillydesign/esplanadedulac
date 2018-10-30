@@ -176,7 +176,7 @@
                     <div><?php echo $tarifs; ?></div>
                 <?php endif; ?>
 
-                <?php if(get_field('voltaire') OR get_field('passedanse')): ?>
+                <?php if(get_field('voltaire') OR get_field('passedanse') OR get_field('culture')): ?>
                   <h5>Partenariat</h5>
                   <br><br>
                 <?php endif; ?>
@@ -190,6 +190,11 @@
                     <a href="http://www.passedanse.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/passedanse.jpg"><span>Passe Danse</span></a>
                   </div>
                 <?php endif; ?>
+                <?php if(get_field('culture')): ?>
+                  <div class="event_partner">
+                    <a href="http://culture-pour-tous.fr" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/culture.jpg"><span>Culture Pour Tous</span></a>
+                  </div>
+                  <?php endif; ?>
 
                 <?php if ($masterclass): ?>
                     <h5 class="masterclass"><span class="plus">+</span> MASTERCLASS</h5>
