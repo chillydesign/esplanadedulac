@@ -17,7 +17,7 @@
                 <div class="news_text">
                     <p class="category">Actualités L’Esplanade du Lac</p>
                     <h3><a href="<?php echo $permalink; ?>"><?php the_title(); ?></a></h3>
-                    <p class="date"><?php the_time('F j, Y'); ?></p>
+                    <!-- <p class="date"><?php the_time('F j, Y'); ?></p> -->
                     <p><?php the_excerpt(); ?></p>
                 </div>
             </div>

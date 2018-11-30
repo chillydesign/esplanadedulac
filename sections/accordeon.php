@@ -11,7 +11,7 @@
         <?php // $row_id = 'accordion_' . $slug  . '_' . $row_index; ?>
 
 
-        <div class="single_accordion" >
+        <div class="single_accordion" id="<?php echo sanitize_title($title); ?>">
             <h3 class="accordion_title"><?php echo $title; ?></h3>
             <div class="accordion_content">
                 <?php echo $content; ?>

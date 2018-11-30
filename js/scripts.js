@@ -11,6 +11,13 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
         var $window = $(window);
         var $body = $('body');
 
+        if(window.location.hash) {
+         //set the value as a variable, and remove the #
+         var hash_value = window.location.hash.replace('#', '');
+         //show the value with an alert pop-up
+         $('#' + hash_value).addClass('active_accordion');
+
+        }
 
 
 
@@ -45,6 +52,10 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
 
         });
         // $single_accordions.first().addClass('active_accordion');
+
+        $('.english_show').on('click', function(){
+            $('.english_version').toggleClass('active');
+        });
 
 
         // match height footer columns

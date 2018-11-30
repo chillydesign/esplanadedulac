@@ -55,9 +55,14 @@
 
     <article class="container" >
         <div id="event_details">
-
                 <section class="event_details_section">
                 <?php the_field('main'); ?>
+                <?php if(!empty(get_field('english'))): ?>
+                  <div class="english_version">
+                    <div class="english_show"><span class="english_plus">+</span><span class="english_minus">-</span>English version</div>
+                    <div class="english_text"><?php the_field('english'); ?></div>
+                  </div>
+                <?php endif; ?>
                 <?php if ($booking_link) { ?>
                   <h6 class="showonlyonsmall"><a href="<?php echo $booking_link;?>" target="_blank" class="book_button">Réserver</a></h6>
                 <?php } ?>
@@ -192,7 +197,7 @@
                 <?php endif; ?>
                 <?php if(get_field('culture')): ?>
                   <div class="event_partner">
-                    <a href="http://culture-pour-tous.fr" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/culture.jpg"><span>Culture Pour Tous</span></a>
+                    <a href="<?php echo get_home_url(); ?>/autour-des-spectacles/#culture-pour-tous" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/culture.jpg" style="width:200px;"></a>
                   </div>
                   <?php endif; ?>
 

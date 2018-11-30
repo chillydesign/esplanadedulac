@@ -24,7 +24,6 @@
     <article  class="container" >
         <div id="event_details">
             <section class="event_details_section">
-                <p><span class="author"><?php _e( 'Published by', 'webfactor' ); ?> <?php the_author_posts_link(); ?></span> on <span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span></p>
 
                 <?php the_content(); // Dynamic Content ?>
 
