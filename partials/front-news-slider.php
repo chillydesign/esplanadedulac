@@ -12,7 +12,9 @@
               <?php if(get_field('video')) : ?>
                 <div class="news_image"><?php the_field('video'); ?></div>
               <?php else: ?>
-                <div class="news_image" style="background-image:url(<?php echo $image; ?>);"></div>
+
+                <div class="news_image" style="height: auto; background:none;"><img src="<?php echo $image; ?>" alt=""></div>
+                <!-- <div class="news_image" style="background-image:url(<?php //echo $image; ?>);"></div> -->
               <?php endif; ?>
                 <div class="news_text">
                     <p class="category">Actualités L’Esplanade du Lac</p>

@@ -7,7 +7,10 @@
 
     <?php $post_id = get_the_id(); ?>
     <?php $image = thumbnail_of_post_url( $post_id,  'large');  ?>
-    <header class="event_header small_event_header" style="background-image:url(<?php echo $image; ?>);">
+    <hr style="border-top:5px solid #0e8294;margin-top:-6px;"/>
+
+    <!-- <header class="event_header small_event_header" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/visuel_esplanade_rectangle.jpg');">
+
 
 
         <div class="container">
@@ -18,7 +21,21 @@
         <div class="event_header_text_bg"></div>
 
 
-    </header>
+    </header> -->
+
+
+<!-- REMOVE THIS IF YOU PUT HEADER BACK -->
+    <div class="container">
+        <div class="event_header_text"><br><br><br>
+            <h1><?php the_title(); ?></h1>
+        </div>
+    </div>
+    <!-- REMOVE THIS IF YOU PUT HEADER BACK -->
+
+
+
+
+
 
     <!-- article -->
     <article  class="container" >
@@ -31,6 +48,9 @@
 
                 <?php // comments_template(); ?>
             </section>
+            <aside>
+              <img src="<?php echo $image; ?>" alt="">
+            </aside>
         </div>
     </article>
     <!-- /article -->
