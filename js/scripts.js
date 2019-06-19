@@ -107,14 +107,13 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
         })
 
 
-        // SHOW YOUTUBE VIDEOS IN SLIDER
-        if (typeof $video_urls !== 'undefined' ) {
-            setTimeout(  function() {
-                for (var vi = 0; vi < $video_urls.length; vi++) {
-                    var $video = $video_urls[vi];
+        function loadVideos($urls, $container) {
+
+             for (var vi = 0; vi < $urls.length; vi++) {
+                    var $video = $urls[vi];
                     var $youtube_id = youtubeIDFromUrl( $video.video );
                     if ($youtube_id) {
-                        var $html_id = 'video_' + vi.toString();
+                        var $html_id = $container + vi.toString();
                         new YT.Player( $html_id, {
                             height: '390',
                             width: '640',
@@ -125,9 +124,22 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
                         });
                     }
                 }
+        }
 
-            }, 1000);
+        // SHOW YOUTUBE VIDEOS IN SLIDER
 
+        if (typeof $other_video_urls !== 'undefined' ) {
+            console.log('loading other videos');
+            setTimeout(  function() {
+                loadVideos($other_video_urls, 'other_video_');
+            }, 500);
+        }
+
+        if (typeof $video_urls !== 'undefined' ) {
+            console.log('loading main videos');
+            setTimeout(  function() {
+                loadVideos($video_urls, 'video_');
+            }, 1500);
         }
 
 
@@ -151,7 +163,14 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
                 if ($h.length > 0) {
                     $id = $h[0];
                 }
+            } else {  // is it the short youtube url format
+                var $nv = $url.split('youtu.be/');
+                if ($vv.length > 1) {
+                    var $id = $vv[1];
+                }
             }
+
+
             return $id;
         }
 
@@ -179,7 +198,7 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
             if (typeof map_location != 'undefined') {
 
                 var map_theme = [{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#C5E3BF"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#D1D1B8"}]},{"featureType":"water","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#C6E2FF"}]}];
-
+ 
                 var map_options = {
                     zoom: 15,
                     mapTypeControl: true,

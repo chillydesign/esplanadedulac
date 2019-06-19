@@ -115,9 +115,9 @@
                           <div class="carousel">
 
                               <?php if (get_field('videos_first_part')): ?>
-                                <?php $vv = 0; foreach( get_field('videos_first_part') as $video ):   ?>
-                                  <div id="video_<?php echo $vv; ?>"></div>
-                              <?php $vv++; endforeach; ?>
+                                <?php $vvv = 0; foreach( get_field('videos_first_part') as $video ):   ?>
+                                  <div id="other_video_<?php echo $vvv; ?>"></div>
+                              <?php $vvv++; endforeach; ?>
                             <?php endif; ?>
                               <?php foreach( get_field('gallery_first_part') as $image ): ?>
                                   <img src="<?php echo $image['sizes']['medium']; ?>" alt="" />
@@ -127,7 +127,7 @@
 
                       <?php if (get_field('videos_first_part')) : ?>
                           <script>
-                              var $video_urls = <?php echo json_encode( get_field('videos_first_part')); ?>;
+                              var $other_video_urls = <?php echo json_encode( get_field('videos_first_part')); ?>;
                           </script>
                       <?php endif; ?>
                   <?php endif; ?>
