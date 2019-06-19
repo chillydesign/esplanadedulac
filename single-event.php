@@ -12,10 +12,12 @@
     <?php $top_slider = get_field('top_slider'); ?>
     <?php $gallery = get_field('gallery'); ?>
     <?php $videos = get_field('videos'); ?>
+    <?php $family = get_field('family'); ?>
+    <?php $family_image =  get_field('logo_voir_famille','option');   // returns url of the image ?>
     <?php $tarifs = get_field('tarifs'); ?>
     <?php $masterclass = get_field('masterclass'); ?>
     <?php $booking_link = get_field('booking_link'); ?>
-
+  
 
 
 
@@ -34,7 +36,7 @@
 
 
         <div class="container">
-            <div class="event_header_text<?php if(get_field('family')) {echo ' voir_en_famille';} ?>">
+            <div class="event_header_text <?php if(  $family ) { echo 'voir_en_famille';} ?>">
                 <h1><?php the_title(); ?></h1>
                 <h5><?php echo get_field('subtitle'); ?></h5>
                 <h6 style="color: #373737; margin: 5px 0 0;">
@@ -46,6 +48,9 @@
                   <?php if($date) {echo $nice_date . ' - ';} ?>
                   <?php echo get_field('time'); ?>
                 </h6>
+                <?php if ($family) : ?>
+                  <div class="voir_en_famille_inside" style="background-image: url(<?php echo $family_image; ?>);"></div>
+                <?php endif; ?>
             </div>
         </div>
         <div class="event_header_text_bg"></div>

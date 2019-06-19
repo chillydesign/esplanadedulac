@@ -65,10 +65,11 @@ header.event_header {
 }
 
 @media(min-width:$browser_small){
-  .voir_en_famille{
+  .voir_en_famille {
+  position: relative;
     padding-right: 120px!important;
 
-    &:after {
+    .voir_en_famille_inside {
       width: 100px;
       height: 90px;
       background-image: url(../img/voir_en_famille_full);
@@ -77,8 +78,10 @@ header.event_header {
       position: absolute;
       top: 10px;
       right: 20px;
-      content: '';
+
     }
+
+
   }
 }
 
