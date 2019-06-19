@@ -669,19 +669,19 @@ function video_url_to_iframe($url) {
 //https://www.youtube.com/watch?v=41WkEy16mxk&t=2511s
 // https://youtu.be/41WkEy16mxk
 
-$oldyoutube = explode('youtube.com/watch?v=', $url);
-if (sizeof($oldyoutube) == 2) {
+$oldyoutubelink = explode('youtube.com/watch?v=', $url);
+if (sizeof($oldyoutubelink) == 2) {
    $is_youtube = true;
-   $id = $oldyoutube[1];
+   $id = $oldyoutubelink[1];
    $otherparms = explode('&', $id);
    if ( sizeof( $otherparms ) == 2  ) {
         $id = $otherparms[0];
    }
 } else {
-    $newyoutube = explode( 'youtu.be/' , $url);
-    if (sizeof($newyoutube) == 2) {
+    $newyoutubelink = explode( 'youtu.be/' , $url);
+    if (sizeof($newyoutubelink) == 2) {
         $is_youtube = true;
-        $id = $oldyoutube[1];
+        $id = $newyoutubelink[1];
     } else {
         $vimeolink  = explode('vimeo.com/', $url);
         if (sizeof($vimeolink == 2)) {
