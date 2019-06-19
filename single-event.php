@@ -13,10 +13,12 @@
     <?php $gallery = get_field('gallery'); ?>
     <?php $videos = get_field('videos'); ?>
     <?php $family = get_field('family'); ?>
-    <?php $family_image =  get_field('logo_voir_famille','option');   // returns url of the image ?>
     <?php $tarifs = get_field('tarifs'); ?>
     <?php $masterclass = get_field('masterclass'); ?>
     <?php $booking_link = get_field('booking_link'); ?>
+    <?php $voltaire = get_field('voltaire'); ?>
+    <?php $passedanse = get_field('passedanse'); ?>
+    <?php $culture = get_field('culture'); ?>
   
 
 
@@ -49,6 +51,7 @@
                   <?php echo get_field('time'); ?>
                 </h6>
                 <?php if ($family) : ?>
+                  <?php $family_image =  get_field('logo_voir_famille','option');   // returns url of the image ?>
                   <div class="voir_en_famille_inside" style="background-image: url(<?php echo $family_image; ?>);"></div>
                 <?php endif; ?>
             </div>
@@ -183,23 +186,29 @@
                     <div><?php echo $tarifs; ?></div>
                 <?php endif; ?>
 
-                <?php if(get_field('voltaire') OR get_field('passedanse') OR get_field('culture')): ?>
+                <?php if(  $voltaire || $passedanse || $culture): ?>
                   <h5>Partenariat</h5>
                   <br><br>
                 <?php endif; ?>
-                <?php if(get_field('voltaire')): ?>
+                <?php if ($voltaire): ?>
+                  <?php $vol_url = get_field('saison_voltaire_url','option'); ?>
+                  <?php $vol_img = get_field('saison_voltaire_image','option'); ?>
                   <div class="event_partner">
-                    <a href="https://www.ferney-voltaire.fr/agendas/presentation-saison-voltaire" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/voltaire.jpg"><span>Saison Voltaire</span></a>
+                    <a href="<?php echo $vol_url; ?>" target="_blank"><img src="<?php echo $vol_img; ?>"><span>Saison Voltaire</span></a>
                   </div>
                   <?php endif; ?>
-                <?php if(get_field('passedanse')): ?>
+                <?php if ($passedanse): ?>
+                  <?php $pas_url = get_field('passe_danse_url','option'); ?>
+                  <?php $pas_img = get_field('passe_danse_image','option'); ?>
                   <div class="event_partner">
-                    <a href="http://www.passedanse.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/passedanse.jpg"><span>Passe Danse</span></a>
+                    <a href="<?php echo $pas_url; ?>" target="_blank"><img src="<?php echo $pas_img; ?>"><span>Passe Danse</span></a>
                   </div>
                 <?php endif; ?>
-                <?php if(get_field('culture')): ?>
+                <?php if ($culture): ?>
+                  <?php $cul_url = get_field('culture_pour_tous_url','option'); ?>
+                  <?php $cul_img = get_field('culture_pour_tous_image','option'); ?>
                   <div class="event_partner">
-                    <a href="<?php echo get_home_url(); ?>/autour-des-spectacles/#culture-pour-tous" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/culture.jpg" style="width:200px;"></a>
+                    <a href="<?php echo $cul_url; ?>" target="_blank"><img src="<?php echo $cul_img; ?>" style="width:200px;"></a>
                   </div>
                   <?php endif; ?>
 
