@@ -684,7 +684,7 @@ if (sizeof($oldyoutubelink) == 2) {
         $id = $newyoutubelink[1];
     } else {
         $vimeolink  = explode('vimeo.com/', $url);
-        if (sizeof($vimeolink == 2)) {
+        if (sizeof($vimeolink) == 2) { 
             $is_vimeo = true;
             $id = $vimeolink[1];
         } else {
