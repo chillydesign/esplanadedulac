@@ -666,8 +666,9 @@ add_filter('body_class','mv_browser_body_class');
 
 
 function video_url_to_iframe($url) {
-//https://www.youtube.com/watch?v=41WkEy16mxk&t=2511s
+// https://www.youtube.com/watch?v=41WkEy16mxk&t=2511s
 // https://youtu.be/41WkEy16mxk
+// https://www.dailymotion.com/video/x7biogk
 
 $oldyoutubelink = explode('youtube.com/watch?v=', $url);
 if (sizeof($oldyoutubelink) == 2) {
@@ -688,7 +689,11 @@ if (sizeof($oldyoutubelink) == 2) {
             $is_vimeo = true;
             $id = $vimeolink[1];
         } else {
-
+            $dailymotion = explode('dailymotion.com/video/', $url);
+            if ( sizeof($dailymotion) == 2 ) {
+                $is_dailymotion = true;
+                $id = $dailymotion[1];
+            }
         }
 
 
@@ -699,6 +704,8 @@ if (sizeof($oldyoutubelink) == 2) {
         echo '<iframe width="640" height="390" src="https://www.youtube.com/embed/'. $id .'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
     } else if ($is_vimeo) {
         echo '<iframe src="https://player.vimeo.com/video/'. $id . '?color=ffffff" width="640" height="390" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+    } else if ($is_dailymotion) {
+        echo '<iframe frameborder="0" width="640" height="390" src="https://www.dailymotion.com/embed/video/'. $id.''" allowfullscreen allow="autoplay"></iframe>';
     }
 
 
