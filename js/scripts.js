@@ -132,14 +132,14 @@
             console.log('loading other videos');
             setTimeout(  function() {
                 loadVideos($other_video_urls, 'other_video_');
-            }, 500);
+            }, 1000);
         }
 
         if (typeof $video_urls !== 'undefined' ) {
             console.log('loading main videos');
             setTimeout(  function() {
                 loadVideos($video_urls, 'video_');
-            }, 1500);
+            }, 500);
         }
 
 
@@ -165,8 +165,8 @@
                 }
             } else {  // is it the short youtube url format
                 var $nv = $url.split('youtu.be/');
-                if ($vv.length > 1) {
-                    var $id = $vv[1];
+                if ($nv.length > 1) {
+                    $id = $nv[1];
                 }
             }
 
