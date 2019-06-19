@@ -705,7 +705,7 @@ if (sizeof($oldyoutubelink) == 2) {
     } else if ($is_vimeo) {
         echo '<iframe src="https://player.vimeo.com/video/'. $id . '?color=ffffff" width="640" height="390" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
     } else if ($is_dailymotion) {
-        echo '<iframe frameborder="0" width="640" height="390" src="https://www.dailymotion.com/embed/video/'. $id.''" allowfullscreen allow="autoplay"></iframe>';
+        echo '<iframe frameborder="0" width="640" height="390" src="https://www.dailymotion.com/embed/video/'. $id . '" allowfullscreen allow="autoplay"></iframe>';
     }
 
 
