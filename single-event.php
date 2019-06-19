@@ -80,7 +80,8 @@
                             <?php if ($videos): ?>
                               <?php $vv = 0; foreach( $videos as $video ):   ?>
                               <div>
-                                <div id="video_<?php echo $vv; ?>" tyle="height;:390px"></div>
+                              <?php video_url_to_iframe($video['video']); ?>
+                              <!--  <div id="video_<?php echo $vv; ?>" style="height::390px"></div> -->
                                 </div>
                             <?php $vv++; endforeach; ?>
                           <?php endif; ?>
@@ -92,7 +93,7 @@
                         </div>
                     </div>
 
-                    <?php if ($videos) : ?>
+                    <?php if ($videos && false) : ?>
                         <script>
                             var $video_urls = <?php echo json_encode( $videos); ?>;
                         </script>
@@ -120,11 +121,15 @@
 
                               <?php if (get_field('videos_first_part')): ?>
                                 <?php $vvv = 0; foreach( get_field('videos_first_part') as $video ):   ?>
+                                <div style="height:390px">
                                   <div id="other_video_<?php echo $vvv; ?>"></div>
+                                  </div>
                               <?php $vvv++; endforeach; ?>
                             <?php endif; ?>
                               <?php foreach( get_field('gallery_first_part') as $image ): ?>
+                                <div>
                                   <img src="<?php echo $image['sizes']['medium']; ?>" alt="" />
+                                  </div>
                               <?php endforeach; ?>
                           </div>
                       </div>
