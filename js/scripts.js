@@ -1,6 +1,6 @@
-import slick from '../node_modules/slick-carousel/slick/slick.js';
-import Masonry from '../node_modules/masonry-layout/dist/masonry.pkgd.js';
-import featherlight from '../node_modules/featherlight/release/featherlight.min.js';
+//import slick from '../node_modules/slick-carousel/slick/slick.js';
+// // import Masonry from '../node_modules/masonry-layout/dist/masonry.pkgd.js';
+// import featherlight from '../node_modules/featherlight/release/featherlight.min.js';
 
 (function ($, root, undefined) {
 

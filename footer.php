@@ -76,6 +76,8 @@
   <?php wp_footer(); ?>
   <script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
   <script type='text/javascript' src='//maps.google.com/maps/api/js?key=AIzaSyCoHn6xGs3f0pMSx7zh7D0M1w1K6iS51tc&#038;ver=4.8.1'></script>
+  <script type="text/javascript" src="<?php echo $tdu; ?>/js/featherlight.min.js?v=<?php echo wf_version(); ?>"></script>
+  <script type="text/javascript" src="<?php echo $tdu; ?>/js/slick.min.js?v=<?php echo wf_version(); ?>"></script>
   <script type="text/javascript" src="<?php echo $tdu; ?>/js/scripts.js?v=<?php echo wf_version(); ?>"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114588276-4"></script>
