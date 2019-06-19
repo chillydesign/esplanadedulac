@@ -127,6 +127,7 @@
         }
 
         // SHOW YOUTUBE VIDEOS IN SLIDER
+        // THIS IS UNUSED NOW, JUST USE PHP TO MAKE THE IFRAME
 
         if (typeof $other_video_urls !== 'undefined' ) {
             console.log('loading other videos');

@@ -81,7 +81,6 @@
                               <?php $vv = 0; foreach( $videos as $video ):   ?>
                               <div>
                               <?php video_url_to_iframe($video['video']); ?>
-                              <!--  <div id="video_<?php echo $vv; ?>" style="height::390px"></div> -->
                                 </div>
                             <?php $vv++; endforeach; ?>
                           <?php endif; ?>
@@ -93,11 +92,6 @@
                         </div>
                     </div>
 
-                    <?php if ($videos && false) : ?>
-                        <script>
-                            var $video_urls = <?php echo json_encode( $videos); ?>;
-                        </script>
-                    <?php endif; ?>
                 <?php endif; ?>
 
 
@@ -121,8 +115,8 @@
 
                               <?php if (get_field('videos_first_part')): ?>
                                 <?php $vvv = 0; foreach( get_field('videos_first_part') as $video ):   ?>
-                                <div style="height:390px">
-                                  <div id="other_video_<?php echo $vvv; ?>"></div>
+                                <div>
+                                     <?php video_url_to_iframe($video['video']); ?>
                                   </div>
                               <?php $vvv++; endforeach; ?>
                             <?php endif; ?>
@@ -133,12 +127,6 @@
                               <?php endforeach; ?>
                           </div>
                       </div>
-
-                      <?php if (get_field('videos_first_part')) : ?>
-                          <script>
-                              var $other_video_urls = <?php echo json_encode( get_field('videos_first_part')); ?>;
-                          </script>
-                      <?php endif; ?>
                   <?php endif; ?>
                   <?php if(get_field('first_part_avec')): ?>
                     <h5>Avec</h5>
