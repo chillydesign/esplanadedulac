@@ -675,7 +675,7 @@ if (sizeof($oldyoutube) == 2) {
    $id = $oldyoutube[1];
    $otherparms = explode('&', $id);
    if ( sizeof( $otherparms ) == 2  ) {
-        $id = $otherparms[0]
+        $id = $otherparms[0];
    }
 } else {
     $newyoutube = explode( 'youtu.be/' , $url);
@@ -694,7 +694,6 @@ if (sizeof($oldyoutube) == 2) {
 
     }
 }
-
 
     if ($is_youtube) {
         echo '<iframe width="640" height="390" src="https://www.youtube.com/embed/'. $id .'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
