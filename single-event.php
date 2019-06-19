@@ -79,11 +79,15 @@
 
                             <?php if ($videos): ?>
                               <?php $vv = 0; foreach( $videos as $video ):   ?>
-                                <div id="video_<?php echo $vv; ?>"></div>
+                              <div>
+                                <div id="video_<?php echo $vv; ?>" tyle="height;:390px"></div>
+                                </div>
                             <?php $vv++; endforeach; ?>
                           <?php endif; ?>
                             <?php foreach( $gallery as $image ): ?>
+                              <div>
                                   <img src="<?php echo $image['sizes']['medium']; ?>" alt="" />
+                                  </div>
                             <?php endforeach; ?>
                         </div>
                     </div>
