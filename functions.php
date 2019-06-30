@@ -91,7 +91,7 @@ function webfactor_nav()
 }
 
 function wf_version(){
-  return '0.1.7';
+  return '0.1.8';
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -685,7 +685,7 @@ if (sizeof($oldyoutubelink) == 2) {
         $id = $newyoutubelink[1];
     } else {
         $vimeolink  = explode('vimeo.com/', $url);
-        if (sizeof($vimeolink) == 2) { 
+        if (sizeof($vimeolink) == 2) {
             $is_vimeo = true;
             $id = $vimeolink[1];
         } else {
@@ -714,4 +714,3 @@ if (sizeof($oldyoutubelink) == 2) {
 
 
 ?>
- 

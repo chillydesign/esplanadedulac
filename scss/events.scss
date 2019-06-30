@@ -1,5 +1,3 @@
-
-
 header.event_header {
   background: $brand_color no-repeat center center;
   background-size: cover;
@@ -33,14 +31,13 @@ header.event_header {
     }
   }
 
-
   .event_header_text {
     position: absolute;
     bottom: -20px;
     left: 0;
     z-index: 2;
     margin: 0 auto 0;
-    padding:20px 30px 20px 15px;
+    padding: 20px 30px 20px 15px;
     width: 100%;
     width: calc(100% - 40px);
     display: inline-block;
@@ -58,33 +55,25 @@ header.event_header {
     h5 {
       padding: 0;
     }
-
-
   }
-
 }
 
-@media(min-width:$browser_small){
+@media (min-width: $browser_small) {
   .voir_en_famille {
-  position: relative;
-    padding-right: 120px!important;
-
-    .voir_en_famille_inside {
-      width: 100px;
-      height: 90px;
-      background-image: url(../img/voir_en_famille_full);
-      background-repeat: no-repeat;
-      background-size: auto 100%;
-      position: absolute;
-      top: 10px;
-      right: 20px;
-
-    }
-
-
+    position: relative;
+    padding-right: 120px !important;
+  }
+  .voir_en_famille_inside {
+    width: 100px;
+    height: 90px;
+    background-image: url(../img/voir_en_famille_full);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    position: absolute;
+    top: 10px;
+    right: 20px;
   }
 }
-
 
 #event_details {
   display: flex;
@@ -95,7 +84,6 @@ header.event_header {
   }
 
   section.event_details_section {
-
     flex: 1 auto 0;
     padding-bottom: 50px;
     width: 100%;
@@ -105,25 +93,20 @@ header.event_header {
     }
 
     .gallery_container {
-      margin:10px 0 30px 0;
+      margin: 10px 0 30px 0;
 
-      .slick-prev, .slick-next {
-        color: white
+      .slick-prev,
+      .slick-next {
+        color: white;
       }
-
-
     }
-
   }
 }
 .carousel {
-
   .image_container {
     position: relative;
     img {
-
     }
-
   }
 
   .caption {
@@ -143,7 +126,6 @@ header.event_header {
     height: 350px;
     position: relative;
   }
-
 }
 h2.first_part {
   color: $brand_color;
@@ -160,25 +142,32 @@ h2.first_part {
   }
 }
 
-.masterclass {margin-top: 30px;}
+.masterclass {
+  margin-top: 30px;
+}
 
 .book_button {
   display: block;
   margin-bottom: 40px;
   background: #0095c0;
-  color: white!important;
+  color: white !important;
   text-transform: uppercase;
   font-size: 1.2em;
   border: 0;
   max-width: 300px;
 }
 
-.showonlyonbig { display: none;}
+.showonlyonbig {
+  display: none;
+}
 @media (min-width: $browser_small) {
-  .showonlyonbig { display: block; text-align: right;}
-  .showonlyonsmall { display: none;}
-
-
+  .showonlyonbig {
+    display: block;
+    text-align: right;
+  }
+  .showonlyonsmall {
+    display: none;
+  }
 }
 
 span.plus {
@@ -190,13 +179,11 @@ span.plus {
   padding-right: 5px;
 }
 
-
-
 .event_partner {
   font-size: 2em;
   margin: 10px 0;
   a {
-    text-decoration: none!important;
+    text-decoration: none !important;
     border-bottom: 0;
     img {
       display: inline-block;
@@ -207,52 +194,56 @@ span.plus {
   }
 }
 
-
 .single-post {
   header.event_header.small_event_header {
     min-height: 350px;
     .event_header_text {
-        bottom: -370px;
+      bottom: -370px;
     }
   }
 }
 
-
 .english_version {
-    padding: 0 10px;
-    margin-bottom: 50px;
+  padding: 0 10px;
+  margin-bottom: 50px;
 
-    .english_show {
-        font-size: 1.6em;
-        color: #0094c2;
-        margin-bottom: 5px;
-        cursor: pointer;
+  .english_show {
+    font-size: 1.6em;
+    color: #0094c2;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+
+  span.english_plus,
+  span.english_minus {
+    font-size: 1.9em;
+    font-weight: bold;
+    display: inline-block;
+    top: 2px;
+    margin-right: 5px;
+    position: relative;
+  }
+
+  span.english_minus {
+    display: none;
+  }
+
+  .english_text {
+    font-style: italic;
+    display: none;
+  }
+
+  &.active {
+    border: solid 1px #0094c2;
+    span.english_minus {
+      display: inline-block;
     }
-
-    span.english_plus, span.english_minus {
-        font-size: 1.9em;
-        font-weight: bold;
-        display: inline-block;
-        top: 2px;
-        margin-right: 5px;
-        position: relative;
+    span.english_plus {
+      display: none;
     }
-
-    span.english_minus {display: none;}
 
     .english_text {
-        font-style: italic;
-        display: none;
+      display: block;
     }
-
-
-    &.active {
-      border: solid 1px #0094c2;
-      span.english_minus {display: inline-block;;}
-      span.english_plus {display: none;}
-
-      .english_text {
-          display: block;
-      }
-    }
+  }
 }
