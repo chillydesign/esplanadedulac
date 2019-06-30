@@ -73,6 +73,17 @@ header.event_header {
     top: 10px;
     right: 20px;
   }
+
+  .single_event_inner {
+    .voir_en_famile_inside {
+      top: auto;
+      bottom: 0;
+      right: 0;
+      width: 67px;
+      height: 70px;
+      background-size: contain;
+    }
+  }
 }
 
 #event_details {
