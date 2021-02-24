@@ -26,7 +26,7 @@
 				<?php if ($date_repeater) : ?> <p class="date"><?php echo nice_event_dates_from_repeater($date_repeater, false); ?></p><?php endif; ?>
 			</div>
 			<?php if ($mention) : ?>
-				<p class="mention"><?php echo $mention; ?></p>
+				<p class="pill"><?php echo $mention; ?></p>
 			<?php endif; ?>
 
 		</div>

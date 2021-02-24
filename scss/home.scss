@@ -175,18 +175,12 @@ body.home {}
         }
 
 
-        .mention {
+        .pill {
           position: absolute;
           top: 10px;
           left: 10px;
           z-index: 10000;
-          padding: 3px 14px;
-          background-color: $brand_color;
-          border-radius: 11px;
-          text-align: center;
-          color: white;
-          line-height: 1;
-          font-weight: bold;
+          margin: 0;
         }
 
         .single_event_image {
@@ -380,4 +374,18 @@ body.home {}
   }
 
 
+}
+
+
+.pill {
+
+  padding: 3px 14px;
+  background-color: $brand_color;
+  border-radius: 11px;
+  text-align: center;
+  color: white;
+  line-height: 1;
+  font-weight: bold;
+  margin-right: 10px;
+  display: inline-block;
 }
