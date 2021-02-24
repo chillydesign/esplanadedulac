@@ -34,11 +34,14 @@ global $events_args;
                 <?php if ($date) : ?><p class="date"> <?php echo $nice_date; ?> <br> <?php echo $time; ?></p><?php endif; ?>
 
                 <?php if ($date_repeater) : ?>
-                  <?php foreach ($date_repeater as $d) : ?>
+
+                  <?php echo nice_event_dates_from_repeater($date_repeater); ?>
+
+                  <!-- <?php foreach ($date_repeater as $d) : ?>
                     <p class="date"> <?php echo nice_date($d['date']); ?>
                       <br> <?php echo $d['time']; ?>
                     </p>
-                  <?php endforeach; ?>
+                  <?php endforeach; ?> -->
                 <?php endif; ?>
 
 
