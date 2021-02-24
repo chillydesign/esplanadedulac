@@ -91,7 +91,9 @@
 
 
           <?php if ($date_repeater) : ?>
-            <?php if (sizeof($date_repeater == 1)) : ?>
+
+            <?php var_dump($date_repeater); ?>
+            <?php if (($date_repeater == 1)) : ?>
               <h6 class="showonlyonsmall"><a href="<?php echo $date_repeater[0]['booking_link'] ?>" target="_blank" class="book_button">Réserver</a></h6>
             <?php else : ?>
               <h5 class="gallery_title">Réserver</h5>
