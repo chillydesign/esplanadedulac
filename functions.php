@@ -646,13 +646,13 @@ function nice_event_dates($dates) {
     if (sizeof($dates) == 0) {
         return '-';
     } elseif (sizeof($dates) == 1) {
-        $nice_date =  nice_date(current($dates[0]));
+        $nice_date =  nice_date(($dates[0]));
         return $nice_date;
     } else {
         $first = current($dates);
         $last = end($dates);
-        $nice_first =  strftime('%a %d', strtotime(current($first)));
-        $nice_last =  nice_date(current($last));
+        $nice_first =  strftime('%a %d', strtotime(($first)));
+        $nice_last =  nice_date(($last));
         return $nice_first . ' → '  . $nice_last;
     }
 }
