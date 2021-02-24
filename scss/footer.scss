@@ -1,25 +1,29 @@
 footer {
-  // background: lighten($brand_color, 55);
-  // border-top: 6px double $brand_color;
-  // padding:0;
-  // margin:0;
-  // color: darken($brand_color, 10);
+    // background: lighten($brand_color, 55);
+    // border-top: 6px double $brand_color;
+    // padding:0;
+    // margin:0;
+    // color: darken($brand_color, 10);
 
-  background: $dark_grey;
-  padding:0;
-  margin:0;
-  color: white;
-  h3 {
-    color: white!important;
-    font-weight: normal;
-    font-size: 2em;
-  }
+    background: $dark_grey;
+    padding: 0;
+    margin: 0;
+    color: white;
+
+    h3 {
+        color: white !important;
+        font-weight: normal;
+        font-size: 2em;
+    }
 
     h4 {
         text-transform: uppercase;
     }
 
-    a, a:hover, a:visited, a:link {
+    a,
+    a:hover,
+    a:visited,
+    a:link {
         color: inherit;
         border-bottom: 0;
     }
@@ -72,18 +76,20 @@ footer {
 
 
     form {
-    //    display: flex;
-    //    flex-wrap: wrap;
+        //    display: flex;
+        //    flex-wrap: wrap;
         margin: 0 0 20px;
     }
-    input, button {
-    //    flex: 1 auto 0;
+
+    input,
+    button {
+        //    flex: 1 auto 0;
         border: 0;
-        border-bottom: 1px solid  white;
-        outline:0;
+        border-bottom: 1px solid white;
+        outline: 0;
         background: transparent;
         // color:  darken($brand_color, 10);
-        color:  white;
+        color: white;
         display: inline-block;
         padding: 10px;
         width: 100%;
@@ -91,8 +97,9 @@ footer {
         margin: 0 0 18px;
         font-size: 1.7em;
         box-shadow: 0 0 0;
+
         &::placeholder {
-          color:  white;
+            color: white;
         }
 
 
@@ -105,24 +112,29 @@ footer {
 
 
     }
-    button, input[type="submit"] {
+
+    button,
+    input[type="submit"] {
         background: transparent;
         border: 2px solid white;
         color: white;
-        margin-top:1px;
+        margin-top: 1px;
         cursor: pointer;
         transition: all 0.3s;
+
         &:hover {
             background: white;
             color: $dark_grey;
         }
+
         &:focus {
             background: white;
             color: $dark_grey;
         }
+
         &:active {
             position: relative;
-            top:1px;
+            top: 1px;
         }
     }
 
@@ -132,8 +144,10 @@ footer {
         color: white;
         padding: 20px 0;
         text-transform: uppercase;
+
         ul {
             margin: 0;
+
             li {
                 display: inline-block;
 
@@ -142,7 +156,10 @@ footer {
                     padding: 5px 15px;
                     position: relative;
 
-                    &, &:hover, &:visited, &:link {
+                    &,
+                    &:hover,
+                    &:visited,
+                    &:link {
                         color: white;
                     }
 
@@ -153,6 +170,7 @@ footer {
 
                     }
                 }
+
                 &:last-child {
                     a:after {
                         content: '';
@@ -165,6 +183,7 @@ footer {
 }
 
 $social_icon_size: 35px;
+
 .social_icon {
     padding:10px 10px 10px #{$social_icon_size * 1.2};
     background: no-repeat center left;
@@ -175,6 +194,7 @@ $social_icon_size: 35px;
     &.social_icon_facebook {
         background-image: url('../img/facebook.svg')
     }
+
     &.social_icon_instagram {
         background-image: url('../img/instagram.svg')
     }
@@ -182,6 +202,7 @@ $social_icon_size: 35px;
 
 a.poster_link {
     display: inline-block;
+
     img {
         width: auto;
         height: 100px;
@@ -200,9 +221,9 @@ div.response {
     max-width: 90%;
     background: white;
     z-index: 999999;
-    border: solid 2px #0095c0;
-    color: #0095c0!important;
-    box-shadow: 0 0 50px rgba(0,0,0,0.2);
+    border: solid 2px $brand_color;
+    color: $brand_color !important;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
     padding: 50px;
     text-align: center;
     font-size: 2em;

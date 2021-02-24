@@ -687,7 +687,9 @@ function generate_color_stylesheet($color) {
     html body .accordion_container .single_accordion  h3.accordion_title {color: ' . $color . '  }
     html body h5, .page h3  {color: ' . $color . '  }
     html body a:hover {color: ' . $color . '  }
-    html body header#page_header  nav ul li.menu-item-has-children ul.sub-menu border-top-color: ' . $color . '}
+    html body header#page_header  nav ul li.menu-item-has-children ul.sub-menu  {border-top-color: ' . $color . '}
+    html body div.response { border-color: ' . $color . '  }
+    html body .book_button { background-color: ' . $color . '  }
     </style>';
 }
 
