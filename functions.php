@@ -677,7 +677,7 @@ function nice_event_dates_from_repeater($repeater_dates, $remove_old = false) {
 
 
 function generate_color_stylesheet($color) {
-    return '<style>
+    echo '<style>
     header.event_header { background-color: ' . $color . '  }
     .event_header_text  {color: ' . $color . '  }
     h2.first_part{color: ' . $color . '  }
