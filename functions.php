@@ -670,9 +670,13 @@ function nice_event_dates_from_repeater($repeater_dates, $remove_old = false) {
 
     $dates = array_map('api_get_date',  $repeater_dates);
 
+
+    var_dump($dates);
+
     if ($remove_old) {
         $dates = array_filter($dates,  'api_in_future');
     }
+    var_dump($dates);
 
     return nice_event_dates($dates);
 }
