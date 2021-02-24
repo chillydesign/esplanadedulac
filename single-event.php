@@ -19,7 +19,17 @@
     <?php $tarifs = get_field('tarifs'); ?>
     <?php $masterclass = get_field('masterclass'); ?>
     <?php $booking_link = get_field('booking_link'); ?>
-
+    <?php $booking_link_html = ''; ?>
+    <?php if ($date_repeater) :
+      if (count($date_repeater) == 1) :
+        $booking_link_html  .= '<h6 class="showonlyonsmall"><a href="' .  $date_repeater[0]['booking_link'] . '" target="_blank" class="book_button">Réserver</a></h6>';
+      else :
+        $booking_link_html  .= ' <h5 class="gallery_title">Réserver</h5>';
+        foreach ($date_repeater as $d) :
+          $booking_link_html  .= '<a href="' . $date_repeater[0]['booking_link'] . '" target="_blank" class="book_button book_button_small">' . nice_date($d['date']) . ' - ' .   $d['heure'] . '</a>';
+        endforeach;
+      endif;
+    endif; ?>
 
 
 
@@ -90,19 +100,10 @@
 
 
 
-          <?php if ($date_repeater) : ?>
+          <?php if (false && $booking_link) { ?>
+            <h6 class="showonlyonsmall"><a href="<?php echo $booking_link; ?>" target="_blank" class="book_button">Réserver</a></h6>
+          <?php } ?>
 
-            <?php var_dump($date_repeater); ?>
-            <?php if (($date_repeater == 1)) : ?>
-              <h6 class="showonlyonsmall"><a href="<?php echo $date_repeater[0]['booking_link'] ?>" target="_blank" class="book_button">Réserver</a></h6>
-            <?php else : ?>
-              <h5 class="gallery_title">Réserver</h5>
-              <?php foreach ($date_repeater as $d) : ?>
-                <a href="<?php echo $date_repeater[0]['booking_link'] ?>" target="_blank" class="book_button book_button_small"> <?php echo nice_date($d['date']); ?> - <?php echo $d['heure']; ?></a>
-              <?php endforeach; ?>
-            <?php endif; ?>
-
-          <?php endif; ?>
 
 
 
@@ -217,9 +218,11 @@
 
         <aside>
 
-          <?php if ($booking_link) { ?>
+          <?php if (false && $booking_link) { ?>
             <h6><a href="<?php echo $booking_link; ?>" target="_blank" class="book_button">Réserver</a></h6>
           <?php } ?>
+
+          <?php echo $booking_link_html; ?>
 
           <?php if ($tarifs) : ?>
             <div><?php echo $tarifs; ?></div>
