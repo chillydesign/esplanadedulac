@@ -9,7 +9,7 @@
         $events_args = array(  // used for partials/front events all
             'post_type' => 'event',
             'posts_per_page' =>  -1,
-            'meta_key' => 'date',
+            'meta_key' => 'date_repeater_0_date',
             'orderby' => 'meta_value',
             'order' => 'ASC',
             'meta_query' => array(
@@ -29,7 +29,7 @@
 
 
                 array(
-                    'key'     => 'dates_0_date',
+                    'key'     => 'date_repeater_0_date',
                     'value'   => $today,
                     'compare' => '>=',
                     'type' => 'DATE'
