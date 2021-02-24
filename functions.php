@@ -646,7 +646,7 @@ function nice_event_dates($dates) {
     if (sizeof($dates) == 0) {
         return '-';
     } elseif (sizeof($dates) == 1) {
-        $nice_date =  nice_date(($dates[0]));
+        $nice_date =  nice_date(current($dates));
         return $nice_date;
     } else {
         $first = current($dates);
