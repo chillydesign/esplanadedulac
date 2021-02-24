@@ -7,10 +7,7 @@
 
     <?php $post_id = get_the_id(); ?>
     <?php $image = thumbnail_of_post_url( $post_id,  'large');  ?>
-    <hr style="border-top:5px solid #0e8294;margin-top:-6px;"/>
-
-    <!-- <header class="event_header small_event_header" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/visuel_esplanade_rectangle.jpg');">
-
+    <header class="event_header small_event_header" style="background-image:url(<?php echo $image; ?>);">
 
 
         <div class="container">
@@ -21,26 +18,13 @@
         <div class="event_header_text_bg"></div>
 
 
-    </header> -->
-
-
-<!-- REMOVE THIS IF YOU PUT HEADER BACK -->
-    <div class="container">
-        <div class="event_header_text"><br><br><br>
-            <h1><?php the_title(); ?></h1>
-        </div>
-    </div>
-    <!-- REMOVE THIS IF YOU PUT HEADER BACK -->
-
-
-
-
-
+    </header>
 
     <!-- article -->
     <article  class="container" >
         <div id="event_details">
             <section class="event_details_section">
+                <p><span class="author"><?php _e( 'Published by', 'webfactor' ); ?> <?php the_author_posts_link(); ?></span> on <span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span></p>
 
                 <?php the_content(); // Dynamic Content ?>
 
@@ -48,9 +32,6 @@
 
                 <?php // comments_template(); ?>
             </section>
-            <aside>
-              <img src="<?php echo $image; ?>" alt="">
-            </aside>
         </div>
     </article>
     <!-- /article -->

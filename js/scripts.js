@@ -1,6 +1,6 @@
-//import slick from '../node_modules/slick-carousel/slick/slick.js';
-// // import Masonry from '../node_modules/masonry-layout/dist/masonry.pkgd.js';
-// import featherlight from '../node_modules/featherlight/release/featherlight.min.js';
+import slick from '../node_modules/slick-carousel/slick/slick.js';
+import Masonry from '../node_modules/masonry-layout/dist/masonry.pkgd.js';
+import featherlight from '../node_modules/featherlight/release/featherlight.min.js';
 
 (function ($, root, undefined) {
 
@@ -11,13 +11,6 @@
         var $window = $(window);
         var $body = $('body');
 
-        if(window.location.hash) {
-         //set the value as a variable, and remove the #
-         var hash_value = window.location.hash.replace('#', '');
-         //show the value with an alert pop-up
-         $('#' + hash_value).addClass('active_accordion');
-
-        }
 
 
 
@@ -52,10 +45,6 @@
 
         });
         // $single_accordions.first().addClass('active_accordion');
-
-        $('.english_show').on('click', function(){
-            $('.english_version').toggleClass('active');
-        });
 
 
         // match height footer columns
@@ -107,13 +96,14 @@
         })
 
 
-        function loadVideos($urls, $container) {
-
-             for (var vi = 0; vi < $urls.length; vi++) {
-                    var $video = $urls[vi];
+        // SHOW YOUTUBE VIDEOS IN SLIDER
+        if (typeof $video_urls !== 'undefined' ) {
+            setTimeout(  function() {
+                for (var vi = 0; vi < $video_urls.length; vi++) {
+                    var $video = $video_urls[vi];
                     var $youtube_id = youtubeIDFromUrl( $video.video );
                     if ($youtube_id) {
-                        var $html_id = $container + vi.toString();
+                        var $html_id = 'video_' + vi.toString();
                         new YT.Player( $html_id, {
                             height: '390',
                             width: '640',
@@ -124,23 +114,9 @@
                         });
                     }
                 }
-        }
 
-        // SHOW YOUTUBE VIDEOS IN SLIDER
-        // THIS IS UNUSED NOW, JUST USE PHP TO MAKE THE IFRAME
-
-        if (typeof $other_video_urls !== 'undefined' ) {
-            console.log('loading other videos');
-            setTimeout(  function() {
-                loadVideos($other_video_urls, 'other_video_');
             }, 1000);
-        }
 
-        if (typeof $video_urls !== 'undefined' ) {
-            console.log('loading main videos');
-            setTimeout(  function() {
-                loadVideos($video_urls, 'video_');
-            }, 500);
         }
 
 
@@ -164,14 +140,7 @@
                 if ($h.length > 0) {
                     $id = $h[0];
                 }
-            } else {  // is it the short youtube url format
-                var $nv = $url.split('youtu.be/');
-                if ($nv.length > 1) {
-                    $id = $nv[1];
-                }
             }
-
-
             return $id;
         }
 
@@ -199,7 +168,7 @@
             if (typeof map_location != 'undefined') {
 
                 var map_theme = [{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#C5E3BF"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#D1D1B8"}]},{"featureType":"water","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#C6E2FF"}]}];
- 
+
                 var map_options = {
                     zoom: 15,
                     mapTypeControl: true,

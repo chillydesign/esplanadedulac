@@ -12,14 +12,12 @@
               <?php if(get_field('video')) : ?>
                 <div class="news_image"><?php the_field('video'); ?></div>
               <?php else: ?>
-
-                <div class="news_image" style="height: auto; background:none;"><img src="<?php echo $image; ?>" alt=""></div>
-                <!-- <div class="news_image" style="background-image:url(<?php //echo $image; ?>);"></div> -->
+                <div class="news_image" style="background-image:url(<?php echo $image; ?>);"></div>
               <?php endif; ?>
                 <div class="news_text">
                     <p class="category">Actualités L’Esplanade du Lac</p>
                     <h3><a href="<?php echo $permalink; ?>"><?php the_title(); ?></a></h3>
-                    <!-- <p class="date"><?php the_time('F j, Y'); ?></p> -->
+                    <p class="date"><?php the_time('F j, Y'); ?></p>
                     <p><?php the_excerpt(); ?></p>
                 </div>
             </div>

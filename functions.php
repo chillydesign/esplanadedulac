@@ -91,7 +91,7 @@ function webfactor_nav()
 }
 
 function wf_version(){
-  return '0.1.9';
+  return '0.1.1.7';
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -118,8 +118,6 @@ function webfactor_conditional_scripts()
 function webfactor_styles()
 {
 
-
-    wp_dequeue_style( 'wp-block-library' );
 
     wp_register_style('wf_style', get_template_directory_uri() . '/css/global.css', array(), wf_version(),  'all');
     wp_enqueue_style('wf_style'); // Enqueue it!
@@ -662,55 +660,5 @@ function mv_browser_body_class($classes) {
         return $classes;
 }
 add_filter('body_class','mv_browser_body_class');
-
-
-
-function video_url_to_iframe($url) {
-// https://www.youtube.com/watch?v=41WkEy16mxk&t=2511s
-// https://youtu.be/41WkEy16mxk
-// https://www.dailymotion.com/video/x7biogk
-
-$oldyoutubelink = explode('youtube.com/watch?v=', $url);
-if (sizeof($oldyoutubelink) == 2) {
-   $is_youtube = true;
-   $id = $oldyoutubelink[1];
-   $otherparms = explode('&', $id);
-   if ( sizeof( $otherparms ) == 2  ) {
-        $id = $otherparms[0];
-   }
-} else {
-    $newyoutubelink = explode( 'youtu.be/' , $url);
-    if (sizeof($newyoutubelink) == 2) {
-        $is_youtube = true;
-        $id = $newyoutubelink[1];
-    } else {
-        $vimeolink  = explode('vimeo.com/', $url);
-        if (sizeof($vimeolink) == 2) {
-            $is_vimeo = true;
-            $id = $vimeolink[1];
-        } else {
-            $dailymotion = explode('dailymotion.com/video/', $url);
-            if ( sizeof($dailymotion) == 2 ) {
-                $is_dailymotion = true;
-                $id = $dailymotion[1];
-            }
-        }
-
-
-    }
-}
-
-    if ($is_youtube) {
-        echo '<iframe width="640" height="390" src="https://www.youtube.com/embed/'. $id .'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-    } else if ($is_vimeo) {
-        echo '<iframe src="https://player.vimeo.com/video/'. $id . '?color=ffffff" width="640" height="390" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
-    } else if ($is_dailymotion) {
-        echo '<iframe frameborder="0" width="640" height="390" src="https://www.dailymotion.com/embed/video/'. $id . '" allowfullscreen allow="autoplay"></iframe>';
-    }
-
-
-
-}
-
 
 ?>

@@ -12,14 +12,10 @@
     <?php $top_slider = get_field('top_slider'); ?>
     <?php $gallery = get_field('gallery'); ?>
     <?php $videos = get_field('videos'); ?>
-    <?php $family = get_field('family'); ?>
     <?php $tarifs = get_field('tarifs'); ?>
     <?php $masterclass = get_field('masterclass'); ?>
     <?php $booking_link = get_field('booking_link'); ?>
-    <?php $voltaire = get_field('voltaire'); ?>
-    <?php $passedanse = get_field('passedanse'); ?>
-    <?php $culture = get_field('culture'); ?>
-  
+
 
 
 
@@ -38,7 +34,7 @@
 
 
         <div class="container">
-            <div class="event_header_text <?php if(  $family ) { echo 'voir_en_famille';} ?>">
+            <div class="event_header_text<?php if(get_field('family')) {echo ' voir_en_famille';} ?>">
                 <h1><?php the_title(); ?></h1>
                 <h5><?php echo get_field('subtitle'); ?></h5>
                 <h6 style="color: #373737; margin: 5px 0 0;">
@@ -50,10 +46,6 @@
                   <?php if($date) {echo $nice_date . ' - ';} ?>
                   <?php echo get_field('time'); ?>
                 </h6>
-                <?php if ($family) : ?>
-                  <?php $family_image =  get_field('logo_voir_famille','option');   // returns url of the image ?>
-                  <div class="voir_en_famille_inside" style="background-image: url(<?php echo $family_image; ?>);"></div>
-                <?php endif; ?>
             </div>
         </div>
         <div class="event_header_text_bg"></div>
@@ -63,14 +55,9 @@
 
     <article class="container" >
         <div id="event_details">
+
                 <section class="event_details_section">
                 <?php the_field('main'); ?>
-                <?php if(!empty(get_field('english'))): ?>
-                  <div class="english_version">
-                    <div class="english_show"><span class="english_plus">+</span><span class="english_minus">-</span>English version</div>
-                    <div class="english_text"><?php the_field('english'); ?></div>
-                  </div>
-                <?php endif; ?>
                 <?php if ($booking_link) { ?>
                   <h6 class="showonlyonsmall"><a href="<?php echo $booking_link;?>" target="_blank" class="book_button">Réserver</a></h6>
                 <?php } ?>
@@ -82,19 +69,20 @@
 
                             <?php if ($videos): ?>
                               <?php $vv = 0; foreach( $videos as $video ):   ?>
-                              <div>
-                              <?php video_url_to_iframe($video['video']); ?>
-                                </div>
+                                <div id="video_<?php echo $vv; ?>"></div>
                             <?php $vv++; endforeach; ?>
                           <?php endif; ?>
                             <?php foreach( $gallery as $image ): ?>
-                              <div>
                                   <img src="<?php echo $image['sizes']['medium']; ?>" alt="" />
-                                  </div>
                             <?php endforeach; ?>
                         </div>
                     </div>
 
+                    <?php if ($videos) : ?>
+                        <script>
+                            var $video_urls = <?php echo json_encode( $videos); ?>;
+                        </script>
+                    <?php endif; ?>
                 <?php endif; ?>
 
 
@@ -117,19 +105,21 @@
                           <div class="carousel">
 
                               <?php if (get_field('videos_first_part')): ?>
-                                <?php $vvv = 0; foreach( get_field('videos_first_part') as $video ):   ?>
-                                <div>
-                                     <?php video_url_to_iframe($video['video']); ?>
-                                  </div>
-                              <?php $vvv++; endforeach; ?>
+                                <?php $vv = 0; foreach( get_field('videos_first_part') as $video ):   ?>
+                                  <div id="video_<?php echo $vv; ?>"></div>
+                              <?php $vv++; endforeach; ?>
                             <?php endif; ?>
                               <?php foreach( get_field('gallery_first_part') as $image ): ?>
-                                <div>
                                   <img src="<?php echo $image['sizes']['medium']; ?>" alt="" />
-                                  </div>
                               <?php endforeach; ?>
                           </div>
                       </div>
+
+                      <?php if (get_field('videos_first_part')) : ?>
+                          <script>
+                              var $video_urls = <?php echo json_encode( get_field('videos_first_part')); ?>;
+                          </script>
+                      <?php endif; ?>
                   <?php endif; ?>
                   <?php if(get_field('first_part_avec')): ?>
                     <h5>Avec</h5>
@@ -186,31 +176,10 @@
                     <div><?php echo $tarifs; ?></div>
                 <?php endif; ?>
 
-                <?php if(  $voltaire || $passedanse || $culture): ?>
-                  <h5>Partenariat</h5>
-                  <br><br>
+                <?php if(get_field('voltaire')): ?>
+                  <div class="event_partner">
+                    <img src="<?php echo get_template_directory_uri(); ?>/wp-content/img/voltaire.jpg">
                 <?php endif; ?>
-                <?php if ($voltaire): ?>
-                  <?php $vol_url = get_field('saison_voltaire_url','option'); ?>
-                  <?php $vol_img = get_field('saison_voltaire_image','option'); ?>
-                  <div class="event_partner">
-                    <a href="<?php echo $vol_url; ?>" target="_blank"><img src="<?php echo $vol_img; ?>"><span>Saison Voltaire</span></a>
-                  </div>
-                  <?php endif; ?>
-                <?php if ($passedanse): ?>
-                  <?php $pas_url = get_field('passe_danse_url','option'); ?>
-                  <?php $pas_img = get_field('passe_danse_image','option'); ?>
-                  <div class="event_partner">
-                    <a href="<?php echo $pas_url; ?>" target="_blank"><img src="<?php echo $pas_img; ?>"><span>Passe Danse</span></a>
-                  </div>
-                <?php endif; ?>
-                <?php if ($culture): ?>
-                  <?php $cul_url = get_field('culture_pour_tous_url','option'); ?>
-                  <?php $cul_img = get_field('culture_pour_tous_image','option'); ?>
-                  <div class="event_partner">
-                    <a href="<?php echo $cul_url; ?>" target="_blank"><img src="<?php echo $cul_img; ?>" style="width:200px;"></a>
-                  </div>
-                  <?php endif; ?>
 
                 <?php if ($masterclass): ?>
                     <h5 class="masterclass"><span class="plus">+</span> MASTERCLASS</h5>

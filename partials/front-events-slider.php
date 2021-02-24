@@ -35,7 +35,7 @@ $latest_events_args = array(
             <?php $event_id = get_the_id(); ?>
             <?php $permalink = get_the_permalink(); ?>
             <?php $date = get_field('date');  ?>
-            <?php $nice_date =  utf8_encode(strftime("%a %d %B", strtotime( $date ))); ?>
+            <?php $nice_date =  strftime("%a %d %B", strtotime( $date )); ?>
             <?php $time = get_field('time'); ?>
 
             <?php
