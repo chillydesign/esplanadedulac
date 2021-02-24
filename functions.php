@@ -678,15 +678,16 @@ function nice_event_dates_from_repeater($repeater_dates, $remove_old = false) {
 
 function generate_color_stylesheet($color) {
     echo '<style  type="text/css" media="screen">
-    header.event_header { background-color: ' . $color . ' !important  }
-    .event_header_text  {color: ' . $color . ' !important  }
-    h2.first_part{color: ' . $color . ' !important  }
-    p.category {color: ' . $color . ' !important  }
-    #latest_events_slider .single_event_slide_inner { background-color: ' . $color . ' !important  }
-    .single_event_container:after { background-color: ' . $color . ' !important  }
-    .single_accordion  h3.accordion_title {color: ' . $color . ' !important  }
-    h5, .page h3  {color: ' . $color . ' !important  }
-    a:hover  {color: ' . $color . ' !important  }
+    html body header.event_header { background-color: ' . $color . '  }
+    html body header.event_header .event_header_text  {color: ' . $color . '  }
+    html body h2.first_part {color: ' . $color . '  }
+    html body p.category {color: ' . $color . '  }
+    html body #latest_events_slider .single_event_slide_inner { background-color: ' . $color . '  }
+    html body .accordion_container .single_event_container:after { background-color: ' . $color . '  }
+    html body .accordion_container .single_accordion  h3.accordion_title {color: ' . $color . '  }
+    html body h5, .page h3  {color: ' . $color . '  }
+    html body a:hover {color: ' . $color . '  }
+    html body header#page_header  nav ul li.menu-item-has-children ul.sub-menu border-top-color: ' . $color . '}
     </style>';
 }
 
