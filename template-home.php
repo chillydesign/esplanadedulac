@@ -20,22 +20,29 @@
                     'compare' => '=',
                     'type' => 'numeric'
                 ),
-                // array(  //    ONLY SHOW EVENTS THAT HAVENT FINISHED YET
-                //     'key' => 'date',
-                //     'value' => date( 'Y-m-d' ),  // today
-                //     'compare' => '>=',
-                //     'type' => 'DATE'
-                // )
 
 
                 array(
-                    'key'     => 'date_repeater_0_date',
-                    'value'   => $today,
-                    'compare' => '>=',
-                    'type' => 'DATE'
+                    'relation' => 'OR',
+                    array(
+                        'key'     => 'date_repeater_0_date',
+                        'value'   => $today,
+                        'compare' => '>=',
+                        'type' => 'DATE'
+                    ),
+                    array(
+                        'key'     => 'date_repeater_1_date',
+                        'value'   => $today,
+                        'compare' => '>=',
+                        'type' => 'DATE'
+                    ),
+                    array(
+                        'key'     => 'date_repeater_2_date',
+                        'value'   => $today,
+                        'compare' => '>=',
+                        'type' => 'DATE'
+                    ),
                 )
-
-
 
             )
 
