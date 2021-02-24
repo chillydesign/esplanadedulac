@@ -18,10 +18,13 @@ global $events_args;
             <?php $image = thumbnail_of_post_url($event_id,  'large');  ?>
             <?php $permalink = get_the_permalink(); ?>
             <?php $category =   get_the_terms($event_id, 'event_cat'); ?>
-            <?php $date = get_field('date');  ?>
             <?php $date_repeater = get_field('date_repeater');  ?>
-            <?php $nice_date =  utf8_encode(strftime("%a %d %B", strtotime($date))); ?>
-            <?php $time = get_field('time'); ?>
+            <?php  // $date = get_field('date');  
+            ?>
+            <?php // $nice_date =  utf8_encode(strftime("%a %d %B", strtotime($date))); 
+            ?>
+            <?php // $time = get_field('time'); 
+            ?>
             <?php $familyclass = (get_field('family')) ? 'family ' : ''; ?>
 
             <div class="single_event_container">
@@ -31,17 +34,10 @@ global $events_args;
                 </div>
                 <?php if ($category and sizeof($category) > 0) : ?><p class="category"><?php echo $category[0]->name; ?></p><?php endif; ?>
                 <h4><a href="<?php echo $permalink; ?>"><?php the_title(); ?></a></h4>
-                <?php if ($date) : ?><p class="date"> <?php echo $nice_date; ?> <br> <?php echo $time; ?></p><?php endif; ?>
+
 
                 <?php if ($date_repeater) : ?>
-
                   <?php echo nice_event_dates_from_repeater($date_repeater); ?>
-
-                  <!-- <?php foreach ($date_repeater as $d) : ?>
-                    <p class="date"> <?php echo nice_date($d['date']); ?>
-                      <br> <?php echo $d['time']; ?>
-                    </p>
-                  <?php endforeach; ?> -->
                 <?php endif; ?>
 
 
