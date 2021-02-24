@@ -5,7 +5,7 @@
 
         <?php
 
-
+        $today = date("Ymd");
         $events_args = array(  // used for partials/front events all
             'post_type' => 'event',
             'posts_per_page' =>  -1,
