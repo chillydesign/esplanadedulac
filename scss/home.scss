@@ -181,10 +181,12 @@ body.home {}
           left: 10px;
           right: 10px;
           z-index: 100;
-          padding: 10px;
+          padding: 6px;
           border: 1px solid $red;
-          background-color: lighten($red, 50);
+          background-color: lighten($red, 44);
           color: $red;
+          border-radius: 3px;
+          text-align: center;
 
         }
 
