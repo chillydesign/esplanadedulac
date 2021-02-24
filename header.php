@@ -25,7 +25,7 @@
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon/favicon.ico?v=ngkn6OpdjR">
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
-    <?php $feature_color = get_field('logo', 'feature_colour'); ?>
+    <?php $feature_color = get_field('feature_colour', 'option'); ?>
     <?php if ($feature_color) :
         generate_color_stylesheet($feature_color);
     endif; ?>
