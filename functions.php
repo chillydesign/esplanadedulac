@@ -662,8 +662,8 @@ function api_get_date($d) {
     return $d['date'];
 }
 function api_in_future($d) {
-    $now =  time();
-    return strtotime($d) > $now;
+    $now =  strtotime("today");
+    return strtotime($d) >= $now;
 }
 
 function nice_event_dates_from_repeater($repeater_dates, $remove_old = false) {
