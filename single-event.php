@@ -101,10 +101,6 @@
 
 
 
-          <?php if (false && $booking_link) { ?>
-            <h6 class="showonlyonsmall"><a href="<?php echo $booking_link; ?>" target="_blank" class="book_button">Réserver</a></h6>
-          <?php } ?>
-
 
 
 
@@ -203,9 +199,7 @@
             </div>
           <?php endif; ?>
 
-          <?php if ($booking_link) { ?>
-            <h6 class="showonlyonbig"><a href="<?php echo $booking_link; ?>" target="_blank" class="book_button">Réserver</a></h6>
-          <?php } ?>
+          <?php echo $booking_link_html; ?>
 
           <?php if (get_field('mentions')) : ?>
             <div class="mentions">
@@ -219,9 +213,6 @@
 
         <aside>
 
-          <?php if (false && $booking_link) { ?>
-            <h6><a href="<?php echo $booking_link; ?>" target="_blank" class="book_button">Réserver</a></h6>
-          <?php } ?>
 
           <?php echo $booking_link_html; ?>
 
