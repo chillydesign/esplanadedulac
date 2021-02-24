@@ -5,6 +5,8 @@
 		<?php $permalink = get_the_permalink(); ?>
 		<?php $category =   get_the_terms($event_id, 'event_cat'); ?>
 		<?php $date_repeater = get_field('date_repeater');  ?>
+		<?php $mention = get_field('mention');  ?>
+
 		<?php // $date = get_field('date');  
 		?>
 		<?php // $nice_date = nice_date( $date ); 
