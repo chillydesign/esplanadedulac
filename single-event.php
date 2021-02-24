@@ -14,6 +14,8 @@
     ?>
     <?php $date_repeater = get_field('date_repeater');  ?>
     <?php $top_slider = get_field('top_slider'); ?>
+    <?php $mentions = get_field('mentions'); ?>
+    <?php $mention = get_field('mention'); ?>
     <?php $gallery = get_field('gallery'); ?>
     <?php $videos = get_field('videos'); ?>
     <?php $tarifs = get_field('tarifs'); ?>
@@ -52,7 +54,12 @@
         <div class="event_header_text<?php if (get_field('family')) {
                                         echo ' voir_en_famille';
                                       } ?>">
-          <h1><?php the_title(); ?></h1>
+          <h1>
+            <?php the_title(); ?>
+            <?php if ($mention) : ?>
+              <span class="pill"><?php echo $mention; ?></span>
+            <?php endif; ?>
+          </h1>
           <h5>
 
             <?php echo get_field('subtitle'); ?>
@@ -201,10 +208,10 @@
 
           <?php echo $booking_link_html; ?>
 
-          <?php if (get_field('mentions')) : ?>
+          <?php if ($mentions) : ?>
             <div class="mentions">
               <h5>Mentions obligatoires*</h5>
-              <?php echo get_field('mentions'); ?>
+              <?php echo $mentions; ?>
             </div>
           <?php endif; ?>
 
