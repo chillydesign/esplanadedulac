@@ -662,22 +662,16 @@ function api_get_date($d) {
     return $d['date'];
 }
 function api_in_future($d) {
-    $now =  strtotime("today");
-    return strtotime($d) >= $now;
+    return strtotime($d) >= strtotime("today");
 }
 
 function nice_event_dates_from_repeater($repeater_dates, $remove_old = false) {
 
     $dates = array_map('api_get_date',  $repeater_dates);
-
-
-    var_dump($dates);
-
     if ($remove_old) {
+        // only show dates in the future
         $dates = array_filter($dates,  'api_in_future');
     }
-    var_dump($dates);
-
     return nice_event_dates($dates);
 }
 
