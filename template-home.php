@@ -5,7 +5,17 @@
 
         <?php
 
+
+        $meta_date_queries = ['relation' => 'OR'];
         $today = date("Ymd");
+        for ($i = 0; $i < 5; $i++) {
+            $key = 'date_repeater_' . $i . '_date';
+            $arr =   array('key' => $key, 'value'  => $today, 'compare' => '>=', 'type' => 'DATE');
+            array_push($meta_date_queries, $arr);
+        }
+
+
+
         $events_args = array(  // used for partials/front events all
             'post_type' => 'event',
             'posts_per_page' =>  -1,
@@ -20,30 +30,7 @@
                     'compare' => '=',
                     'type' => 'numeric'
                 ),
-
-
-                array(
-                    'relation' => 'OR',
-                    array(
-                        'key'     => 'date_repeater_0_date',
-                        'value'   => $today,
-                        'compare' => '>=',
-                        'type' => 'DATE'
-                    ),
-                    array(
-                        'key'     => 'date_repeater_1_date',
-                        'value'   => $today,
-                        'compare' => '>=',
-                        'type' => 'DATE'
-                    ),
-                    array(
-                        'key'     => 'date_repeater_2_date',
-                        'value'   => $today,
-                        'compare' => '>=',
-                        'type' => 'DATE'
-                    ),
-                )
-
+                $meta_date_queries
             )
 
         );
