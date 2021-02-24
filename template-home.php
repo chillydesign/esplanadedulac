@@ -38,8 +38,9 @@
         ?>
 
         <?php get_template_part('partials/front', 'events-slider'); ?>
-        <?php get_template_part('partials/front', 'events-all'); ?>
         <?php get_template_part('partials/front', 'news-slider'); ?>
+        <?php get_template_part('partials/front', 'events-all'); ?>
+
 
 
 
