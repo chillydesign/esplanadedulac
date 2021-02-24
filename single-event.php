@@ -26,7 +26,7 @@
       else :
         $booking_link_html  .= ' <h5 class="gallery_title">Réserver</h5>';
         foreach ($date_repeater as $d) :
-          $booking_link_html  .= '<a href="' . $date_repeater[0]['booking_link'] . '" target="_blank" class="book_button book_button_small">' . nice_date($d['date']) . ' - ' .   $d['heure'] . '</a>';
+          $booking_link_html  .= '<a href="' . $date_repeater[0]['booking_link'] . '" target="_blank" class="book_button  book_button_small">' . nice_date($d['date']) . ' - ' .   $d['heure'] . '</a>';
         endforeach;
       endif;
     endif; ?>
