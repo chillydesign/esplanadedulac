@@ -316,7 +316,7 @@ function webfactorcomments($comment, $args, $depth) {
             <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>">
                     <?php
                     printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'), '  ', '');
-                                                                                        ?>
+                                                                                                ?>
             </div>
 
             <?php comment_text() ?>
@@ -639,6 +639,32 @@ add_filter('body_class', 'mv_browser_body_class');
 
 function nice_date($da) {
     return  utf8_encode(strftime("%a %d %B", strtotime($da)));
+}
+
+function nice_event_dates($dates) {
+
+    if (sizeof($dates) == 0) {
+        return '-';
+    } elseif (sizeof($dates) == 1) {
+        $nice_date =  nice_date(current($dates[0]));
+        return $nice_date;
+    } else {
+        $first = current($dates);
+        $last = end($dates);
+        $nice_first =  strftime('%a %d', strtotime(current($first)));
+        $nice_last =  nice_date(current($last));
+        return $nice_first . ' → '  . $nice_last;
+    }
+}
+
+
+function api_get_date($d){
+    return $d['date'];
+}
+function nice_event_dates_from_repeater($repeater_dates) {
+    $dates = array_map( 'api_get_date',  $repeater_dates)
+
+
 }
 
 
