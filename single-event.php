@@ -64,7 +64,7 @@
 
             <?php if ($date_repeater) : ?>
               <?php foreach ($date_repeater as $d) : ?>
-                <?php echo nice_date($d['date']); ?> - <?php echo $d['time']; ?>
+                <?php echo nice_date($d['date']); ?> - <?php echo $d['heure']; ?>
                 <br>
               <?php endforeach; ?>
             <?php endif; ?>
