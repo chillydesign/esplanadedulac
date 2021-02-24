@@ -676,4 +676,19 @@ function nice_event_dates_from_repeater($repeater_dates, $remove_old = false) {
 }
 
 
+function generate_color_stylesheet($color) {
+    return '<style>
+    header.event_header { background-color: ' . $color . '  }
+    .event_header_text  {color: ' . $color . '  }
+    h2.first_part{color: ' . $color . '  }
+    p.category {color: ' . $color . '  }
+    #latest_events_slider .single_event_slide_inner { background-color: ' . $color . '  }
+    .single_event_container:after { background-color: ' . $color . '  }
+    .single_accordion  h3.accordion_title {color: ' . $color . '  }
+    h5, .page h3  {color: ' . $color . '  }
+    a:hover  {color: ' . $color . '  }
+    </style>';
+}
+
+
     ?>
