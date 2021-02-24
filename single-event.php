@@ -87,9 +87,22 @@
 
         <section class="event_details_section">
           <?php the_field('main'); ?>
-          <?php if ($booking_link) { ?>
-            <h6 class="showonlyonsmall"><a href="<?php echo $booking_link; ?>" target="_blank" class="book_button">Réserver</a></h6>
-          <?php } ?>
+
+
+
+          <?php if ($date_repeater) : ?>
+            <?php if (sizeof($date_repeater == 1)) : ?>
+              <h6 class="showonlyonsmall"><a href="<?php echo $date_repeater[0]['booking_link'] ?>" target="_blank" class="book_button">Réserver</a></h6>
+            <?php else : ?>
+              <h5 class="gallery_title">Réserver</h5>
+              <?php foreach ($date_repeater as $d) : ?>
+                <a href="<?php echo $date_repeater[0]['booking_link'] ?>" target="_blank" class="book_button book_button_small"> <?php echo nice_date($d['date']); ?> - <?php echo $d['heure']; ?></a>
+              <?php endforeach; ?>
+            <?php endif; ?>
+
+          <?php endif; ?>
+
+
 
           <?php if ($gallery || $videos) : ?>
             <h5 class="gallery_title">Galerie</h5>
