@@ -658,13 +658,14 @@ function nice_event_dates($dates) {
 }
 
 
-function api_get_date($d){
+function api_get_date($d) {
     return $d['date'];
 }
+
 function nice_event_dates_from_repeater($repeater_dates) {
-    $dates = array_map( 'api_get_date',  $repeater_dates)
+    $dates = array_map('api_get_date',  $repeater_dates);
 
-
+    return nice_event_dates($dates);
 }
 
 
