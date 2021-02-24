@@ -8,7 +8,7 @@
     <?php $image = thumbnail_of_post_url($event_id,  'large');  ?>
     <?php // $date = get_field('date'); 
     ?>
-    <?php // $nice_date =  utf8_encode(strftime("%a %d %B", strtotime( $date ))); 
+    <?php // $nice_date = nice_date( $date ); 
     ?>
     <?php // $time = get_field('time'); 
     ?>
