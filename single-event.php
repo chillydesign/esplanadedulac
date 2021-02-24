@@ -22,12 +22,13 @@
     <?php $booking_link_html = ''; ?>
     <?php if ($date_repeater) :
       if (count($date_repeater) == 1) :
-        $booking_link_html  .= '<h6 class="showonlyonsmall"><a href="' .  $date_repeater[0]['booking_link'] . '" target="_blank" class="book_button">Réserver</a></h6>';
+        $booking_link_html  .= '<h6 ><a href="' .  $date_repeater[0]['booking_link'] . '" target="_blank" class="book_button">Réserver</a></h6>';
       else :
         $booking_link_html  .= ' <h5 class="gallery_title">Réserver</h5>';
         foreach ($date_repeater as $d) :
           $booking_link_html  .= '<a href="' . $date_repeater[0]['booking_link'] . '" target="_blank" class="book_button  book_button_small">' . nice_date($d['date']) . ' - ' .   $d['heure'] . '</a>';
         endforeach;
+        $booking_link_html  .= '<br><br>';
       endif;
     endif; ?>
 
