@@ -661,9 +661,18 @@ function nice_event_dates($dates) {
 function api_get_date($d) {
     return $d['date'];
 }
+function api_in_future($d) {
+    $now =  time();
+    return strtotime($d) > $now;
+}
 
-function nice_event_dates_from_repeater($repeater_dates) {
+function nice_event_dates_from_repeater($repeater_dates, $remove_old = false) {
+
     $dates = array_map('api_get_date',  $repeater_dates);
+
+    if ($remove_old) {
+        $dates = array_filter($dates,  'api_in_future');
+    }
 
     return nice_event_dates($dates);
 }

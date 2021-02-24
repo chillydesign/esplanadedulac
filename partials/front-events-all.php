@@ -19,12 +19,7 @@ global $events_args;
             <?php $permalink = get_the_permalink(); ?>
             <?php $category =   get_the_terms($event_id, 'event_cat'); ?>
             <?php $date_repeater = get_field('date_repeater');  ?>
-            <?php  // $date = get_field('date');  
-            ?>
-            <?php // $nice_date =  utf8_encode(strftime("%a %d %B", strtotime($date))); 
-            ?>
-            <?php // $time = get_field('time'); 
-            ?>
+
             <?php $familyclass = (get_field('family')) ? 'family ' : ''; ?>
 
             <div class="single_event_container">
@@ -37,7 +32,7 @@ global $events_args;
 
 
                 <?php if ($date_repeater) : ?>
-                  <p class="date"><?php echo nice_event_dates_from_repeater($date_repeater); ?></p>
+                  <p class="date"><?php echo nice_event_dates_from_repeater($date_repeater, true); ?></p>
                 <?php endif; ?>
 
 

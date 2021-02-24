@@ -40,7 +40,7 @@ $latest_events_args['posts_per_page'] = 3;
                                 <h5><?php echo get_field('subtitle'); ?></h5>
 
                                 <?php if ($date_repeater) : ?>
-                                    <p class="date"><?php echo nice_event_dates_from_repeater($date_repeater); ?></p>
+                                    <p class="date"><?php echo nice_event_dates_from_repeater($date_repeater, true); ?></p>
                                 <?php endif; ?>
 
 
