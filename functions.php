@@ -678,15 +678,15 @@ function nice_event_dates_from_repeater($repeater_dates, $remove_old = false) {
 
 function generate_color_stylesheet($color) {
     echo '<style  type="text/css" media="screen">
-    header.event_header { background-color: ' . $color . '  }
-    .event_header_text  {color: ' . $color . '  }
-    h2.first_part{color: ' . $color . '  }
-    p.category {color: ' . $color . '  }
-    #latest_events_slider .single_event_slide_inner { background-color: ' . $color . '  }
-    .single_event_container:after { background-color: ' . $color . '  }
-    .single_accordion  h3.accordion_title {color: ' . $color . '  }
-    h5, .page h3  {color: ' . $color . '  }
-    a:hover  {color: ' . $color . '  }
+    header.event_header { background-color: ' . $color . ' !important  }
+    .event_header_text  {color: ' . $color . ' !important  }
+    h2.first_part{color: ' . $color . ' !important  }
+    p.category {color: ' . $color . ' !important  }
+    #latest_events_slider .single_event_slide_inner { background-color: ' . $color . ' !important  }
+    .single_event_container:after { background-color: ' . $color . ' !important  }
+    .single_accordion  h3.accordion_title {color: ' . $color . ' !important  }
+    h5, .page h3  {color: ' . $color . ' !important  }
+    a:hover  {color: ' . $color . ' !important  }
     </style>';
 }
 
