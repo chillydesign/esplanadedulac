@@ -50,10 +50,10 @@
             if ($terms) {
               $count = count($terms);
               if ($count > 0) {
-                echo ' | ';
+
                 foreach ($terms as $term) {
                   if ($terms_count < 2) {
-                    echo $term->name . ' - ';
+                    echo ' - '  . $term->name;
                     $terms_count++;
                   }
                 }
