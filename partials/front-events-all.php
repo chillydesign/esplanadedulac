@@ -37,7 +37,7 @@ global $events_args;
 
 
                 <?php if ($date_repeater) : ?>
-                  <?php echo nice_event_dates_from_repeater($date_repeater); ?>
+                  <p class="date"><?php echo nice_event_dates_from_repeater($date_repeater); ?></p>
                 <?php endif; ?>
 
 
