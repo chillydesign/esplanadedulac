@@ -19,6 +19,7 @@ global $events_args;
             <?php $permalink = get_the_permalink(); ?>
             <?php $category =   get_the_terms($event_id, 'event_cat'); ?>
             <?php $date_repeater = get_field('date_repeater');  ?>
+            <?php $mention = get_field('mention');  ?>
 
             <?php $familyclass = (get_field('family')) ? 'family ' : ''; ?>
 
@@ -38,6 +39,10 @@ global $events_args;
 
 
               </div>
+              <?php if ($mention) : ?>
+                <p class="mention"><?php echo $mention; ?></p>
+              <?php endif; ?>
+
             </div>
 
         <?php endwhile;
