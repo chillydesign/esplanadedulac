@@ -594,11 +594,11 @@ function allow_extra_mime_types_upload($mimes) {
     $mimes['x-acad'] = 'application/x-acad';
     $mimes['autocad_dwg'] = 'application/autocad_dwg';
     $mimes['x-dwg'] = 'image/x-dwg';
-    $mimes['dwg'] = 'application/dwg';
+    // $mimes['dwg'] = 'application/dwg';
     $mimes['x-dwg'] = 'application/x-dwg';
     $mimes['x-autocad'] = 'application/x-autocad';
-    $mimes['vnd.dwg'] = 'image/vnd.dwg';
-    $mimes['dwg'] = 'drawing/dwg';
+    $mimes['dwg'] = 'image/vnd.dwg';  // vnd.dwg
+    // $mimes['dwg'] = 'drawing/dwg';
 
     return $mimes;
 }
