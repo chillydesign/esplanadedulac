@@ -586,16 +586,26 @@ function thumbnail_of_post_url($post_id,  $size = 'large') {
     return $image;
 }
 
-//
-//
-// function cc_mime_types($mimes) {
-//   $mimes['svg'] = 'image/svg+xml';
-//   return $mimes;
-// }
-// add_filter('upload_mimes', 'cc_mime_types');
-//
-//
-//
+
+
+function allow_extra_mime_types_upload($mimes) {
+
+    $mimes['acad'] = 'application/acad';
+    $mimes['x-acad'] = 'application/x-acad';
+    $mimes['autocad_dwg'] = 'application/autocad_dwg';
+    $mimes['x-dwg'] = 'image/x-dwg';
+    $mimes['dwg'] = 'application/dwg';
+    $mimes['x-dwg'] = 'application/x-dwg';
+    $mimes['x-autocad'] = 'application/x-autocad';
+    $mimes['vnd.dwg'] = 'image/vnd.dwg';
+    $mimes['dwg'] = 'drawing/dwg';
+
+    return $mimes;
+}
+add_filter('upload_mimes', 'allow_extra_mime_types_upload');
+
+
+
 
 
 include('functions_accesskey.php');
