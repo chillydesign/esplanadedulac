@@ -88,7 +88,7 @@ function webfactor_nav() {
 }
 
 function wf_version() {
-    return '0.1.2';
+    return '0.1.3';
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -697,7 +697,7 @@ function generate_color_stylesheet($color) {
     html body #latest_events_slider .single_event_slide_inner { background-color: ' . $color . '  }
     html body .accordion_container .single_event_container:after { background-color: ' . $color . '  }
     html body .accordion_container .single_accordion  h3.accordion_title {color: ' . $color . '  }
-    html body h5, 
+    html body h5,
     html body.page h3  {color: ' . $color . '  }
     html body a:hover {color: ' . $color . '  }
     html body header#page_header  nav ul li.menu-item-has-children ul.sub-menu  {border-top-color: ' . $color . '}
