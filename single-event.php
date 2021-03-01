@@ -6,11 +6,11 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <?php $event_id = get_the_id(); ?>
     <?php $image = thumbnail_of_post_url($event_id,  'large');  ?>
-    <?php // $date = get_field('date'); 
+    <?php // $date = get_field('date');
     ?>
-    <?php // $nice_date = nice_date( $date ); 
+    <?php // $nice_date = nice_date( $date );
     ?>
-    <?php // $time = get_field('time'); 
+    <?php // $time = get_field('time');
     ?>
     <?php $date_repeater = get_field('date_repeater');  ?>
     <?php $top_slider = get_field('top_slider'); ?>
@@ -23,12 +23,20 @@
     <?php $booking_link = get_field('booking_link'); ?>
     <?php $booking_link_html = ''; ?>
     <?php if ($date_repeater) :
-      if (count($date_repeater) == 1) :
+      if (count($date_repeater) == 1  ) :
+            if ($date_repeater[0]['booking_link']) :
         $booking_link_html  .= '<h6 ><a href="' .  $date_repeater[0]['booking_link'] . '" target="_blank" class="book_button">Réserver</a></h6>';
+      endif;
       else :
-        $booking_link_html  .= ' <h5 class="gallery_title">Réserver</h5>';
+        $i=1;
         foreach ($date_repeater as $d) :
-          $booking_link_html  .= '<a href="' . $date_repeater[0]['booking_link'] . '" target="_blank" class="book_button  book_button_small">' . nice_date($d['date']) . ' - ' .   $d['heure'] . '</a>';
+          if($d['booking_link']) :
+            if($i==1):
+              $booking_link_html  .= ' <h5 class="gallery_title">Réserver</h5>';
+            endif;
+          $booking_link_html  .= '<a href="' . $d['booking_link'] . '" target="_blank" class="book_button  book_button_small">' . nice_date($d['date']) . ' - ' .   $d['heure'] . '</a>';
+          $i++;
+        endif;
         endforeach;
         $booking_link_html  .= '<br><br>';
       endif;
