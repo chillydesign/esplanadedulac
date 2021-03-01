@@ -1,0 +1,6 @@
+#!/bin/bash
+ssh webfactor << EOF
+ cd ~/web/projets/esplanadedulac/wp-content/themes/esplanadedulac;
+ git pull origin master;
+ echo "DONE!";
+EOF
