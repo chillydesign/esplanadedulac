@@ -44,12 +44,12 @@ footer {
 
 
             @media (min-width: $browser_small) {
-                width: #{100% / 3};
-                min-width: #{100% / 3};
+                width: 33%;
+                min-width: 33%;
 
                 &.footer_column_wide {
-                    width: #{100% / 3};
-                    min-width: #{100% / 3};
+                    width: 33%;
+                    min-width: 33%;
                 }
 
                 &.footer_column_right {
@@ -58,12 +58,12 @@ footer {
             }
 
             @media (min-width: $browser_medium) {
-                width: #{100% / 4};
-                min-width: #{100% / 4};
+                width: 25%;
+                min-width: 25%;
 
                 &.footer_column_wide {
-                    width: #{100% / 4 * 2};
-                    min-width: #{100% / 4 * 2};
+                    width: 50%;
+                    min-width: 50%;
                 }
 
             }
