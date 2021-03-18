@@ -251,7 +251,7 @@ function html5wp_excerpt($length_callback = '', $more_callback = '') {
 // Custom View Article link to Post
 function html5_blank_view_article($more) {
     global $post;
-    return '... <br/><h6><a href="' . get_permalink($post->ID) . '">' . __('Lire plus', 'webfactor') . '</a></h6>';
+    return '... <a class="read_more_link" href="' . get_permalink($post->ID) . '">' . __('lire plus', 'webfactor') . '</a>';
 }
 
 // Remove Admin bar
