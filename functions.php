@@ -704,7 +704,7 @@ function generate_color_stylesheet($color) {
     html body div.response { border-color: ' . $color . '  }
     html body .book_button { background-color: ' . $color . '  }
     html body #all_events #events_and_programme .events_container .single_event_container::after { background-color: ' . $color . '  }
-    html body .pill  { background-color: ' . $color . '  }
+    html body .pill  { border: solid 1px ' . $color . '; color : ' . $color . ' }
 
     </style>';
 }
