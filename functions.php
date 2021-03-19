@@ -88,7 +88,7 @@ function webfactor_nav() {
 }
 
 function wf_version() {
-    return '0.1.3';
+    return '0.1.4';
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -690,7 +690,6 @@ function nice_event_dates_from_repeater($repeater_dates, $remove_old = false) {
 
 function generate_color_stylesheet($color) {
     echo '<style  type="text/css" media="screen">
-    html body header.event_header { background-color: ' . $color . '  }
     html body header.event_header .event_header_text  {color: ' . $color . '  }
     html body h2.first_part {color: ' . $color . '  }
     html body p.category {color: ' . $color . '  }

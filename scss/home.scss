@@ -390,6 +390,12 @@ body.home {}
   font-size: 13px;
 }
 
+html body.single span.pill{
+  transform: scale(1.2);
+    position: relative;
+    top: -8px;
+    margin-left: 20px;
+}
 
 
 .entry .entry-content > *, .entry .entry-summary > *, .entry .entry-summary > .wp-block-group > .wp-block-group__inner-container > *, .entry .entry-content > .wp-block-group > .wp-block-group__inner-container > *{max-width:100%;}
