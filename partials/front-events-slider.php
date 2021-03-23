@@ -36,7 +36,7 @@ $latest_events_args['posts_per_page'] = 3;
                     <div class="single_event_slide_inner" style="background-image:url(<?php echo $image; ?>);">
                         <div class="event_slide_text">
                             <a style="color:white;" href="<?php echo $permalink; ?>">
-                                <h2>TESTESTESTESTEST<?php if(get_sub_field('mention, $event_id')){ echo get_sub_field('mention, $event_id') . ' / ';} ?><?php the_title(); ?></h2>
+                                <h2><?php if(get_sub_field('mention', $event_id)){ echo get_sub_field('mention', $event_id) . ' / ';} ?><?php the_title(); ?></h2>
                                 <h5><?php echo get_field('subtitle'); ?></h5>
 
                                 <?php if ($date_repeater) : ?>
@@ -45,7 +45,7 @@ $latest_events_args['posts_per_page'] = 3;
 
 
                             </a>
-                            <?php if(!get_sub_field('hide_ticketing, $event_id')): ?>
+                            <?php if(!get_sub_field('hide_ticketing', $event_id)): ?>
                             <p><a href="<?php echo get_field('booking_link'); ?>" class="button button_open " target="_blank">Billetterie</a></p>
                             <?php endif; ?>
                         </div>
