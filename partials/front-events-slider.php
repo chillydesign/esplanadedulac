@@ -36,7 +36,7 @@ $latest_events_args['posts_per_page'] = 3;
                     <div class="single_event_slide_inner" style="background-image:url(<?php echo $image; ?>);">
                         <div class="event_slide_text">
                             <a style="color:white;" href="<?php echo $permalink; ?>">
-                            <?php echo get_sub_field('mention', $event_id); ?>
+                            <?php echo get_field('mention', $event_id); ?>
                                 <h2><?php if(get_sub_field('mention', $event_id)){ echo get_sub_field('mention', $event_id) . ' / ';} ?><?php the_title(); ?></h2>
                                 <h5><?php echo get_field('subtitle'); ?></h5>
 
