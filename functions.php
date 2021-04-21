@@ -721,6 +721,8 @@ function generate_color_stylesheet($color) {
     html body #all_events #events_and_programme .events_container .single_event_container::after { background-color: ' . $color . '  }
     html body .pill  { border: solid 1px ' . $color . '; color : ' . $color . ' }
 
+    .events_and_news_container_inner  #news_slider  {border-color: ' . $color . '  }
+
     </style>';
 }
 
