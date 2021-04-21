@@ -134,8 +134,8 @@ body.home {}
 
 
         @media (min-width: $browser_verysmall) {
-          width: calc(50% - #{$column_gap});
-          max-width: calc(50% - #{$column_gap});
+          width: calc(100% - #{$column_gap});
+          max-width: calc(100% - #{$column_gap});
           margin: 0 #{$column_gap * 0.5} $column_gap;
         }
 
