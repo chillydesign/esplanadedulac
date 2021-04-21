@@ -121,8 +121,8 @@ body.home {}
       .single_event_container {
 
         flex: auto 1;
-        width: #{100% / 1};
-        max-width: #{100% / 1};
+        width: 100%;
+        max-width: 100%;
 
         background: white;
         margin: 0 0px #{$column_gap };
@@ -316,10 +316,9 @@ body.home {}
   #news_slider {
 
     border: 2px solid $brand_color;
+    margin-top: 40px;
 
-    @media (min-width: $browser_verysmall) {
-      width: 50%;
-    }
+
 
     @media (min-width: $browser_medium) {
       width: 25%;
@@ -339,9 +338,7 @@ body.home {}
   #all_events {
 
 
-    @media (min-width: $browser_verysmall) {
-      width: 50%;
-    }
+
 
     @media (min-width: $browser_medium) {
       width: 75%;
