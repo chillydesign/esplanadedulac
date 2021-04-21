@@ -469,18 +469,18 @@ html body.single span.pill {
 //     background:rgba(255,255,255,0.4);
 //  }
 
-@media (min-width: 520px) {
-  #news_slider .single_news_container_inner .news_image {
-    width: calc(25% - 25px);
-    border-right: none;
-    margin-right: 25px;
+// @media (min-width: 520px) {
+  //   #news_slider .single_news_container_inner .news_image {
+  //     width: calc(25% - 25px);
+  //     border-right: none;
+  //     margin-right: 25px;
 
-  }
+  //   }
 
-  #news_slider .single_news_container_inner .news_text {
-    width: calc(75% - 25px);
-  }
-}
+  //   #news_slider .single_news_container_inner .news_text {
+  //     width: calc(75% - 25px);
+  //   }
+  // }
 
 iframe {
   height: 200px !important;
