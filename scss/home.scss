@@ -301,9 +301,10 @@ body.home {}
 
 .events_and_news_container {
   background-color: $light_grey;
+  margin-bottom: 40px;
 }
 
-.events_and_news_container_inner{
+.events_and_news_container_inner {
 
 
 
@@ -328,6 +329,14 @@ body.home {}
       margin-top: 40px;
       padding: 0;
     }
+
+
+    .slick-arrow {
+      top: -55px;
+      transform: scaleY(1.5);
+    }
+
+
   }
 
   #all_events {
@@ -356,11 +365,11 @@ body.home {}
   .news_title {
     text-align: center;
     text-transform: uppercase;
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: normal;
     margin: 0;
     padding: 10px 0;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
   }
 
   .single_news_container {
