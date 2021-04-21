@@ -37,11 +37,16 @@
 
         ?>
 
+
         <?php get_template_part('partials/front', 'events-slider'); ?>
-        <?php get_template_part('partials/front', 'news-slider'); ?>
-        <?php get_template_part('partials/front', 'events-all'); ?>
-
-
+        <div class="events_and_news_container">
+            <div class="container">
+                <div class="events_and_news_container_inner">
+                    <?php get_template_part('partials/front', 'news-slider'); ?>
+                    <?php get_template_part('partials/front', 'events-all'); ?>
+                </div>
+            </div>
+        </div>
 
 
     <?php endwhile; ?>
