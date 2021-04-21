@@ -76,7 +76,7 @@
 <?php wp_footer(); ?>
 <script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
 <script type='text/javascript' src='//maps.google.com/maps/api/js?key=AIzaSyCoHn6xGs3f0pMSx7zh7D0M1w1K6iS51tc'></script>
-<script type="text/javascript" src="<?php echo $tdu; ?>/js/min/scripts.bundle.js?v=<?php echo wf_version(); ?>"></script>
+
 <script>
   // (function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
   // (f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
