@@ -12,7 +12,9 @@
               <?php if (get_field('video')) : ?>
                 <div class="news_image"><?php the_field('video'); ?></div>
               <?php else : ?>
-                <div class="news_image" style="background-image:url(<?php echo $image; ?>);"></div>
+                <a href="<?php echo $permalink; ?>">
+                  <div class="news_image" style="background-image:url(<?php echo $image; ?>);"></div>
+                </a>
               <?php endif; ?>
               <div class="news_text">
 
