@@ -101,13 +101,13 @@ function webfactor_header_scripts() {
 
 
 
-        wp_register_script('slick', $tdu . '/js/slick.min.js', array(),  wf_version(), true); // Modernizr
+        wp_register_script('slick', $tdu . '/js/slick.min.js', array('jquery'),  wf_version(), true); // Modernizr
         wp_enqueue_script('slick'); // Enqueue it!
 
-        wp_register_script('featherlight', $tdu . '/js/featherlight.min.js', array(),  wf_version(), true); // Modernizr
+        wp_register_script('featherlight', $tdu . '/js/featherlight.min.js', array('jquery'),  wf_version(), true); // Modernizr
         wp_enqueue_script('featherlight'); // Enqueue it!
 
-        wp_register_script('scripts', $tdu . '/js/scripts.js', array(),  wf_version(), true); // Modernizr
+        wp_register_script('scripts', $tdu . '/js/scripts.js', array('jquery'),  wf_version(), true); // Modernizr
         wp_enqueue_script('scripts'); // Enqueue it!
 
 
