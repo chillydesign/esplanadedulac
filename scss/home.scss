@@ -165,9 +165,13 @@ body.home {}
         }
 
         .single_event_image_container {
-          height: 130px;
+          height: 230px;
           overflow: hidden;
           margin: -20px -20px 20px;
+
+          @media (min-width: $browser_medium) {
+            height: 130px;
+          }
 
         }
 
