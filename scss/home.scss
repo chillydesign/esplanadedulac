@@ -306,7 +306,7 @@ body.home {}
 
 
 
-  @media (min-width: $browser_verysmall) {
+  @media (min-width: $browser_medium) {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row-reverse;
