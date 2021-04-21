@@ -306,14 +306,17 @@ body.home {}
 .events_and_news_container_inner {
 
 
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row-reverse;
-  justify-content: space-between;
 
+
+  @media (min-width: $browser_verysmall) {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
 
   #news_slider {
-    width: 100%;
+
 
     @media (min-width: $browser_verysmall) {
       width: 50%;
@@ -325,7 +328,7 @@ body.home {}
   }
 
   #all_events {
-    width: 100%;
+
 
     @media (min-width: $browser_verysmall) {
       width: 50%;
