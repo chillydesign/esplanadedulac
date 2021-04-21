@@ -133,15 +133,12 @@ body.home {}
         position: relative;
 
 
-        @media (min-width: $browser_verysmall) {
-          width: calc(100% - #{$column_gap});
-          max-width: calc(100% - #{$column_gap});
-          margin: 0 #{$column_gap * 0.5} $column_gap;
-        }
 
-        @media (min-width: $browser_small) {
+
+        @media (min-width: $browser_medium) {
           width: calc(33% - #{$column_gap});
           max-width: calc(33% - #{$column_gap});
+          margin: 0 #{$column_gap * 0.5} $column_gap;
         }
 
         &:after {
