@@ -324,6 +324,9 @@ body.home {}
 
 
 
+
+
+
     @media (min-width: $browser_medium) {
       width: 25%;
       margin-top: 40px;
@@ -368,6 +371,7 @@ body.home {}
     margin: 0;
     padding: 10px 0;
     letter-spacing: 3px;
+    color: black;
   }
 
   .single_news_container {
@@ -414,10 +418,12 @@ body.home {}
       h3 {
         padding: 0 0 15px;
         text-transform: uppercase;
+        color: black;
 
         a {
-          color: inherit;
+          color: black;
           border: 0;
+
         }
       }
 
