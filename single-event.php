@@ -21,22 +21,26 @@
     <?php $tarifs = get_field('tarifs'); ?>
     <?php $masterclass = get_field('masterclass'); ?>
     <?php $booking_link = get_field('booking_link'); ?>
+    <?php $voltaire = get_field('voltaire'); ?>
+    <?php $passedanse = get_field('passedanse'); ?>
+    <?php $culture = get_field('culture'); ?>
+
     <?php $booking_link_html = ''; ?>
     <?php if ($date_repeater) :
-      if (count($date_repeater) == 1  ) :
-            if ($date_repeater[0]['booking_link']) :
-        $booking_link_html  .= '<h6 ><a href="' .  $date_repeater[0]['booking_link'] . '" target="_blank" class="book_button">Réserver</a></h6>';
-      endif;
+      if (count($date_repeater) == 1) :
+        if ($date_repeater[0]['booking_link']) :
+          $booking_link_html  .= '<h6 ><a href="' .  $date_repeater[0]['booking_link'] . '" target="_blank" class="book_button">Réserver</a></h6>';
+        endif;
       else :
-        $i=1;
+        $i = 1;
         foreach ($date_repeater as $d) :
-          if($d['booking_link']) :
-            if($i==1):
+          if ($d['booking_link']) :
+            if ($i == 1) :
               $booking_link_html  .= ' <h5 class="gallery_title">Réserver</h5>';
             endif;
-          $booking_link_html  .= '<a href="' . $d['booking_link'] . '" target="_blank" class="book_button  book_button_small">' . nice_date($d['date']) . ' - ' .   $d['heure'] . '</a>';
-          $i++;
-        endif;
+            $booking_link_html  .= '<a href="' . $d['booking_link'] . '" target="_blank" class="book_button  book_button_small">' . nice_date($d['date']) . ' - ' .   $d['heure'] . '</a>';
+            $i++;
+          endif;
         endforeach;
         $booking_link_html  .= '<br><br>';
       endif;
@@ -235,22 +239,42 @@
             <div><?php echo $tarifs; ?></div>
           <?php endif; ?>
 
-          <?php if (get_field('voltaire')) : ?>
+          <?php if ($voltaire) : ?>
+            <?php $vol_url = get_field('saison_voltaire_url', 'option'); ?>
+            <?php $vol_img = get_field('saison_voltaire_image', 'option'); ?>
             <div class="event_partner">
-              <img src="<?php echo get_template_directory_uri(); ?>/wp-content/img/voltaire.jpg">
-            <?php endif; ?>
+              <a href="<?php echo $vol_url; ?>" target="_blank"><img src="<?php echo $vol_img; ?>"><span>Saison Voltaire</span></a>
+            </div>
+          <?php endif; ?>
+          <?php if ($passedanse) : ?>
+            <?php $pas_url = get_field('passe_danse_url', 'option'); ?>
+            <?php $pas_img = get_field('passe_danse_image', 'option'); ?>
+            <div class="event_partner">
+              <a href="<?php echo $pas_url; ?>" target="_blank"><img src="<?php echo $pas_img; ?>"><span>Passe Danse</span></a>
+            </div>
+          <?php endif; ?>
 
-            <?php if ($masterclass) : ?>
-              <h5 class="masterclass"><span class="plus">+</span> MASTERCLASS</h5>
-              <div><?php echo $masterclass; ?></div>
-              <p>
-                <?php $email = get_field('masterclass_email', 'option'); ?>
-                <?php $name = get_the_title(); ?>
-                <?php $subject = rawurlencode('Inscription à la Masterclass ' . $name); ?>
-                <?php $mailto = "mailto:" . $email . "?subject=" . $subject . "&body=Bonjour%2C%20%0A%0AJe%20souhaite%20m'inscrire%20%C3%A0%20la%20Masterclass%20" .  $name . ".%0A%0A%0ABien%20cordialement%2C"; ?>
-              </p>
-              <h6><a target="_blank" href="<?php echo $mailto; ?>" style="margin-top:-30px;">S'inscrire</a></h6>
-            <?php endif; ?>
+          <?php if ($culture) : ?>
+            <?php $cul_url = get_field('culture_pour_tous_url', 'option'); ?>
+            <?php $cul_img = get_field('culture_pour_tous_image', 'option'); ?>
+            <div class="event_partner">
+              <a href="<?php echo $cul_url; ?>" target="_blank"><img src="<?php echo $cul_img; ?>"><span>Culture Pour Tous</span></a>
+            </div>
+          <?php endif; ?>
+
+
+          <?php if ($masterclass) : ?>
+            <h5 class="masterclass"><span class="plus">+</span> MASTERCLASS</h5>
+            <div><?php echo $masterclass; ?></div>
+            <p>
+              <?php $email = get_field('masterclass_email', 'option'); ?>
+              <?php $name = get_the_title(); ?>
+              <?php $subject = rawurlencode('Inscription à la Masterclass ' . $name); ?>
+              <?php $mailto = "mailto:" . $email . "?subject=" . $subject . "&body=Bonjour%2C%20%0A%0AJe%20souhaite%20m'inscrire%20%C3%A0%20la%20Masterclass%20" .  $name . ".%0A%0A%0ABien%20cordialement%2C"; ?>
+            </p>
+            <h6><a target="_blank" href="<?php echo $mailto; ?>" style="margin-top:-30px;">S'inscrire</a></h6>
+          <?php endif; ?>
+
 
 
 
