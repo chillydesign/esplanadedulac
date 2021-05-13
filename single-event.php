@@ -242,14 +242,14 @@
           <?php if ($voltaire) : ?>
             <?php $vol_url = get_field('saison_voltaire_url', 'option'); ?>
             <?php $vol_img = get_field('saison_voltaire_image', 'option'); ?>
-            <div class="event_partner">
+            <div class="event_special_image_container">
               <a href="<?php echo $vol_url; ?>" target="_blank"><img src="<?php echo $vol_img; ?>"><span>Saison Voltaire</span></a>
             </div>
           <?php endif; ?>
           <?php if ($passedanse) : ?>
             <?php $pas_url = get_field('passe_danse_url', 'option'); ?>
             <?php $pas_img = get_field('passe_danse_image', 'option'); ?>
-            <div class="event_partner">
+            <div class="event_special_image_container">
               <a href="<?php echo $pas_url; ?>" target="_blank"><img src="<?php echo $pas_img; ?>"><span>Passe Danse</span></a>
             </div>
           <?php endif; ?>
@@ -257,7 +257,7 @@
           <?php if ($culture) : ?>
             <?php $cul_url = get_field('culture_pour_tous_url', 'option'); ?>
             <?php $cul_img = get_field('culture_pour_tous_image', 'option'); ?>
-            <div class="event_partner">
+            <div class="event_special_image_container">
               <a href="<?php echo $cul_url; ?>" target="_blank"><img src="<?php echo $cul_img; ?>"><span>Culture Pour Tous</span></a>
             </div>
           <?php endif; ?>
