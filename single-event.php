@@ -131,9 +131,11 @@
                 <?php if ($videos) : ?>
                   <?php $vv = 0;
                   foreach ($videos as $video) :   ?>
-                    <div id="video_<?php echo $vv; ?>"></div>
-                  <?php $vv++;
-                  endforeach; ?>
+                    <?php if ($video != '') : ?>
+                      <div id="video_<?php echo $vv; ?>"></div>
+                      <?php $vv++; ?>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
                 <?php endif; ?>
                 <?php foreach ($gallery as $image) : ?>
                   <img src="<?php echo $image['sizes']['medium']; ?>" alt="" />
