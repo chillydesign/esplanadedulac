@@ -126,12 +126,11 @@ body.home {}
 
         background: white;
         margin: 0 0px #{$column_gap };
-        padding: 20px;
+        padding: 20px 20px 30px;
         color: $dark_grey;
         transition: all 0.3s;
         box-shadow: #{$column_gap * -0.5} 0px 10px #{$column_gap * -0.5} transparentize($dark_grey, 1);
         position: relative;
-
 
 
 
