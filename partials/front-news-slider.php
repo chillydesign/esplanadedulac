@@ -1,4 +1,5 @@
 <section id="news_slider">
+  <div class="news_slider_inner">
   <h3 class="news_title">Actualités</h3>
   <div class="container">
     <div class="carousel">
@@ -29,5 +30,6 @@
       endif;  ?>
       <?php wp_reset_query(); ?>
     </div>
+  </div>
   </div>
 </section>
