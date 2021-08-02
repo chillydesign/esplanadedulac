@@ -134,7 +134,7 @@
                   <?php $vv = 0;
                   foreach ($videos as $video) :   ?>
                     <?php if ($video['video'] != '') : ?>
-                      <div class="video-box"><div id="video_<?php echo $vv; ?>"></div></div>
+                      <div id="video_<?php echo $vv; ?>"></div>
                       <?php $vv++; ?>
                     <?php endif; ?>
                   <?php endforeach; ?>
