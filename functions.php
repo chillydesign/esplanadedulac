@@ -698,7 +698,7 @@ function nice_event_dates_from_repeater($repeater_dates, $remove_old = false) {
     $dates = array_map('api_get_date',  $repeater_dates);
     if ($remove_old) {
         // only show dates in the future
-        $dates = array_filter($dates,  'api_in_future');
+        // $dates = array_filter($dates,  'api_in_future');
     }
     return nice_event_dates($dates);
 }
