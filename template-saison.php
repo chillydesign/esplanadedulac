@@ -14,24 +14,18 @@
         $events_args = array(  // used for partials/front events all
             'post_type' => 'event',
             'posts_per_page' =>  -1,
-            'meta_key' => 'date',
-            'orderby' => 'meta_value',
-            'order' => 'ASC',
-            // 'meta_query' => array(
-            //     'relation' => 'OR', //    ONLY SHOW EVENTS THAT ARENT RESIDENCE
-            //     array(
-            //         'key' => 'residence',
-            //         'value' => 1,
-            //         'compare' => '!=',
-            //         'type' => 'numeric'
-            //     ),
-            //     array(
-            //         'key' => 'residence',
-            //         'value' => 1, // value required wordpress bug
-            //         'compare' => 'NOT EXISTS',
-
-            //     )
-            // )
+            // 'meta_key' => 'date',
+            // 'orderby' => 'meta_value',
+            // 'order' => 'ASC',
+            'meta_query' => array(
+                'relation' => 'AND',
+                array( //    ONLY SHOW EVENTS THAT ARENT RESIDENCE
+                    'key' => 'residence',
+                    'value' => 1,
+                    'compare' => '!=',
+                    'type' => 'numeric'
+                )
+            )
         );
 
         if ($search && $search != '') {
