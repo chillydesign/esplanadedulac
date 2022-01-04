@@ -17,21 +17,21 @@
             'meta_key' => 'date',
             'orderby' => 'meta_value',
             'order' => 'ASC',
-            'meta_query' => array(
-                'relation' => 'OR', //    ONLY SHOW EVENTS THAT ARENT RESIDENCE
-                array(
-                    'key' => 'residence',
-                    'value' => 1,
-                    'compare' => '!=',
-                    'type' => 'numeric'
-                ),
-                array(
-                    'key' => 'residence',
-                    'value' => 1, // value required wordpress bug
-                    'compare' => 'NOT EXISTS',
+            // 'meta_query' => array(
+            //     'relation' => 'OR', //    ONLY SHOW EVENTS THAT ARENT RESIDENCE
+            //     array(
+            //         'key' => 'residence',
+            //         'value' => 1,
+            //         'compare' => '!=',
+            //         'type' => 'numeric'
+            //     ),
+            //     array(
+            //         'key' => 'residence',
+            //         'value' => 1, // value required wordpress bug
+            //         'compare' => 'NOT EXISTS',
 
-                )
-            )
+            //     )
+            // )
         );
 
         if ($search && $search != '') {
