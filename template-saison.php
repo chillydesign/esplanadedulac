@@ -18,12 +18,18 @@
             'orderby' => 'meta_value',
             'order' => 'ASC',
             'meta_query' => array(
-                'relation' => 'AND',
-                array( //    ONLY SHOW EVENTS THAT ARENT RESIDENCE
+                'relation' => 'OR', //    ONLY SHOW EVENTS THAT ARENT RESIDENCE
+                array(
                     'key' => 'residence',
                     'value' => 1,
                     'compare' => '!=',
                     'type' => 'numeric'
+                ),
+                array(
+                    'key' => 'residence',
+                    'value' => 1, // value required wordpress bug
+                    'compare' => 'NOT EXISTS',
+
                 )
             )
         );
