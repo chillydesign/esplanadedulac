@@ -46,7 +46,13 @@
             <nav>
                 <ul>
                     <?php chilly_nav('header_nav'); ?>
-                    <li style="position:initial"><a id="ticketing_link" href="http://www.forumsirius.fr/orion/divonne.phtml?kld=1" target="_blank">Billetterie En Ligne</a></li>
+                    <?php $billeterie_link = get_field('lien_billetterie_en_ligne', 'option'); ?>
+
+                    <?php if ($billeterie_link) : ?>
+                        <li style="position:initial">
+                            <a id="ticketing_link" href="<?php echo $billeterie_link; ?>" target="_blank">Billetterie En Ligne</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </nav>
 
