@@ -32,6 +32,23 @@ body.home {}
       pointer-events: none;
 
 
+
+    }
+
+
+
+    .event_slide_text {
+      position: relative;
+      z-index: 10;
+
+      flex: 1 auto 0;
+      max-width: 700px;
+      color: white;
+      margin: 0;
+      padding: 0 20px;
+
+
+
       &.color_overlay_red {
         background-color: transparentize($red, 0.5);
       }
@@ -51,19 +68,6 @@ body.home {}
       &.color_overlay_none {
         background-color: transparent
       }
-    }
-
-
-
-    .event_slide_text {
-      position: relative;
-      z-index: 10;
-
-      flex: 1 auto 0;
-      max-width: 700px;
-      color: white;
-      margin: 0;
-      padding: 0 20px;
 
       a {
         color: white !important;

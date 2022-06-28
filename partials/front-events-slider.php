@@ -25,6 +25,10 @@ $latest_events_args['posts_per_page'] = 3;
                 <?php $date_repeater = get_field('date_repeater');  ?>
                 <?php
                 $color_overlay = get_field('color_overlay');
+                $color_overlay_class = '';
+                if ($color_overlay) {
+                    $color_overlay_class = "color_overlay_" . $color_overlay;
+                };
                 $top_slider = get_field('top_slider');
                 if ($top_slider) {
                     $image = $top_slider[0]['sizes']['large'];
@@ -35,7 +39,7 @@ $latest_events_args['posts_per_page'] = 3;
 
                 <div class="single_event_slide">
                     <div class="single_event_slide_inner" style="background-image:url(<?php echo $image; ?>);">
-                        <div class="event_slide_text">
+                        <div class="event_slide_text <?php echo $color_overlay_class; ?>">
                             <a style="color:white;" href="<?php echo $permalink; ?>">
                                 <h2><?php if (get_field('mention', $event_id)) {
                                         echo get_field('mention', $event_id) . ' / ';
@@ -51,10 +55,12 @@ $latest_events_args['posts_per_page'] = 3;
                             <?php if (!get_field('hide_ticketing', $event_id)) : ?>
                                 <p><a href="<?php echo get_field('booking_link'); ?>" class="button button_open " target="_blank">Billetterie</a></p>
                             <?php endif; ?>
+
+
+
+
                         </div>
-                        <?php if ($color_overlay) : ?>
-                            <div class="color_overlay color_overlay_<?php echo $color_overlay; ?>"></div>
-                        <?php endif; ?>
+
                     </div>
 
                 </div>
