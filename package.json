@@ -34,6 +34,6 @@
     "gulp-minify": "^3.0.15",
     "gulp-sass": "^4.1.0",
     "gulp-watch": "^5.0.1",
-    "webpack": "^3.11.0"
+    "webpack": "^5.75.0"
   }
 }
